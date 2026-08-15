@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "service",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing aliqua deserunt ullamco occaecat aliqua consequat in dolor eiusmod aliqua sint tempor."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

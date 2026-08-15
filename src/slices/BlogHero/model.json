@@ -1,0 +1,58 @@
+{
+  "id": "blog_hero",
+  "type": "SharedSlice",
+  "name": "BlogHero",
+  "description": "BlogHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "heading",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": ""
+          }
+        },
+        "hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "hero_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "background_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "use_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "use_background",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "format": "page",
+  "id": "project",
+  "label": "project",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "project_name": {
+        "type": "Text",
+        "config": {
+          "label": "project_name",
+          "placeholder": ""
+        }
+      },
+      "project_description": {
+        "type": "Text",
+        "config": {
+          "label": "project_description",
+          "placeholder": ""
+        }
+      },
+      "featured": {
+        "type": "Boolean",
+        "config": {
+          "label": "featured",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
+        }
+      },
+      "dispaly_order": {
+        "type": "Number",
+        "config": {
+          "label": "dispaly_order",
+          "placeholder": ""
+        }
+      },
+      "status": {
+        "type": "Text",
+        "config": {
+          "label": "status",
+          "placeholder": ""
+        }
+      },
+      "client_type": {
+        "type": "Text",
+        "config": {
+          "label": "client_type",
+          "placeholder": ""
+        }
+      },
+      "industry": {
+        "type": "Text",
+        "config": {
+          "label": "industry",
+          "placeholder": ""
+        }
+      },
+      "role": {
+        "type": "Text",
+        "config": {
+          "label": "role",
+          "placeholder": ""
+        }
+      },
+      "duration": {
+        "type": "Text",
+        "config": {
+          "label": "duration",
+          "placeholder": ""
+        }
+      },
+      "team_size": {
+        "type": "Text",
+        "config": {
+          "label": "team_size",
+          "placeholder": ""
+        }
+      },
+      "live_url": {
+        "type": "Link",
+        "config": {
+          "label": "live_url",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "github_link": {
+        "type": "Link",
+        "config": {
+          "label": "github_link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "demo_video": {
+        "type": "Link",
+        "config": {
+          "label": "demo_video",
+          "placeholder": "",
+          "select": "media",
+          "allowText": true
+        }
+      },
+      "project_metrics": {
+        "type": "Group",
+        "config": {
+          "label": "project_metrics",
+          "repeat": true,
+          "fields": {}
+        }
+      },
+      "card_thumnail": {
+        "type": "Image",
+        "config": {
+          "label": "card_thumnail",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "hero_banner": {
+        "type": "Image",
+        "config": {
+          "label": "hero_banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "statistics": {
+              "type": "SharedSlice"
+            },
+            "solution": {
+              "type": "SharedSlice"
+            },
+            "screenshot_gallery": {
+              "type": "SharedSlice"
+            },
+            "feature_list": {
+              "type": "SharedSlice"
+            },
+            "rich_text": {
+              "type": "SharedSlice"
+            },
+            "faqs": {
+              "type": "SharedSlice"
+            },
+            "architecture": {
+              "type": "SharedSlice"
+            },
+            "development_process": {
+              "type": "SharedSlice"
+            },
+            "cta": {
+              "type": "SharedSlice"
+            },
+            "challenge": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

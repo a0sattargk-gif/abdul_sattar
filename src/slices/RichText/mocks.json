@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "adjective",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do incididunt minim pariatur ad magna qui est sint Lorem cupidatat laborum. Qui consectetur quis quis amet anim officia amet fugiat dolore consequat."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

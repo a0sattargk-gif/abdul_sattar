@@ -1,0 +1,47 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "arrow",
+				"type": "Text"
+			},
+			"repeater": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "56985d1e-f515-4602-8e25-25089e34db88",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "hung",
+									"type": "Text"
+								}
+							],
+							[
+								"desc",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est in magna aliquip aliqua in cupidatat culpa cupidatat aliquip in aute. Labore adipisicing consectetur mollit duis dolor proident. Ipsum consequat et do et ut enim sint velit qui magna in et."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

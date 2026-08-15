@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "composed",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia ut ea excepteur aliquip duis tempor veniam labore nostrud quis est. Ex officia ad voluptate fugiat nulla fugiat eiusmod velit Lorem laborum id elit consectetur labore. Nisi duis consectetur ut dolor tempor nisi officia esse deserunt nostrud dolore irure qui aliquip."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

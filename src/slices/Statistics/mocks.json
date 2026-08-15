@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"statistics": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "a73e3724-c810-49de-a211-de6f339f7bfd",
+						"value": [
+							[
+								"score",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "itself",
+									"type": "Text"
+								}
+							],
+							[
+								"desc",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "believed",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

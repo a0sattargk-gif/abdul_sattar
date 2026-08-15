@@ -1,0 +1,34 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "state",
+				"type": "Text"
+			},
+			"desc": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Amet consectetur Lorem eiusmod proident."
+						}
+					}
+				]
+			},
+			"btn": {
+				"__TYPE__": "LinkContent",
+				"key": "edbdb40e-bc2f-4ba9-9dd8-9800fbe30fbd",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "express"
+				}
+			}
+		},
+		"items": []
+	}
+]
