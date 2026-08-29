@@ -1,36 +1,62 @@
-export default function BlogHero() {
+import Link from "next/link";
+import { PrismicNextImage } from "@prismicio/next";
+
+import type { BlogPostDocument } from "../../../../prismicio-types";
+
+interface BlogCardProps {
+  post: BlogPostDocument;
+  priority?: boolean;
+}
+
+export default function BlogCard({
+  post,
+  priority = false,
+}: BlogCardProps) {
+  const title =
+    post.data.listing_title || "Untitled article";
+
   return (
-    <section
-      aria-labelledby="blog-page-heading"
-      className="relative overflow-hidden bg-navy-900 py-16 sm:py-20 lg:py-24"
-    >
-      <div aria-hidden="true" className="absolute inset-0">
-        <div className="absolute -left-24 top-0 size-80 rounded-full bg-emerald-brand-500/10 blur-3xl" />
-        <div className="absolute -right-24 bottom-0 size-80 rounded-full bg-emerald-brand-400/10 blur-3xl" />
-      </div>
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-cool-gray-200 bg-white">
+      <Link
+        href={`/blog/${post.uid}`}
+        className="relative block aspect-[16/10] overflow-hidden"
+      >
+        <PrismicNextImage
+          field={post.data.thumbnail}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover"
+          fallbackAlt=""
+        />
+      </Link>
 
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(rgba(203,213,225,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(203,213,225,0.05)_1px,transparent_1px)] bg-[size:48px_48px]"
-      />
+      <div className="flex flex-1 flex-col p-5">
+        {post.data.category && (
+          <p className="text-xs font-bold uppercase tracking-wide text-emerald-brand-700">
+            {post.data.category}
+          </p>
+        )}
 
-      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-brand-300">
-          Engineering Insights
-        </p>
+        <h2 className="mt-2 text-xl font-extrabold text-navy-900">
+          <Link href={`/blog/${post.uid}`}>
+            {title}
+          </Link>
+        </h2>
 
-        <h1
-          id="blog-page-heading"
-          className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+        {post.data.listing_excerpt && (
+          <p className="mt-2 line-clamp-2 text-sm leading-6 text-cool-gray-700">
+            {post.data.listing_excerpt}
+          </p>
+        )}
+
+        <Link
+          href={`/blog/${post.uid}`}
+          className="mt-4 text-sm font-bold text-emerald-brand-700"
         >
-          Practical ideas for building better software
-        </h1>
-
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-cool-gray-200 sm:text-lg">
-          Articles about full-stack development, architecture, cloud, databases,
-          frontend engineering, and production systems.
-        </p>
+          Read Article
+        </Link>
       </div>
-    </section>
+    </article>
   );
 }
