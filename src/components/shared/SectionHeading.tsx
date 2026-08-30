@@ -1,12 +1,17 @@
-import type { SectionHeadingContent } from "@/types/home";
+ 
 
-interface SectionHeadingProps extends SectionHeadingContent {
+interface SectionHeadingProps  { 
+  id?:string;
   align?: "left" | "center";
   headingLevel?: "h2" | "h3";
   className?: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
 }
 
 export default function SectionHeading({
+  id,
   eyebrow,
   title,
   description,

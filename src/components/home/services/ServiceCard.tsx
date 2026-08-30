@@ -1,149 +1,51 @@
-import type { ServiceIconName } from "@/types/home";
+import Link from "next/link";
 
-interface ServiceIconProps {
-  icon: ServiceIconName;
+import ServiceIcon from "@/components/home/services/ServiceIcon";
+
+import type { HomeService } from "@/types/home";
+
+interface ServiceCardProps {
+  service: HomeService;
 }
 
-export default function ServiceIcon({ icon }: ServiceIconProps) {
-  switch (icon) {
-    case "frontend":
-      return <FrontendIcon />;
-
-    case "backend":
-      return <BackendIcon />;
-
-    case "mobile":
-      return <MobileIcon />;
-
-    case "architecture":
-      return <ArchitectureIcon />;
-
-    default:
-      return null;
-  }
-}
-
-function FrontendIcon() {
+export default function ServiceCard({
+  service,
+}: ServiceCardProps) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-7">
-      <rect
-        x="3"
-        y="4"
-        width="18"
-        height="16"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
+    <article className="group flex h-full flex-col rounded-2xl border border-cool-gray-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-brand-300 hover:shadow-lg">
+      <div className="flex size-12 items-center justify-center rounded-xl bg-emerald-brand-50 text-emerald-brand-700">
+        <ServiceIcon icon={service.icon} />
+      </div>
 
-      <path
-        d="M3 8h18M7 6h.01M10 6h.01"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
+      <h3 className="mt-5 text-xl font-bold tracking-tight text-navy-900">
+        {service.title}
+      </h3>
 
-      <path
-        d="m9 12-2 2 2 2m6-4 2 2-2 2m-2-5-2 6"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+      <p className="mt-3 flex-1 text-sm leading-6 text-cool-gray-500">
+        {service.description}
+      </p>
 
-function BackendIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-7">
-      <ellipse
-        cx="12"
-        cy="5"
-        rx="8"
-        ry="3"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
+      <Link
+        href={service.href}
+        className="mt-6 inline-flex items-center gap-2 self-start text-sm font-bold text-emerald-brand-700 transition hover:text-emerald-brand-800"
+      >
+        Learn more
 
-      <path
-        d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-
-      <path
-        d="M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-    </svg>
-  );
-}
-
-function MobileIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-7">
-      <rect
-        x="7"
-        y="2.5"
-        width="10"
-        height="19"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-
-      <path
-        d="M10 5h4M11 18.5h2"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ArchitectureIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-7">
-      <rect
-        x="9"
-        y="3"
-        width="6"
-        height="5"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-
-      <rect
-        x="3"
-        y="16"
-        width="6"
-        height="5"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-
-      <rect
-        x="15"
-        y="16"
-        width="6"
-        height="5"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-
-      <path
-        d="M12 8v4m0 0H6v4m6-4h6v4"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          fill="none"
+          className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+        >
+          <path
+            d="M4 10H16M11 5L16 10L11 15"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </Link>
+    </article>
   );
 }
