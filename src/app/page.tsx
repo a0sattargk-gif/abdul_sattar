@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+// sattar
 import AboutPreview from "@/components/home/about/AboutPreview";
 import CTASection from "@/components/home/cta/CTASection";
 import ExpertiseSection from "@/components/home/expertise/ExpertiseSection";
