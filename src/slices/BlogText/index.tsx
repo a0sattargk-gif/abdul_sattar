@@ -23,7 +23,7 @@ export default function BlogText({ slice }: BlogTextProps) {
             "[&_ul]:my-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6",
             "[&_ol]:my-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6",
             "[&_pre]:my-7 [&_pre]:overflow-x-auto [&_pre]:rounded-2xl [&_pre]:bg-navy-950 [&_pre]:p-5 [&_pre]:text-sm [&_pre]:text-cool-gray-100",
-            "[&_blockquote]:my-7 [&_blockquote]:border-l-4 [&_blockquote]:border-emerald-brand-500 [&_blockquote]:bg-cool-gray-50 [&_blockquote]:px-5 [&_blockquote]:py-3",
+            "[&_blockquote]:my-7 [&_blockquote]:border-l-4 [&_blockquote]:border-emerald-brand-700 [&_blockquote]:bg-cool-gray-50 [&_blockquote]:px-5 [&_blockquote]:py-3",
             "[&_a]:font-semibold [&_a]:text-emerald-brand-700 [&_a]:underline [&_a]:underline-offset-4",
           ].join(" ")}
         >

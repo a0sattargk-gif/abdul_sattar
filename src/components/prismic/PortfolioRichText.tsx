@@ -45,7 +45,7 @@ export default function PortfolioRichText({
         "[&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6",
         "[&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-4",
         "[&_blockquote]:border-l-4",
-        "[&_blockquote]:border-emerald-brand-500",
+        "[&_blockquote]:border-emerald-brand-700",
         "[&_blockquote]:pl-5",
         "[&_pre]:overflow-x-auto",
         "[&_pre]:rounded-xl",

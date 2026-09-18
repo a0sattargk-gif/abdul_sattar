@@ -64,8 +64,8 @@ export default function Footer() {
           </div>
 
           <p className="mt-5 text-xs leading-6 text-cool-gray-500">
-            Designed and developed with accessibility, performance,
-            maintainability, and user experience in mind.
+            Designed and developed with scalability, high performance,
+            maintainability, and modern engineering standards.
           </p>
         </div>
       </div>

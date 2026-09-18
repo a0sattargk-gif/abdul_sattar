@@ -72,7 +72,7 @@ export default function MobileNavbar({
         </div>
 
         <p className="mt-5 text-center text-sm text-cool-gray-500">
-          Full-stack development, accessibility and AI solutions.
+          Full-stack development, system design and AI solutions.
         </p>
       </div>
     </div>

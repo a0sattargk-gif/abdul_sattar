@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const imageUrl = project.data.card_thumnail || "";
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cool-gray-200 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-brand-300 hover:shadow-brand-lg">
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cool-gray-300 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-lg">
       <Link
         href={`/projects/${project.uid}`}
         aria-label={`View ${title} case study`}

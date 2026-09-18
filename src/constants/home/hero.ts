@@ -1,25 +1,24 @@
 import type { HomeHeroContent } from "@/types/home";
 
 export const HOME_HERO_CONTENT: HomeHeroContent = {
-  eyebrow: "Full-Stack Software Engineer",
+  eyebrow: "Sattar Web Studio",
 
-  title: "I build scalable and reliable",
-
-  highlightedText: "software products",
+  title: "Software engineering for",
+  highlightedText: "useful, reliable digital products.",
 
   description:
-    "I develop production-ready web and mobile applications using React, Next.js, Node.js, NestJS, Django REST Framework, modern databases, AWS, microservices, and microfrontend architectures.",
+    "I’m Abdul Sattar, the developer behind Sattar Web Studio. I build full-stack web applications, backend systems, mobile experiences, and high-performance digital products.",
 
   primaryAction: {
-    label: "View My Projects",
+    label: "View Selected Work",
     href: "/projects",
-    ariaLabel: "View my full-stack software development projects",
+    ariaLabel: "View selected projects by Abdul Sattar",
   },
 
   secondaryAction: {
     label: "Discuss a Project",
     href: "/contact",
-    ariaLabel: "Contact me to discuss a software development project",
+    ariaLabel: "Contact Abdul Sattar to discuss a project",
   },
 
   technologies: [
@@ -27,13 +26,8 @@ export const HOME_HERO_CONTENT: HomeHeroContent = {
     "Next.js",
     "Node.js",
     "NestJS",
-    "React Native",
-    "Django REST Framework",
+    ".NET",
     "PostgreSQL",
-    "MongoDB",
-    "Supabase",
-    "AWS",
-    "Microservices",
-    "Microfrontends",
+    "System Design",
   ],
 };

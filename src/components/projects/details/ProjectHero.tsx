@@ -30,7 +30,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
         <div className="mx-auto max-w-4xl text-center">
           <div className="flex flex-wrap justify-center gap-2">
             {project.data.industry && (
-              <span className="rounded-full border border-emerald-brand-300/25 bg-emerald-brand-500/10 px-3 py-1.5 text-xs font-bold text-emerald-brand-300">
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold text-white">
                 {project.data.industry}
               </span>
             )}

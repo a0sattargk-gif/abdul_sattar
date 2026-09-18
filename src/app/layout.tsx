@@ -6,12 +6,17 @@ import Navbar from "@/components/layout/navbar/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      process.env.APP_URL ||
+      "https://sattarwebstudio.com"
+  ),
   title: {
     default: "Sattar Web Studio",
     template: "%s | Sattar Web Studio",
   },
   description:
-    "Full-stack development, web accessibility, Shopify development, and AI-powered solutions.",
+    "Full-stack development, backend systems, system design, and modern web application architecture.",
 };
 
 interface RootLayoutProps {

@@ -45,12 +45,12 @@ export default function ContactDetails() {
         ))}
       </dl>
 
-      <div className="mt-6 rounded-2xl border border-emerald-brand-200 bg-emerald-brand-50 p-5">
-        <p className="text-sm font-bold text-emerald-brand-900">
+      <div className="mt-6 rounded-2xl border-l-4 border-l-emerald-brand-700 border-y border-r border-cool-gray-300 bg-navy-50/50 p-5">
+        <p className="text-sm font-bold text-navy-950">
           Helpful information to include
         </p>
 
-        <p className="mt-2 text-sm leading-6 text-emerald-brand-900">
+        <p className="mt-2 text-sm leading-6 text-navy-900">
           Project goal, required features, current status, preferred timeline,
           and approximate budget.
         </p>

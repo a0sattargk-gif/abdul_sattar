@@ -6,7 +6,7 @@ interface FAQItemProps {
 
 export default function FAQItem({ item }: FAQItemProps) {
   return (
-    <details className="group rounded-xl border border-cool-gray-200 bg-white open:border-emerald-brand-300">
+    <details className="group rounded-xl border border-cool-gray-300 bg-white open:border-navy-950 open:shadow-brand-sm">
       <summary className="flex min-h-15 cursor-pointer list-none items-center justify-between gap-5 rounded-xl px-5 py-4">
         <span className="font-bold leading-6 text-navy-900">
           {item.question}

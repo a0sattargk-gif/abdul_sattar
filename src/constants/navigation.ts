@@ -27,11 +27,11 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
           "Scalable frontend and backend applications using modern technologies.",
       },
       {
-        id: "web-accessibility",
-        label: "Web Accessibility",
-        href: "/services/web-accessibility",
+        id: "system-design",
+        label: "System Design & Architecture",
+        href: "/services/system-design",
         description:
-          "WCAG audits, accessibility remediation, and accessible development.",
+          "Distributed systems, microservices, database architecture, and scalability.",
       },
       {
         id: "shopify-development",
@@ -87,7 +87,7 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
         label: "Skills",
         href: "/skills",
         description:
-          "Technical skills across frontend, backend, accessibility, and AI.",
+          "Technical skills across frontend, backend, system design, and AI.",
       },
       {
         id: "experience",

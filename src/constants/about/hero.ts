@@ -1,45 +1,53 @@
 import type { AboutHeroContent } from "@/types/about";
 
 export const ABOUT_HERO_CONTENT: AboutHeroContent = {
-  eyebrow: "About Me",
+  eyebrow: "About Abdul Sattar",
+  statusBadge: "Available for select contracts & roles",
 
-  title: "Full-stack engineer building",
-
-  highlightedText: "reliable software systems",
+  title: "Software engineering with",
+  highlightedText: "craft, rigor, and accountability.",
 
   description:
-    "I am a full-stack software engineer with more than two years of professional experience building web applications, backend services, mobile products, dashboards, and scalable software architecture.",
+    "I’m Abdul Sattar, a full-stack software engineer and the developer behind Sattar Web Studio. I partner with founders, teams, and businesses to build high-performance web applications, resilient backend systems, and scalable digital platforms.",
 
   secondaryDescription:
-    "My work combines frontend engineering, backend development, databases, cloud deployment, microservices, microfrontends, and mobile development to deliver maintainable products from idea to production.",
+    "My engineering approach emphasizes modular architecture, strict type safety, clean API contracts, and scalable system design so products evolve with minimal technical debt.",
+
+  image: {
+    src: "/images/abdul-sattar.webp",
+    alt: "Abdul Sattar, full-stack software engineer and developer behind Sattar Web Studio",
+  },
 
   primaryAction: {
-    label: "View My Experience",
-    href: "/experience",
-    ariaLabel: "View my professional software development experience",
+    label: "Discuss a Project",
+    href: "/contact",
+    ariaLabel: "Contact Abdul Sattar to discuss a software engineering project",
   },
 
   secondaryAction: {
-    label: "Discuss a Project",
-    href: "/contact",
-    ariaLabel: "Contact me to discuss a software development project",
+    label: "View Selected Work",
+    href: "/projects",
+    ariaLabel: "Explore projects built by Abdul Sattar",
   },
 
   stats: [
     {
       id: "experience",
       value: "2+",
-      label: "Years of professional experience",
+      label: "Years Experience",
+      sublabel: "Professional Delivery",
     },
     {
-      id: "development",
-      value: "Full Stack",
-      label: "Frontend, backend, database, and cloud",
+      id: "scope",
+      value: "Full-Stack",
+      label: "End-to-End Scope",
+      sublabel: "Frontend to Backend",
     },
     {
-      id: "platforms",
-      value: "Web + Mobile",
-      label: "Applications across multiple platforms",
+      id: "standards",
+      value: "100%",
+      label: "System Design",
+      sublabel: "Architecture & Scalability",
     },
   ],
 };

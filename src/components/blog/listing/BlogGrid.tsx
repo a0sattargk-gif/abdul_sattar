@@ -1,12 +1,24 @@
+"use client";
+
 import BlogCard from "@/components/blog/listing/BlogCard";
+import PaginationControls from "@/components/shared/PaginationControls";
+import { usePagination } from "@/hooks/usePagination";
 
 import type { BlogPostDocument } from "../../../../prismicio-types";
 
 interface BlogGridProps {
   posts: BlogPostDocument[];
+  pageSize?: number;
 }
 
-export default function BlogGrid({ posts }: BlogGridProps) {
+export default function BlogGrid({ posts, pageSize = 6 }: BlogGridProps) {
+  const pagination = usePagination({
+    items: posts,
+    pageSize,
+    scrollToTopOnChange: true,
+    scrollTargetSelector: "#latest-articles-heading",
+  });
+
   if (posts.length === 0) {
     return null;
   }
@@ -36,10 +48,15 @@ export default function BlogGrid({ posts }: BlogGridProps) {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {posts.map((post, index) => (
+          {pagination.paginatedItems.map((post, index) => (
             <BlogCard key={post.id} post={post} priority={index < 3} />
           ))}
         </div>
+
+        <PaginationControls
+          {...pagination}
+          itemLabel="articles"
+        />
       </div>
     </section>
   );

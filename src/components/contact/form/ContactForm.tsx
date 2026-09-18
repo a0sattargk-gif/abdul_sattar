@@ -307,7 +307,7 @@ export default function ContactForm() {
           className={[
             "mt-5 rounded-xl border p-4 text-sm font-semibold",
             submissionState === "success"
-              ? "border-emerald-brand-200 bg-emerald-brand-50 text-emerald-brand-900"
+              ? "border-l-4 border-l-emerald-brand-700 border-y border-r border-cool-gray-300 bg-navy-50 text-navy-950 font-bold"
               : submissionState === "error"
                 ? "border-red-200 bg-red-50 text-red-800"
                 : "border-cool-gray-200 bg-cool-gray-50 text-navy-800",
@@ -401,7 +401,7 @@ function getInputClasses(hasError: boolean): string {
   return [
     "min-h-12 w-full rounded-xl border bg-white px-4 py-3 text-base text-navy-900 outline-none transition placeholder:text-cool-gray-500",
     "hover:border-cool-gray-400",
-    "focus:border-emerald-brand-500 focus:ring-4 focus:ring-emerald-brand-500/15",
+    "focus:border-navy-950 focus:ring-4 focus:ring-navy-950/10",
     hasError ? "border-red-500" : "border-cool-gray-300",
   ].join(" ");
 }

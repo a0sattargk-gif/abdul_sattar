@@ -1,12 +1,27 @@
+"use client";
+
 import ProjectCard from "@/components/projects/listing/ProjectCard";
+import PaginationControls from "@/components/shared/PaginationControls";
+import { usePagination } from "@/hooks/usePagination";
 
 import type { ProjectDocument } from "../../../../prismicio-types";
 
 interface ProjectsGridProps {
   projects: ProjectDocument[];
+  pageSize?: number;
 }
 
-export default function ProjectsGrid({ projects }: ProjectsGridProps) {
+export default function ProjectsGrid({
+  projects,
+  pageSize = 6,
+}: ProjectsGridProps) {
+  const pagination = usePagination({
+    items: projects,
+    pageSize,
+    scrollToTopOnChange: true,
+    scrollTargetSelector: "#projects-grid-heading",
+  });
+
   return (
     <section
       aria-labelledby="projects-grid-heading"
@@ -32,13 +47,20 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
         </div>
 
         {projects.length > 0 ? (
-          <div className="mt-10 grid gap-7 md:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+          <>
+            <div className="mt-10 grid gap-7 md:grid-cols-2">
+              {pagination.paginatedItems.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+
+            <PaginationControls
+              {...pagination}
+              itemLabel="projects"
+            />
+          </>
         ) : (
-          <div className="mt-10 rounded-2xl border border-cool-gray-200 bg-white p-8 text-center">
+          <div className="mt-10 rounded-2xl border border-cool-gray-300 bg-white p-8 text-center">
             <p className="text-cool-gray-700">
               Project case studies are being prepared.
             </p>

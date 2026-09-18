@@ -16,9 +16,9 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
         href: "/services/full-stack-development",
       },
       {
-        id: "web-accessibility",
-        label: "Web Accessibility",
-        href: "/services/web-accessibility",
+        id: "system-design",
+        label: "System Design & Architecture",
+        href: "/services/system-design",
       },
       {
         id: "shopify-development",
@@ -88,24 +88,19 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
 
 export const FOOTER_LEGAL_LINKS: FooterLink[] = [
   {
-    id: "accessibility-statement",
-    label: "Accessibility Statement",
-    href: "/accessibility-statement",
-  },
-  {
     id: "privacy-policy",
     label: "Privacy Policy",
     href: "/privacy-policy",
   },
   {
     id: "terms",
-    label: "Terms",
+    label: "Terms of Service",
     href: "/terms",
   },
   {
     id: "sitemap",
     label: "Sitemap",
-    href: "/sitemap",
+    href: "/sitemap.xml",
   },
 ];
 

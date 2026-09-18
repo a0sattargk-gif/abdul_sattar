@@ -1,123 +1,156 @@
-const capabilityItems = [
-  {
-    id: "frontend",
-    label: "Frontend Engineering",
-    value: "React, Next.js and microfrontend architecture",
-  },
-  {
-    id: "backend",
-    label: "Backend Development",
-    value: "Node.js, NestJS and Django REST Framework",
-  },
-  {
-    id: "mobile",
-    label: "Mobile Development",
-    value: "Cross-platform applications with React Native",
-  },
-  {
-    id: "cloud-data",
-    label: "Cloud and Data",
-    value: "AWS, PostgreSQL, MongoDB and Supabase",
-  },
-];
+"use client";
 
-const productionStack = ["React", "Next.js", "NestJS", "PostgreSQL", "AWS"];
+import Image from "next/image";
+import {
+  LazyMotion,
+  domAnimation,
+  m,
+  useReducedMotion,
+} from "framer-motion";
 
 export default function HeroVisual() {
+  const reduceMotion = useReducedMotion();
+
+  const lineTransition = (delay: number) => ({
+    duration: 3.6,
+    delay,
+    repeat: Infinity,
+    repeatDelay: 0.2,
+    ease: "easeInOut" as const,
+  });
+
   return (
-    <div aria-hidden="true" className="relative mx-auto w-full max-w-xl">
-      <div className="absolute -left-8 top-12 size-36 rounded-full bg-emerald-brand-500/20 blur-3xl" />
+    <LazyMotion features={domAnimation}>
+      <div className="relative mx-auto w-full max-w-[540px] lg:ml-auto">
 
-      <div className="absolute -right-8 bottom-8 size-40 rounded-full bg-emerald-brand-400/10 blur-3xl" />
+        {/* Keep your existing SATTAR/background decorations here */}
 
-      <div className="relative overflow-hidden rounded-3xl border border-cool-gray-300/20 bg-navy-800/95 p-5 shadow-2xl backdrop-blur sm:p-7">
-        <div className="flex items-center justify-between gap-4 border-b border-cool-gray-300/15 pb-5">
-          <div>
-            <p className="text-sm font-bold text-white">
-              Full-Stack Engineering
-            </p>
+        <div className="relative z-10 mx-auto w-[78%] sm:w-[76%]">
 
-            <p className="mt-1 text-xs text-cool-gray-300">
-              Architecture and delivery capabilities
-            </p>
+          {/* TOP LEFT */}
+          <div
+            aria-hidden="true"
+            className="absolute -left-4 -top-4 z-30"
+          >
+            <m.span
+              className="absolute left-0 top-0 h-[2px] origin-left bg-emerald-brand-600"
+              initial={{ width: 0 }}
+              animate={
+                reduceMotion
+                  ? { width: 70 }
+                  : { width: [24, 72, 72, 24] }
+              }
+              transition={lineTransition(0)}
+            />
+
+            <m.span
+              className="absolute left-0 top-0 w-[2px] origin-top bg-emerald-brand-600"
+              initial={{ height: 0 }}
+              animate={
+                reduceMotion
+                  ? { height: 70 }
+                  : { height: [24, 72, 72, 24] }
+              }
+              transition={lineTransition(0)}
+            />
           </div>
 
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-brand-300/25 bg-emerald-brand-500/15 px-3 py-1.5 text-xs font-semibold text-emerald-brand-300">
-            <span className="size-2 rounded-full bg-emerald-brand-400" />
-            Available
-          </span>
+          {/* TOP RIGHT */}
+          <div
+            aria-hidden="true"
+            className="absolute -right-4 -top-4 z-30"
+          >
+            <m.span
+              className="absolute right-0 top-0 h-[2px] bg-emerald-brand-600"
+              animate={
+                reduceMotion
+                  ? { width: 70 }
+                  : { width: [24, 24, 72, 24] }
+              }
+              transition={lineTransition(0.35)}
+            />
+
+            <m.span
+              className="absolute right-0 top-0 w-[2px] bg-emerald-brand-600"
+              animate={
+                reduceMotion
+                  ? { height: 70 }
+                  : { height: [24, 24, 72, 24] }
+              }
+              transition={lineTransition(0.35)}
+            />
+          </div>
+
+          {/* BOTTOM RIGHT */}
+          <div
+            aria-hidden="true"
+            className="absolute -bottom-4 -right-4 z-30"
+          >
+            <m.span
+              className="absolute bottom-0 right-0 h-[2px] bg-emerald-brand-600"
+              animate={
+                reduceMotion
+                  ? { width: 70 }
+                  : { width: [24, 24, 72, 24] }
+              }
+              transition={lineTransition(0.7)}
+            />
+
+            <m.span
+              className="absolute bottom-0 right-0 w-[2px] bg-emerald-brand-600"
+              animate={
+                reduceMotion
+                  ? { height: 70 }
+                  : { height: [24, 24, 72, 24] }
+              }
+              transition={lineTransition(0.7)}
+            />
+          </div>
+
+          {/* BOTTOM LEFT */}
+          <div
+            aria-hidden="true"
+            className="absolute -bottom-4 -left-4 z-30"
+          >
+            <m.span
+              className="absolute bottom-0 left-0 h-[2px] bg-emerald-brand-600"
+              animate={
+                reduceMotion
+                  ? { width: 70 }
+                  : { width: [24, 24, 72, 24] }
+              }
+              transition={lineTransition(1.05)}
+            />
+
+            <m.span
+              className="absolute bottom-0 left-0 w-[2px] bg-emerald-brand-600"
+              animate={
+                reduceMotion
+                  ? { height: 70 }
+                  : { height: [24, 24, 72, 24] }
+              }
+              transition={lineTransition(1.05)}
+            />
+          </div>
+
+          {/* PORTRAIT — DOES NOT MOVE */}
+          <div className="relative overflow-hidden bg-cool-gray-200">
+            <Image
+              src="/images/abdul-sattar.webp"
+              alt="Abdul Sattar, full-stack software engineer behind Sattar Web Studio"
+              width={720}
+              height={900}
+              priority
+              fetchPriority="high"
+              quality={82}
+              sizes="(max-width: 640px) 78vw, 400px"
+              className="aspect-[4/5] w-full object-cover object-[50%_35%]"
+            />
+          </div>
         </div>
 
-        <div className="mt-6 grid gap-3">
-          {capabilityItems.map((item, index) => (
-            <div
-              key={item.id}
-              className="flex items-center gap-4 rounded-2xl border border-cool-gray-300/20 bg-navy-700/70 p-4"
-            >
-              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-brand-500/15 text-sm font-extrabold text-emerald-brand-300">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
-              <div>
-                <p className="text-sm font-bold text-white">{item.label}</p>
-
-                <p className="mt-1 text-xs leading-5 text-cool-gray-300">
-                  {item.value}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-cool-gray-300/20 bg-navy-900/80 p-4">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-sm font-bold text-white">Production Stack</p>
-
-              <p className="mt-1 text-xs text-cool-gray-300">
-                Technologies used across modern applications
-              </p>
-            </div>
-
-            <span className="rounded-full border border-emerald-brand-300/20 bg-emerald-brand-500/15 px-3 py-1 text-xs font-bold text-emerald-brand-300">
-              Scalable
-            </span>
-          </div>
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            {productionStack.map((technology) => (
-              <span
-                key={technology}
-                className="rounded-lg border border-cool-gray-300/20 bg-white/5 px-3 py-1.5 text-xs font-semibold text-cool-gray-200"
-              >
-                {technology}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-3 grid grid-cols-2 gap-3">
-          <div className="rounded-2xl border border-cool-gray-300/20 bg-navy-700/70 p-4">
-            <p className="text-lg font-extrabold text-emerald-brand-300 sm:text-xl">
-              Web + Mobile
-            </p>
-
-            <p className="mt-1 text-xs leading-5 text-cool-gray-300">
-              React, Next.js and React Native
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-cool-gray-300/20 bg-navy-700/70 p-4">
-            <p className="text-lg font-extrabold text-emerald-brand-300 sm:text-xl">
-              Cloud Ready
-            </p>
-
-            <p className="mt-1 text-xs leading-5 text-cool-gray-300">
-              AWS and distributed system architecture
-            </p>
-          </div>
-        </div>
+        {/* Keep your existing name/title below */}
       </div>
-    </div>
+    </LazyMotion>
   );
 }

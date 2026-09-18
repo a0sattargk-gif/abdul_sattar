@@ -3,15 +3,7 @@ import type { Metadata } from "next";
 import ProjectsGrid from "@/components/projects/listing/ProjectsGrid";
 import ProjectsHero from "@/components/projects/listing/ProjectsHero";
 
-import { createClient, repositoryName } from "@/prismicio";
-
-console.log("Repository:", repositoryName);
-
-const client = createClient();
-
-const repository = await client.getRepository();
-
-console.log(repository);
+import { createClient } from "@/prismicio";
 
 export const metadata: Metadata = {
   title: "Projects",

@@ -26,7 +26,7 @@ export default function FeatureList({ slice }: FeatureListProps) {
           {slice.primary.repeater.map((item, index) => (
             <article
               key={`${item.title}-${index}`}
-              className="h-full rounded-2xl border border-cool-gray-200 bg-cool-gray-50 p-5 transition duration-300 hover:-translate-y-1 hover:border-emerald-brand-300 hover:bg-white hover:shadow-brand-md sm:p-6"
+              className="h-full rounded-2xl border border-cool-gray-300 bg-cool-gray-50 p-5 transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:bg-white hover:shadow-brand-md sm:p-6"
             >
               <span className="grid size-10 place-items-center rounded-xl bg-emerald-brand-500/10 text-sm font-extrabold text-emerald-brand-700">
                 {String(index + 1).padStart(2, "0")}

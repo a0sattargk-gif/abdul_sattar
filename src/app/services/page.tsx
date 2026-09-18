@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
-import RelatedCapabilities from "@/components/services/listing/RelatedCapabilities";
-import ServicesCTA from "@/components/services/listing/ServicesCTA";
-import ServicesGrid from "@/components/services/listing/ServicesGrid";
-import ServicesHero from "@/components/services/listing/ServicesHero";
+ 
 
 import { createClient } from "@/prismicio";
+import ServicesHero from "@/services/listing/ServicesHero";
+ 
+import RelatedCapabilities from "@/services/listing/RelatedCapabilities";
+import ServicesCTA from "@/services/listing/ServicesCTA";
+import ServicesGrid from "@/services/listing/ServicesGrid";
 
 export const metadata: Metadata = {
   title: "Services",

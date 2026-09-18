@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 /* =========================================================
-   PORTFOLIO DESIGN SYSTEM
-   60% Deep Navy
-   30% Cool Gray
-   10% Emerald
+   PORTFOLIO DESIGN SYSTEM — 60-30-10 COLOR HIERARCHY
+   60% Pure White & Luminous Canvas (#ffffff)
+   30% Deep Navy Structural Hierarchy & Typography (Navy 950 / 900 / 800)
+   10% Emerald Brand Accent & Interaction (Emerald 700 / 600 / 500)
+   Neutrals: Hairline structural borders & dividers (Cool Gray 200 / 300)
 ========================================================= */
 
 :root {
-  /* 60% — Deep Navy */
+  /* 30% — Deep Navy (Structure, Headings & Primary Controls) */
 
   --navy-50: #f8fafc;
   --navy-100: #f1f5f9;
@@ -22,7 +23,7 @@
   --navy-900: #0f172a;
   --navy-950: #020617;
 
-  /* 30% — Cool Gray */
+  /* Neutrals — Cool Gray (Borders, Hairlines & Elevated Surfaces) */
 
   --cool-gray-50: #f8fafc;
   --cool-gray-100: #f1f5f9;
@@ -35,7 +36,7 @@
   --cool-gray-800: #273240;
   --cool-gray-900: #18212d;
 
-  /* 10% — Emerald */
+  /* 10% — Emerald Brand (Focus, Status, Accents & Energy) */
 
   --emerald-brand-50: #ecfdf5;
   --emerald-brand-100: #d1fae5;
@@ -48,24 +49,24 @@
   --emerald-brand-800: #065f46;
   --emerald-brand-900: #064e3b;
 
-  /* Light interface */
+  /* Light interface — 60-30-10 Calibrated */
 
-  --background: var(--cool-gray-50);
-  --foreground: var(--navy-900);
+  --background: #ffffff;
+  --foreground: var(--navy-950);
 
   --surface: #ffffff;
-  --surface-soft: var(--cool-gray-100);
-  --surface-muted: var(--cool-gray-200);
+  --surface-soft: var(--navy-50);
+  --surface-muted: var(--cool-gray-100);
 
-  --heading: var(--navy-900);
-  --text: var(--navy-700);
-  --text-muted: var(--cool-gray-600);
+  --heading: var(--navy-950);
+  --text: var(--navy-900);
+  --text-muted: var(--cool-gray-700);
 
   --border: var(--cool-gray-200);
   --border-strong: var(--cool-gray-300);
 
-  --accent: var(--emerald-brand-600);
-  --accent-hover: var(--emerald-brand-700);
+  --accent: var(--emerald-brand-700);
+  --accent-hover: var(--emerald-brand-800);
 
   /* Dark interface */
 
@@ -394,4 +395,4 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
+} 

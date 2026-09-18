@@ -1,56 +1,70 @@
 import type { CoreStrengthsContent } from "@/types/about";
 
 export const ABOUT_CORE_STRENGTHS: CoreStrengthsContent = {
-  eyebrow: "Core Strengths",
-
-  title: "Engineering strengths that support product growth",
-
+  eyebrow: "Engineering Principles",
+  title: "Architectural standards that create tangible product value",
   description:
-    "A practical combination of technical depth, structured thinking, and reliable delivery.",
+    "How disciplined engineering practices translate into faster feature velocity, lower maintenance costs, and better product reliability.",
 
   items: [
     {
-      id: "full-stack-engineering",
-      title: "Full-Stack Engineering",
+      id: "architecture",
+      title: "Clean Modular Architecture",
       description:
-        "Building complete products across frontend, backend, database, and cloud.",
-      icon: "full-stack",
+        "Structuring codebases with clear domain boundaries, strong separation of concerns, and reusable components.",
+      clientBenefit:
+        "Reduces long-term technical debt and allows your team to ship new features faster without breaking existing code.",
+      icon: "architecture",
       points: [
-        "React and Next.js",
-        "Node.js and NestJS",
-        "PostgreSQL and MongoDB",
+        "Modular domain-driven design",
+        "Strict TypeScript typing throughout",
+        "Reusable, documented UI patterns",
       ],
       order: 1,
     },
     {
-      id: "software-architecture",
-      title: "Software Architecture",
+      id: "system-design",
+      title: "System Design & Scalability",
       description:
-        "Designing modular systems that remain maintainable as products grow.",
-      icon: "architecture",
-      points: ["Microservices", "Microfrontends", "Clean architecture"],
+        "Architecting distributed systems, modular services, and database pipelines engineered for high throughput and fault tolerance.",
+      clientBenefit:
+        "Guarantees your platform stays fast, stable, and responsive under heavy user traffic with zero infrastructure bottlenecks.",
+      icon: "system-design",
+      points: [
+        "Distributed system patterns & microservices",
+        "Database indexing & schema optimization",
+        "Redis caching & load resilience",
+      ],
       order: 2,
     },
     {
-      id: "problem-solving",
-      title: "Problem Solving",
+      id: "full-stack",
+      title: "Resilient Full-Stack Systems",
       description:
-        "Turning technical and business requirements into practical solutions.",
-      icon: "problem-solving",
+        "Connecting clean frontend interfaces with robust backend APIs, relational database schemas, and caching layers.",
+      clientBenefit:
+        "Delivers sub-second response times, handles traffic surges smoothly, and prevents runtime crashes.",
+      icon: "full-stack",
       points: [
-        "Requirement analysis",
-        "Technical decisions",
-        "Issue resolution",
+        "Optimized PostgreSQL queries & indices",
+        "Type-safe REST & GraphQL endpoints",
+        "Redis caching for peak performance",
       ],
       order: 3,
     },
     {
-      id: "reliable-delivery",
-      title: "Reliable Delivery",
+      id: "delivery",
+      title: "Pragmatic, Transparent Delivery",
       description:
-        "Taking software from planning through implementation and deployment.",
+        "Direct communication, proactive problem-solving, and continuous integration testing before any code reaches production.",
+      clientBenefit:
+        "Eliminates guesswork with clear timelines, transparent progress updates, and reliable production deployments.",
       icon: "delivery",
-      points: ["Testing", "Deployment", "Production support"],
+      points: [
+        "Direct developer collaboration",
+        "Automated CI/CD workflows",
+        "Production observability & logging",
+      ],
       order: 4,
     },
   ],

@@ -18,7 +18,7 @@ export default function JourneyItem({ item, isLast }: JourneyItemProps) {
         />
       )}
 
-      <article className="grid gap-4 rounded-2xl border border-cool-gray-200 bg-white p-5 shadow-brand-sm transition duration-300 hover:border-emerald-brand-300 hover:shadow-brand-md sm:grid-cols-[auto_1fr] sm:p-6">
+      <article className="grid gap-4 rounded-2xl border border-cool-gray-300 bg-white p-5 shadow-brand-sm transition duration-300 hover:border-navy-950 hover:shadow-brand-md sm:grid-cols-[auto_1fr] sm:p-6">
         <div className="relative z-10 grid size-10 shrink-0 place-items-center rounded-xl bg-navy-900 text-emerald-brand-300">
           <JourneyIcon icon={item.icon} />
         </div>

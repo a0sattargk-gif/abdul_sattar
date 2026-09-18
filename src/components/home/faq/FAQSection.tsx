@@ -26,17 +26,7 @@ export default function FAQSection() {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-sm text-cool-gray-700">Have another question?</p>
-
-          <Link
-            href="/contact"
-            className="group mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg font-bold text-emerald-brand-700 transition-colors hover:text-emerald-brand-800"
-          >
-            Contact Me
-            <ArrowRightIcon />
-          </Link>
-        </div>
+         
       </div>
     </section>
   );

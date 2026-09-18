@@ -1,63 +1,61 @@
 import Image from "next/image";
 
-const engineeringAreas = [
-  "Frontend Engineering",
-  "Backend Systems",
-  "Database Design",
-  "Cloud Deployment",
-];
+interface AboutHeroVisualProps {
+  image: {
+    src: string;
+    alt: string;
+  };
+  statusBadge: string;
+}
 
-export default function AboutHeroVisual() {
+export default function AboutHeroVisual({
+  image,
+  statusBadge,
+}: AboutHeroVisualProps) {
   return (
-    <div className="relative mx-auto w-full max-w-xl">
+    <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+      {/* Subtle emerald ambient glow behind photo */}
       <div
         aria-hidden="true"
-        className="absolute -left-10 top-16 size-40 rounded-full bg-emerald-brand-500/15 blur-3xl"
+        className="pointer-events-none absolute -left-6 -top-6 size-64 rounded-full bg-emerald-brand-400/15 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-6 -right-6 size-64 rounded-full bg-navy-400/15 blur-3xl"
       />
 
-      <div className="relative overflow-hidden rounded-3xl border border-cool-gray-300/20 bg-navy-800 p-3 shadow-2xl">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-navy-700">
+      <div className="relative overflow-hidden rounded-3xl border border-cool-gray-200 bg-white p-3 shadow-brand-lg sm:p-4">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-cool-gray-100">
           <Image
-            src="https://picsum.photos/900/1100?random=41"
-            alt="Software engineer working on full-stack application architecture"
+            src={image.src}
+            alt={image.alt}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 42vw"
-            className="object-cover"
+            quality={90}
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 480px"
+            className="object-cover object-[50%_35%] transition-transform duration-500 hover:scale-[1.02]"
           />
 
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/15 to-transparent"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent"
           />
-
-          <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-cool-gray-300/20 bg-navy-950/90 p-5 backdrop-blur">
-            <p className="text-sm font-bold text-white">
-              Engineering across the complete product stack
-            </p>
-
-            <ul className="mt-4 grid grid-cols-2 gap-2" role="list">
-              {engineeringAreas.map((area) => (
-                <li
-                  key={area}
-                  className="rounded-lg border border-cool-gray-300/15 bg-white/5 px-3 py-2 text-xs font-semibold text-cool-gray-200"
-                >
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <div className="absolute -bottom-5 -right-4 hidden rounded-2xl border border-emerald-brand-300/20 bg-navy-900 p-4 shadow-brand-lg sm:block">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-brand-300">
-          Current focus
-        </p>
+        {/* Floating Studio Badge */}
+        <div className="absolute left-6 top-6 flex items-center gap-2 rounded-xl border border-cool-gray-200/90 bg-white/95 px-3.5 py-1.5 text-xs font-bold text-navy-950 shadow-brand-sm backdrop-blur">
+          <span className="size-1.5 rounded-full bg-emerald-brand-600" />
+          <span>Sattar Web Studio</span>
+        </div>
 
-        <p className="mt-2 text-sm font-semibold text-white">
-          Scalable full-stack products
-        </p>
+        {/* Floating Live Status Badge */}
+        <div className="absolute bottom-6 right-6 flex items-center gap-2 rounded-xl border border-cool-gray-300 bg-white/95 px-3.5 py-2 text-xs font-semibold text-navy-950 shadow-brand-md backdrop-blur">
+          <span className="relative flex size-2">
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-brand-400 opacity-75" />
+            <span className="relative inline-flex size-2 rounded-full bg-emerald-brand-600" />
+          </span>
+          <span>{statusBadge}</span>
+        </div>
       </div>
     </div>
   );

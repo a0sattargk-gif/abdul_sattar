@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import ServiceCTA from "@/components/services/details/ServiceCTA";
-import ServiceDeliverables from "@/components/services/details/ServiceDeliverables";
-import ServiceHero from "@/components/services/details/ServiceHero";
-import ServiceOverview from "@/components/services/details/ServiceOverview";
-import ServicePricing from "@/components/services/details/ServicePricing";
-import ServiceTechnologies from "@/components/services/details/ServiceTechnologies";
+// import ServiceCTA from "@/components/services/details/ServiceCTA";
+// import ServiceDeliverables from "@/components/services/details/ServiceDeliverables";
+// import ServiceHero from "@/components/services/details/ServiceHero";
+// import ServiceOverview from "@/components/services/details/ServiceOverview";
+// import ServicePricing from "@/components/services/details/ServicePricing";
+// import ServiceTechnologies from "@/components/services/details/ServiceTechnologies";
 
 import { createClient } from "@/prismicio";
+import ServiceHero from "@/services/details/ServiceHero";
+import ServiceOverview from "@/services/details/ServiceOverview";
+import ServiceTechnologies from "@/services/details/ServiceTechnologies";
+import ServiceDeliverables from "@/services/details/ServiceDeliverables";
+import ServicePricing from "@/services/details/ServicePricing";
+import ServiceCTA from "@/services/details/ServiceCTA";
 
 interface ServicePageProps {
   params: Promise<{

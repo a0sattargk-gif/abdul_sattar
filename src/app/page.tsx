@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
 // sattar
-import AboutPreview from "@/components/home/about/AboutPreview";
-import CTASection from "@/components/home/cta/CTASection";
-import ExpertiseSection from "@/components/home/expertise/ExpertiseSection";
 import FAQSection from "@/components/home/faq/FAQSection";
 import Hero from "@/components/home/hero/Hero";
-import LatestInsights from "@/components/home/insights/LatestInsights";
-import ProcessSection from "@/components/home/process/ProcessSection";
-import FeaturedProjects from "@/components/home/projects/FeaturedProjects";
-import ResultsSection from "@/components/home/results/ResultsSection";
-import TrustStrip from "@/components/home/trust/TrustStrip";
+import SelectedWorkSection from "@/components/home/selected-work/SelectedWorkSection";
+import CapabilitiesSection from "@/components/home/capabilities/CapabilitiesSection";
+import AboutSection from "@/components/home/about/AboutSection";
+import CTASection from "@/components/home/cta/CTASection";
 
 export const metadata: Metadata = {
   title: "Full-Stack Software Engineer",
@@ -34,15 +30,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustStrip />
-      <FeaturedProjects />
-      <ResultsSection />
-      <AboutPreview />
-      <ExpertiseSection />
-      <ProcessSection />
-      <LatestInsights />
-      <CTASection />
+      <SelectedWorkSection />
+      <CapabilitiesSection />
+      <AboutSection />
+       <CTASection />
       <FAQSection />
+     
     </>
   );
 }
