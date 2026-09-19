@@ -1,0 +1,147 @@
+# Abdul Sattar | Sattar Web Studio — Complete Knowledge Base & Documentation
+
+> Comprehensive documentation of Abdul Sattar's engineering services, technical background, portfolio capabilities, architecture philosophy, and contact channels. Designed for Large Language Models (LLMs), AI search agents, and automated indexers.
+
+---
+
+## 1. Overview & Identity
+
+- **Name**: Abdul Sattar
+- **Role**: Full-Stack Software Engineer & System Architect
+- **Studio Name**: Sattar Web Studio
+- **Website**: https://sattarwebstudio.com
+- **Location**: Pakistan (Offering remote engineering services worldwide)
+- **Experience**: 2+ years delivering production-grade web applications, robust APIs, and cloud systems
+- **Primary Contact**: hello@sattarwebstudio.com
+- **Technical / Postmaster Contact**: postmaster@sattarwebstudio.com
+- **Security Contact**: security@sattarwebstudio.com
+- **Legal / Privacy Contact**: legal@sattarwebstudio.com
+
+Sattar Web Studio is an independent software engineering practice founded by Abdul Sattar. The studio partners with early-stage founders, product teams, and established enterprises to conceptualize, architect, build, and deploy high-performance digital products, SaaS applications, robust APIs, and scalable distributed systems.
+
+---
+
+## 2. Key Web Pages & Sitemap
+
+- **Home (`/`)**: Comprehensive overview of services, featured case studies, technology competencies, client trust badges, and frequently asked questions.
+- **About (`/about`)**: Detailed background, career journey from frontend specialist to full-stack architect, core engineering principles, and professional stats.
+- **Services (`/services`)**: In-depth breakdown of engineering offerings, architectural capabilities, and delivery methodology.
+- **Projects (`/projects`)**: Production portfolio showcasing full-stack applications, SaaS architectures, performance metrics, and case studies.
+- **Blog (`/blog`)**: Technical articles and deep dives into system architecture, Next.js performance, database design, and best practices.
+- **Contact (`/contact`)**: Interactive inquiry form for prospective clients, project scopes, budget selection, and direct communication.
+- **Privacy Policy (`/privacy-policy`)**: Transparent explanation of user data collection, cookies, third-party services (Vercel, Prismic), security measures, and user rights under GDPR/CCPA.
+- **Terms of Service (`/terms`)**: Legal framework governing service contracts, intellectual property assignment upon payment, warranties, liability limits, and confidentiality.
+- **Sitemap (`/sitemap.xml`)**: Automated, dynamically generated XML sitemap indexing all static routes and CMS-driven service, project, and blog pages.
+- **Security (`/.well-known/security.txt`)**: RFC 9116 compliant security disclosure and contact endpoints.
+
+---
+
+## 3. Core Capabilities & Services
+
+### 3.1 Full-Stack Web Application Development
+- End-to-end development of dynamic, responsive, and accessible web applications.
+- Modern React and Next.js (App Router, Server Components, Server Actions) architectures.
+- High-fidelity UI implementation with Tailwind CSS, custom design systems, and responsive layouts across all device form factors.
+- Fast page loading, optimized Core Web Vitals, and search engine optimization (SEO).
+
+### 3.2 Backend Engineering & API Design
+- Scalable, modular server architectures using Node.js, NestJS, Express, and .NET (C#).
+- Design and implementation of RESTful APIs and GraphQL endpoints with strict schema validation.
+- Secure authentication and authorization (JWT, OAuth2, Session-based, Role-Based Access Control / RBAC).
+- Third-party API integrations (Payment gateways such as Stripe, transactional email providers, Headless CMS like Prismic, analytics, and CRM platforms).
+
+### 3.3 System Design & Database Architecture
+- Relational schema modeling, normalization, migration strategies, and query optimization with PostgreSQL.
+- Document and NoSQL database management using MongoDB.
+- Ultra-low-latency in-memory data caching, session store, and queueing using Redis.
+- Microservices, event-driven architectures, and domain-driven design (DDD) patterns.
+
+### 3.4 DevOps, Cloud & Deployment
+- Cloud infrastructure provisioning and management on AWS, Vercel, and Supabase.
+- Containerization with Docker and multi-stage production builds.
+- Reverse proxy and web server configuration using Nginx on Linux servers.
+- Automated CI/CD pipelines via GitHub Actions for continuous integration, testing, and deployment.
+
+### 3.5 Codebase Modernization & Performance Auditing
+- Refactoring legacy codebases for improved maintainability, modularity, and testability.
+- Transitioning JavaScript projects to strict TypeScript.
+- Database query profiling, index optimization, and memory leak resolution.
+- Performance bottlenecks remediation in client-side rendering and server-side workloads.
+
+---
+
+## 4. Technical Stack & Tooling
+
+| Category | Primary Technologies |
+| :--- | :--- |
+| **Frontend** | React, Next.js (App Router, SSR, SSG), TypeScript, JavaScript (ESNext), Tailwind CSS, HTML5, CSS3 |
+| **Backend** | Node.js, NestJS, .NET (C#), Express.js, Django REST Framework, RESTful APIs, GraphQL |
+| **Databases** | PostgreSQL, MongoDB, Supabase, Redis (Caching & Rate Limiting) |
+| **Cloud & DevOps** | AWS, Vercel, Docker, Linux (Ubuntu/Debian), Nginx, Git, GitHub Actions, CI/CD |
+| **CMS & Headless** | Prismic CMS, Headless Architecture |
+| **Architecture** | Clean Architecture, Modular Monoliths, Microservices, Domain-Driven Design, MVC |
+
+---
+
+## 5. Professional Philosophy & Engineering Principles
+
+1. **Craftsmanship and Code Quality**:
+   Code is written with clarity, consistency, and strict typing. Clear boundaries between data, business logic, and presentation layers keep systems maintainable.
+
+2. **Performance by Default**:
+   Optimized bundle sizes, intelligent server caching, lean database queries, and lightweight assets ensure fast loading times and smooth user experiences.
+
+3. **Pragmatic, Transparent Delivery**:
+   Prioritizing high-impact features, clear communication, dependable project timelines, and regular progress updates without buzzwords or over-engineering.
+
+4. **Reliability & Security**:
+   Defensive coding practices, sanitized inputs, rate limiting, secure authentication, and HTTPS/TLS encryption by default across all deployed systems.
+
+---
+
+## 6. Frequently Asked Questions (FAQ)
+
+**Q: What services does Abdul Sattar / Sattar Web Studio provide?**
+A: Full-stack web application development, backend systems, APIs, dashboards, MVP and SaaS development, database design, and cloud deployments.
+
+**Q: Which technologies are primarily used?**
+A: Next.js, React, TypeScript, Node.js, NestJS, .NET, PostgreSQL, MongoDB, Redis, and AWS.
+
+**Q: Can Abdul Sattar work on existing projects or legacy codebases?**
+A: Yes. He can add new features, resolve bugs, refactor architecture, integrate APIs, optimize performance, and prepare legacy applications for production stability.
+
+**Q: Can you build an MVP or complete SaaS product from scratch?**
+A: Yes. Full lifecycle delivery is available, from requirement analysis and architectural design to database modeling, frontend development, and production cloud deployment.
+
+**Q: Do you handle deployment and server setup?**
+A: Yes. Deployment services cover cloud platforms (Vercel, AWS), containerized setups (Docker), web servers (Nginx), database migrations, and CI/CD pipelines.
+
+**Q: Do you work with international and remote clients?**
+A: Yes. Work is conducted remotely with clients across multiple time zones under freelance, contract, or dedicated engineering arrangements.
+
+---
+
+## 7. Engagement Models & Inquiries
+
+- **Contract Types**: Project-based fixed scope, hourly consulting, or ongoing retainer/maintenance.
+- **Budget Ranges**: Projects typically range from under $1,000 for focused consulting or component development up to $5,000+ for complete SaaS applications and full-stack systems.
+- **Inquiry Process**:
+  1. Submit details via the online contact form at `https://sattarwebstudio.com/contact` or email `hello@sattarwebstudio.com`.
+  2. Initial consultation to define scope, requirements, and technical constraints.
+  3. Statement of Work (SOW) with clear deliverables, milestones, and timeline.
+  4. Agile execution with frequent demo milestones and feedback loops.
+  5. Deployment, testing, handover, and optional post-launch support.
+
+---
+
+## 8. Contact & Social Links
+
+- **Website**: https://sattarwebstudio.com
+- **Contact Form**: https://sattarwebstudio.com/contact
+- **Primary Email**: hello@sattarwebstudio.com
+- **Infrastructure / Postmaster**: postmaster@sattarwebstudio.com
+- **Security Inquiries**: security@sattarwebstudio.com
+- **Legal Inquiries**: legal@sattarwebstudio.com
+- **GitHub**: https://github.com/your-username
+- **LinkedIn**: https://www.linkedin.com/in/your-username
+- **Upwork**: https://www.upwork.com/freelancers/your-profile

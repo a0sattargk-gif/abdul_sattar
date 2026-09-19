@@ -9,24 +9,29 @@ export default function BlogImage({ slice }: BlogImageProps) {
     return null;
   }
 
+  const altText = slice.primary.image.alt || "";
+
   return (
-    <section
+    <figure
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-white py-6 sm:py-8 lg:py-10"
+      className="my-8 sm:my-10"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-cool-gray-200 bg-cool-gray-100">
-          <PrismicNextImage
-            field={slice.primary.image}
-            width={1600}
-            height={900}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
-            className="h-auto w-full object-cover"
-            fallbackAlt=""
-          />
-        </div>
+      <div className="relative overflow-hidden rounded-2xl border border-cool-gray-200 bg-cool-gray-100 shadow-sm">
+        <PrismicNextImage
+          field={slice.primary.image}
+          width={1600}
+          height={900}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 900px"
+          className="h-auto w-full object-cover"
+          fallbackAlt=""
+        />
       </div>
-    </section>
+      {altText && (
+        <figcaption className="mt-2.5 text-center text-xs text-cool-gray-500">
+          {altText}
+        </figcaption>
+      )}
+    </figure>
   );
 }

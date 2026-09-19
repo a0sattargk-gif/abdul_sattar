@@ -17,6 +17,7 @@ export default async function BlogPage() {
   const client = createClient();
 
   const posts = await client.getAllByType("blog_post", {
+    fetchOptions: { next: { tags: ["prismic", "blog_posts"] } },
     orderings: [
       {
         field: "document.first_publication_date",

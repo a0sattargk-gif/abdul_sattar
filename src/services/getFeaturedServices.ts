@@ -9,6 +9,7 @@ export async function getFeaturedServices(): Promise<FeaturedService[]> {
   const client = createClient();
 
   const services = await client.getAllByType("service", {
+    fetchOptions: { next: { tags: ["prismic", "services"] } },
     filters: [
       filter.at("my.service.featured", true),
     ],

@@ -16,6 +16,7 @@ export default async function ProjectsPage() {
   const client = createClient();
 
   const projects = await client.getAllByType("project", {
+    fetchOptions: { next: { tags: ["prismic", "projects"] } },
     orderings: [
       {
         field: "my.project.dispaly_order",

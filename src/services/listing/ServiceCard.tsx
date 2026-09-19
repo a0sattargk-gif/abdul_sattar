@@ -26,7 +26,7 @@ export default function ServiceCard({
         className="relative block aspect-[16/10] overflow-hidden bg-navy-800"
       >
         <PrismicNextImage
-          field={service.data.card_image}
+          field={service.data.hero_image}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"

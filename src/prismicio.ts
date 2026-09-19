@@ -16,7 +16,6 @@ export const repositoryName = sm.repositoryName;
  *
  * {@link https://prismic.io/docs/route-resolver#route-resolver}
  */
-// TODO: Update the routes array to match your project's route structure.
 const routes: Route[] = [
   {
     type: "project",
@@ -39,12 +38,22 @@ const routes: Route[] = [
  * @param config - Configuration for the Prismic client.
  */
 export const createClient = (config: ClientConfig = {}) => {
+  const defaultTags = ["prismic"];
+  const customNext = (config.fetchOptions as { next?: { tags?: string[] } } | undefined)?.next;
+  const customTags = customNext?.tags ?? [];
+  const mergedTags = Array.from(new Set([...defaultTags, ...customTags]));
+
   const client = baseCreateClient(repositoryName, {
     routes,
-    fetchOptions:
-      process.env.NODE_ENV === "production"
-        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
-        : { next: { revalidate: 5 } },
+    fetchOptions: {
+      ...config.fetchOptions,
+      next: {
+        revalidate: process.env.NODE_ENV === "production" ? false : 5,
+        ...customNext,
+        tags: mergedTags,
+      },
+      cache: process.env.NODE_ENV === "production" ? "force-cache" : "no-store",
+    },
     ...config,
   });
 

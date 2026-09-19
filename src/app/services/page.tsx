@@ -19,6 +19,7 @@ export default async function ServicesPage() {
   const client = createClient();
 
   const services = await client.getAllByType("service", {
+    fetchOptions: { next: { tags: ["prismic", "services"] } },
     orderings: [
       {
         field: "my.service.display_order",

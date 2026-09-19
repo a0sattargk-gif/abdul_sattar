@@ -1,0 +1,47 @@
+# Abdul Sattar | Sattar Web Studio
+
+> Full-stack software engineer and system architect specializing in React, Next.js, Node.js, NestJS, .NET, PostgreSQL, and scalable cloud systems.
+
+Sattar Web Studio (https://sattarwebstudio.com) is the engineering consultancy and portfolio of Abdul Sattar. The studio designs, builds, and maintains high-performance web applications, resilient backend architectures, and production-ready digital products for founders, startups, and growing businesses worldwide.
+
+## Core Pages
+- [Home](https://sattarwebstudio.com/): Engineering services overview, core capabilities, featured projects, and client FAQs.
+- [About](https://sattarwebstudio.com/about): Bio, engineering principles, career evolution, and core technical strengths of Abdul Sattar.
+- [Services](https://sattarwebstudio.com/services): Custom software development services, architecture design, API development, and cloud deployments.
+- [Projects](https://sattarwebstudio.com/projects): Production case studies, architectural blueprints, and engineering implementations.
+- [Blog](https://sattarwebstudio.com/blog): Technical articles, architectural guides, and software engineering deep dives.
+- [Contact](https://sattarwebstudio.com/contact): Inquiries, project estimates, consultations, and hiring information.
+
+## Core Capabilities & Services
+- [Full-Stack Web Development](https://sattarwebstudio.com/services): Modern, responsive, and accessible user interfaces built with React, Next.js, and TypeScript, backed by robust server-side architecture.
+- [Backend Services & APIs](https://sattarwebstudio.com/services): High-throughput REST and GraphQL APIs built with Node.js, NestJS, and .NET, featuring strict type safety, authentication, and validation.
+- [System Design & Database Architecture](https://sattarwebstudio.com/services): Scalable relational data modeling with PostgreSQL, high-speed caching with Redis, and distributed microservices architecture.
+- [DevOps, Cloud & Deployment](https://sattarwebstudio.com/services): Automated CI/CD pipelines, containerization with Docker, cloud infrastructure on AWS and Vercel, and database management with Supabase.
+- [Code Auditing & Modernization](https://sattarwebstudio.com/services): Technical debt reduction, performance optimization, and architectural refactoring for existing codebases.
+
+## Technology Stack
+- **Frontend**: React, Next.js (App Router, Server Components, SSR), TypeScript, JavaScript (ESNext), Tailwind CSS, HTML5, CSS3.
+- **Backend**: Node.js, NestJS, .NET (C#), Express, RESTful APIs, GraphQL, WebSockets.
+- **Databases & Cache**: PostgreSQL, MongoDB, Redis, Supabase.
+- **DevOps & Cloud**: Docker, AWS, Vercel, Linux, Nginx, GitHub Actions, CI/CD.
+- **Architecture & Practices**: Clean Architecture, Domain-Driven Design (DDD), Microservices, REST / RPC design, Test-Driven Development, Performance Optimization.
+
+## Key Facts
+- **Developer / Founder**: Abdul Sattar
+- **Studio Name**: Sattar Web Studio
+- **Domain**: https://sattarwebstudio.com
+- **Location**: Pakistan (Available for remote work worldwide)
+- **Experience**: 2+ years of professional engineering experience
+- **Engagement Models**: Freelance, Contract, Fractional Engineering, Full-time Remote Roles
+- **Primary Contact**: hello@sattarwebstudio.com
+- **System / Postmaster Contact**: postmaster@sattarwebstudio.com
+
+## Legal & Compliance
+- [Privacy Policy](https://sattarwebstudio.com/privacy-policy): Data privacy, user rights (GDPR/CCPA), and data retention practices.
+- [Terms of Service](https://sattarwebstudio.com/terms): Terms governing client engagements, intellectual property, and service deliverables.
+- [Security Disclosure](https://sattarwebstudio.com/.well-known/security.txt): RFC 9116 security policy and vulnerability reporting.
+
+## Comprehensive Details
+- [Full LLM Context](https://sattarwebstudio.com/llms-full.txt): Complete, unabridged details covering technical expertise, career history, service details, and FAQs.
+- [XML Sitemap](https://sattarwebstudio.com/sitemap.xml): Machine-readable index of all static and dynamic site routes.
+

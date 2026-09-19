@@ -10,6 +10,7 @@ export async function getFeaturedProjects(): Promise<FeaturedProject[]> {
   const client = createClient();
 
   const projects = await client.getAllByType("project", {
+    fetchOptions: { next: { tags: ["prismic", "projects"] } },
     filters: [
       filter.at("my.project.featured", true),
     ],
