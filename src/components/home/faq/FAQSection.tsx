@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import FAQItem from "@/components/home/faq/FAQItem";
 import SectionHeading from "@/components/shared/SectionHeading";
 
@@ -29,24 +27,5 @@ export default function FAQSection() {
          
       </div>
     </section>
-  );
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      fill="none"
-      className="size-5 transition-transform duration-200 group-hover:translate-x-1"
-    >
-      <path
-        d="M4 10H16M11 5L16 10L11 15"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

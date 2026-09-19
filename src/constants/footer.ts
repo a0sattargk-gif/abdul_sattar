@@ -1,3 +1,4 @@
+import { createMailtoLink, PRIMARY_CONTACT_EMAIL } from "@/constants/email";
 import type {
   FooterContactItem,
   FooterLink,
@@ -7,80 +8,90 @@ import type {
 
 export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
   {
-    id: "services",
-    title: "Services",
+    id: "navigation",
+    title: "Navigation",
     links: [
       {
-        id: "full-stack-development",
-        label: "Full-Stack Development",
-        href: "/services/full-stack-development",
+        id: "home",
+        label: "Home",
+        href: "/",
       },
       {
-        id: "system-design",
-        label: "System Design & Architecture",
-        href: "/services/system-design",
+        id: "about",
+        label: "About",
+        href: "/about",
       },
       {
-        id: "shopify-development",
-        label: "Shopify Development",
-        href: "/services/shopify-development",
+        id: "services",
+        label: "Services",
+        href: "/services",
       },
-      {
-        id: "ai-solutions",
-        label: "AI Solutions",
-        href: "/services/ai-solutions",
-      },
-    ],
-  },
-  {
-    id: "work",
-    title: "Work",
-    links: [
       {
         id: "projects",
         label: "Projects",
         href: "/projects",
       },
       {
-        id: "case-studies",
-        label: "Case Studies",
-        href: "/case-studies",
-      },
-      {
-        id: "open-source",
-        label: "Open Source",
-        href: "/open-source",
-      },
-      {
-        id: "experience",
-        label: "Experience",
-        href: "/experience",
-      },
-    ],
-  },
-  {
-    id: "resources",
-    title: "Resources",
-    links: [
-      {
         id: "blog",
         label: "Blog",
         href: "/blog",
       },
       {
-        id: "skills",
-        label: "Skills",
-        href: "/skills",
+        id: "contact",
+        label: "Contact",
+        href: "/contact",
+      },
+    ],
+  },
+  {
+    id: "capabilities",
+    title: "Capabilities",
+    links: [
+      {
+        id: "core-services",
+        label: "Engineering Services",
+        href: "/services",
       },
       {
-        id: "technology-stack",
-        label: "Technology Stack",
-        href: "/tech-stack",
+        id: "case-studies",
+        label: "Project Case Studies",
+        href: "/projects",
       },
       {
-        id: "certifications",
-        label: "Certifications",
-        href: "/certifications",
+        id: "architecture-journey",
+        label: "Experience & Journey",
+        href: "/about",
+      },
+      {
+        id: "technical-insights",
+        label: "Technical Articles",
+        href: "/blog",
+      },
+    ],
+  },
+  {
+    id: "legal-info",
+    title: "Legal & Info",
+    links: [
+      {
+        id: "privacy-policy",
+        label: "Privacy Policy",
+        href: "/privacy-policy",
+      },
+      {
+        id: "terms",
+        label: "Terms of Service",
+        href: "/terms",
+      },
+      {
+        id: "sitemap-xml",
+        label: "XML Sitemap",
+        href: "/sitemap.xml",
+      },
+      {
+        id: "inquiries",
+        label: "Project Inquiries",
+        href: "/contact",
       },
     ],
   },
@@ -126,7 +137,7 @@ export const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
   {
     id: "email",
     label: "Email",
-    href: "mailto:hello@sattarwebstudio.com",
+    href: createMailtoLink(PRIMARY_CONTACT_EMAIL),
     icon: "email",
   },
 ];
@@ -135,8 +146,8 @@ export const FOOTER_CONTACT_ITEMS: FooterContactItem[] = [
   {
     id: "email",
     label: "Email",
-    value: "hello@sattarwebstudio.com",
-    href: "mailto:hello@sattarwebstudio.com",
+    value: PRIMARY_CONTACT_EMAIL,
+    href: createMailtoLink(PRIMARY_CONTACT_EMAIL),
   },
   {
     id: "location",

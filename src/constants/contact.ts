@@ -1,3 +1,4 @@
+import { createMailtoLink, PRIMARY_CONTACT_EMAIL } from "@/constants/email";
 import type { ContactDetail, ContactOption } from "@/types/contact";
 
 export const CONTACT_PROJECT_TYPES: ContactOption[] = [
@@ -54,8 +55,8 @@ export const CONTACT_DETAILS: ContactDetail[] = [
   {
     id: "email",
     label: "Email",
-    value: "your-email@gmail.com",
-    href: "mailto:your-email@gmail.com",
+    value: PRIMARY_CONTACT_EMAIL,
+    href: createMailtoLink(PRIMARY_CONTACT_EMAIL),
   },
   {
     id: "location",

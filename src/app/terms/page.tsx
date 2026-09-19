@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import {
+  createMailtoLink,
+  POSTMASTER_EMAIL,
+  PRIMARY_CONTACT_EMAIL,
+} from "@/constants/email";
+
 export const metadata: Metadata = {
   title: "Terms of Service | Sattar Web Studio",
   description:
@@ -344,20 +350,35 @@ export default function TermsOfServicePage() {
                 <p className="mt-1 text-sm text-cool-gray-700">
                   Engineering & Technical Consultancy
                 </p>
-                <div className="mt-3 flex flex-wrap gap-4 text-sm font-semibold">
-                  <a
-                    href="mailto:hello@sattarwebstudio.com"
-                    className="text-emerald-brand-800 underline hover:text-navy-950"
-                  >
-                    hello@sattarwebstudio.com
-                  </a>
-                  <span aria-hidden="true" className="text-cool-gray-300">•</span>
-                  <Link
-                    href="/contact"
-                    className="text-navy-900 underline hover:text-emerald-brand-800"
-                  >
-                    Contact Form
-                  </Link>
+                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4 text-sm font-semibold">
+                  <div>
+                    <span className="text-xs text-cool-gray-600 block">General & Legal:</span>
+                    <a
+                      href={createMailtoLink(PRIMARY_CONTACT_EMAIL, "Terms of Service Inquiry")}
+                      className="text-emerald-brand-800 underline hover:text-navy-950"
+                    >
+                      {PRIMARY_CONTACT_EMAIL}
+                    </a>
+                  </div>
+                  <span aria-hidden="true" className="hidden sm:inline text-cool-gray-300">•</span>
+                  <div>
+                    <span className="text-xs text-cool-gray-600 block">Technical Ops & Postmaster:</span>
+                    <a
+                      href={createMailtoLink(POSTMASTER_EMAIL)}
+                      className="text-navy-900 underline hover:text-emerald-brand-800"
+                    >
+                      {POSTMASTER_EMAIL}
+                    </a>
+                  </div>
+                  <span aria-hidden="true" className="hidden sm:inline text-cool-gray-300">•</span>
+                  <div className="sm:self-end">
+                    <Link
+                      href="/contact"
+                      className="text-navy-900 underline hover:text-emerald-brand-800"
+                    >
+                      Contact Form
+                    </Link>
+                  </div>
                 </div>
               </div>
             </section>

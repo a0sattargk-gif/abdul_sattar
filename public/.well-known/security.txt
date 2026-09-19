@@ -1,0 +1,9 @@
+# Security & Postmaster Contact Information for Sattar Web Studio
+Contact: mailto:postmaster@sattarwebstudio.com
+Contact: mailto:hello@sattarwebstudio.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://sattarwebstudio.com/.well-known/security.txt
+Policy: https://sattarwebstudio.com/terms
+Acknowledgments: https://sattarwebstudio.com/about
+

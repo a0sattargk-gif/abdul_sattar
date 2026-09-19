@@ -38,7 +38,10 @@ export default function SectionHeading({
         </p>
       )}
 
-      <HeadingTag className="text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl lg:text-5xl">
+      <HeadingTag
+        id={id}
+        className="text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl lg:text-5xl"
+      >
         {title}
       </HeadingTag>
 
