@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     "Practical articles about full-stack development, Next.js, React, Node.js, databases, architecture, and production software engineering.",
 };
 
+export const revalidate = 60;
+
 export default async function BlogPage() {
   const client = createClient();
 

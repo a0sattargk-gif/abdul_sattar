@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     "Full-stack development services for frontend, backend, mobile applications, and software architecture.",
 };
 
+export const revalidate = 60;
+
 export default async function ServicesPage() {
   const client = createClient();
 

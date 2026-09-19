@@ -18,6 +18,10 @@ export default function ServiceCard({
   const description =
     service.data.short_description || "Service details are being updated.";
 
+  const cardImage = service.data.card_image?.url
+    ? service.data.card_image
+    : service.data.hero_image;
+
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cool-gray-300 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-lg">
       <Link
@@ -26,7 +30,7 @@ export default function ServiceCard({
         className="relative block aspect-[16/10] overflow-hidden bg-navy-800"
       >
         <PrismicNextImage
-          field={service.data.hero_image}
+          field={cardImage}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"

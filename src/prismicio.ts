@@ -48,11 +48,10 @@ export const createClient = (config: ClientConfig = {}) => {
     fetchOptions: {
       ...config.fetchOptions,
       next: {
-        revalidate: process.env.NODE_ENV === "production" ? false : 5,
+        revalidate: process.env.NODE_ENV === "production" ? 60 : 5,
         ...customNext,
         tags: mergedTags,
       },
-      cache: process.env.NODE_ENV === "production" ? "force-cache" : "no-store",
     },
     ...config,
   });

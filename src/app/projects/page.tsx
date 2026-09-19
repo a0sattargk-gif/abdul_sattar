@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Explore full-stack projects, SaaS platforms, dashboards, mobile applications, and software architecture case studies.",
 };
 
+export const revalidate = 60;
+
 export default async function ProjectsPage() {
   const client = createClient();
 

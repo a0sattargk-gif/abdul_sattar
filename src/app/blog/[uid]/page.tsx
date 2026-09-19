@@ -27,6 +27,7 @@ const SITE_URL =
   "https://sattarwebstudio.com";
 
 export const dynamicParams = true;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const client = createClient();
