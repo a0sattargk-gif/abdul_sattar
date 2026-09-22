@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { FOOTER_PRIMARY_CTA } from "@/constants/footer";
@@ -8,20 +9,26 @@ export default function FooterBrand() {
       <Link
         href="/"
         aria-label="Sattar Web Studio home"
-        className="inline-flex items-center gap-3 rounded-lg"
+        className="group inline-flex items-center gap-3.5 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-500"
       >
-        <span
-          aria-hidden="true"
-          className="grid size-12 place-items-center rounded-xl bg-emerald-brand-500 text-base font-extrabold text-navy-950"
-        >
-          SW
-        </span>
+        <div className="flex h-14 items-center justify-center rounded-xl bg-navy-900 px-3.5 py-2 shadow-sm ring-1 ring-white/10 transition-all duration-200 group-hover:bg-navy-800 group-hover:ring-white/20">
+          <Image
+            src="/images/logo.png"
+            alt="Sattar Web Studio Logo"
+            width={120}
+            height={48}
+            className="h-10 w-auto object-contain"
+          />
+        </div>
 
-        <span className="flex flex-col">
-          <span className="text-lg font-extrabold tracking-tight text-white">
+        <div className="flex flex-col">
+          <span className="text-xl font-extrabold tracking-tight text-white">
             Sattar Web Studio
           </span>
-        </span>
+          <span className="text-xs font-semibold text-emerald-brand-400">
+            Development & Engineering
+          </span>
+        </div>
       </Link>
 
       <p className="mt-5 text-sm leading-7 text-cool-gray-400">
