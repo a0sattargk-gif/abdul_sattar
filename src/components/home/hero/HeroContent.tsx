@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import type { HomeHeroContent } from "@/types/home";
 
 interface HeroContentProps {
@@ -12,14 +15,12 @@ export default function HeroContent({
   return (
     <div className="max-w-3xl">
       <div className="flex items-center gap-3">
-        <span
-          aria-hidden="true"
-          className="h-px w-8 bg-emerald-brand-700"
-        />
-
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-brand-700">
+        <Badge
+          variant="emerald"
+          className="px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]"
+        >
           {content.eyebrow}
-        </p>
+        </Badge>
       </div>
 
       <h1
@@ -37,59 +38,54 @@ export default function HeroContent({
       </p>
 
       <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-        <Link
-          href={content.primaryAction.href}
-          aria-label={content.primaryAction.ariaLabel}
-          className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-navy-950 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-navy-800"
+        <Button
+          asChild
+          size="lg"
+          variant="default"
+          className="group shadow-md"
         >
-          {content.primaryAction.label}
-          <ArrowRightIcon />
-        </Link>
+          <Link
+            href={content.primaryAction.href}
+            aria-label={content.primaryAction.ariaLabel}
+          >
+            {content.primaryAction.label}
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </Link>
+        </Button>
 
-        <Link
-          href={content.secondaryAction.href}
-          aria-label={content.secondaryAction.ariaLabel}
-          className="inline-flex min-h-12 items-center justify-center rounded-md border border-cool-gray-300 bg-white px-6 py-3 text-sm font-bold text-navy-900 transition-colors hover:border-cool-gray-400"
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="font-bold border-cool-gray-300 hover:bg-cool-gray-50"
         >
-          {content.secondaryAction.label}
-        </Link>
+          <Link
+            href={content.secondaryAction.href}
+            aria-label={content.secondaryAction.ariaLabel}
+          >
+            {content.secondaryAction.label}
+          </Link>
+        </Button>
       </div>
 
       <div className="mt-8 border-t border-cool-gray-200 pt-5">
         <ul
           role="list"
           aria-label="Core technologies"
-          className="flex flex-wrap gap-x-5 gap-y-2"
+          className="flex flex-wrap gap-2"
         >
           {content.technologies.map((technology) => (
-            <li
-              key={technology}
-              className="text-sm font-semibold text-cool-gray-500"
-            >
-              {technology}
+            <li key={technology}>
+              <Badge
+                variant="secondary"
+                className="font-semibold text-cool-gray-600 bg-cool-gray-100 hover:bg-cool-gray-200"
+              >
+                {technology}
+              </Badge>
             </li>
           ))}
         </ul>
       </div>
     </div>
-  );
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      fill="none"
-      className="size-5 transition-transform duration-200 group-hover:translate-x-1"
-    >
-      <path
-        d="M4 10H16M11 5L16 10L11 15"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

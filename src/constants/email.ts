@@ -14,7 +14,7 @@ export const STUDIO_EMAILS = {
   /**
    * Primary Client Inquiries, Consultations & General Business
    */
-  primary: `hello@${SITE_DOMAIN}`,
+  primary: `postmaster@${SITE_DOMAIN}`,
 
   /**
    * Security Disclosures & Vulnerability Reports (RFC 9116)

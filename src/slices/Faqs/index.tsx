@@ -1,8 +1,13 @@
 import type { Content } from "@prismicio/client";
-
 import type { SliceComponentProps } from "@prismicio/react";
 
 import PortfolioRichText from "@/components/prismic/PortfolioRichText";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export type FaqsProps = SliceComponentProps<Content.FaqsSlice>;
 
@@ -36,48 +41,28 @@ export default function Faqs({ slice }: FaqsProps) {
           </h2>
         </div>
 
-        <div className="mt-9 grid gap-3">
-          {faqs.map((item, index) => (
-            <details
-              key={`${item.question}-${index}`}
-              className="group rounded-xl border border-cool-gray-300 bg-white open:border-navy-950 open:shadow-brand-sm"
-            >
-              <summary className="flex min-h-15 cursor-pointer list-none items-center justify-between gap-5 rounded-xl px-5 py-4">
-                <span className="font-bold leading-6 text-navy-900">
+        <div className="mt-9">
+          <Accordion type="single" collapsible className="w-full space-y-3">
+            {faqs.map((item, index) => (
+              <AccordionItem
+                key={`${item.question}-${index}`}
+                value={`faq-${index}`}
+                className="rounded-2xl border border-cool-gray-200/80 bg-white px-6 shadow-sm transition-all hover:border-cool-gray-300 data-[state=open]:border-navy-900/20 data-[state=open]:shadow-md"
+              >
+                <AccordionTrigger className="text-base font-bold text-navy-950 hover:text-emerald-brand-700 py-5">
                   {item.question}
-                </span>
-
-                <span
-                  aria-hidden="true"
-                  className="grid size-8 shrink-0 place-items-center rounded-full bg-cool-gray-100 text-navy-700 transition duration-200 group-open:rotate-45 group-open:bg-emerald-brand-500 group-open:text-navy-950"
-                >
-                  <PlusIcon />
-                </span>
-              </summary>
-
-              <div className="border-t border-cool-gray-200 px-5 py-4">
-                <PortfolioRichText
-                  field={item.answer}
-                  className="text-sm leading-6"
-                />
-              </div>
-            </details>
-          ))}
+                </AccordionTrigger>
+                <AccordionContent className="text-cool-gray-600 text-sm leading-relaxed pb-5 pt-1">
+                  <PortfolioRichText
+                    field={item.answer}
+                    className="text-sm leading-6"
+                  />
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
-  );
-}
-
-function PlusIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="size-5">
-      <path
-        d="M10 4v12M4 10h12"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
   );
 }

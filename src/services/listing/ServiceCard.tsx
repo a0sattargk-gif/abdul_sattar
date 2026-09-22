@@ -1,7 +1,10 @@
 import Link from "next/link";
-
 import { PrismicNextImage } from "@prismicio/next";
+import { ArrowRight } from "lucide-react";
 
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import type { ServiceDocument } from "../../../prismicio-types";
 
 interface ServiceCardProps {
@@ -23,7 +26,7 @@ export default function ServiceCard({
     : service.data.hero_image;
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cool-gray-300 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-lg">
+    <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-cool-gray-300 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-lg">
       <Link
         href={`/services/${service.uid}`}
         aria-label={`View ${title} service`}
@@ -44,9 +47,14 @@ export default function ServiceCard({
         />
 
         {service.data.status && (
-          <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-navy-950/85 px-3 py-1.5 text-xs font-bold text-cool-gray-100 backdrop-blur">
-            {service.data.status}
-          </span>
+          <div className="absolute bottom-4 left-4">
+            <Badge
+              variant="navyMuted"
+              className="border-white/20 bg-navy-950/85 backdrop-blur text-cool-gray-100"
+            >
+              {service.data.status}
+            </Badge>
+          </div>
         )}
       </Link>
 
@@ -71,11 +79,13 @@ export default function ServiceCard({
           >
             {service.data.technologies.slice(0, 4).map((item) =>
               item.technology ? (
-                <li
-                  key={item.technology}
-                  className="rounded-full bg-cool-gray-100 px-3 py-1.5 text-xs font-semibold text-navy-700"
-                >
-                  {item.technology}
+                <li key={item.technology}>
+                  <Badge
+                    variant="secondary"
+                    className="font-semibold text-navy-700"
+                  >
+                    {item.technology}
+                  </Badge>
                 </li>
               ) : null,
             )}
@@ -83,34 +93,18 @@ export default function ServiceCard({
         )}
 
         <div className="mt-auto pt-7">
-          <Link
-            href={`/services/${service.uid}`}
-            className="group/link inline-flex min-h-11 items-center gap-2 rounded-lg font-bold text-emerald-brand-700 hover:text-emerald-brand-800"
+          <Button
+            asChild
+            variant="ghost"
+            className="group/link -ml-4 px-4 font-bold text-emerald-brand-700 hover:text-emerald-brand-800 hover:bg-emerald-brand-50/50"
           >
-            View Service
-            <ArrowRightIcon />
-          </Link>
+            <Link href={`/services/${service.uid}`}>
+              View Service
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
-    </article>
-  );
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      fill="none"
-      className="size-5 transition-transform duration-200 group-hover/link:translate-x-1"
-    >
-      <path
-        d="M4 10H16M11 5L16 10L11 15"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    </Card>
   );
 }

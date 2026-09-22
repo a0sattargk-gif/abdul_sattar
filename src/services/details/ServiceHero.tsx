@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import type { ServiceDocument } from "../../../prismicio-types";
 
 interface ServiceHeroProps {
@@ -79,14 +81,20 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
           <div>
             <div className="flex flex-wrap items-center gap-3">
               {service.data.status && (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-brand-400/30 bg-emerald-brand-500/15 px-3.5 py-1 text-xs font-bold text-emerald-brand-300">
+                <Badge
+                  variant="emerald"
+                  className="border-emerald-brand-400/30 bg-emerald-brand-500/15 text-emerald-brand-300 gap-1.5"
+                >
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-brand-400 animate-pulse" />
                   {service.data.status}
-                </span>
+                </Badge>
               )}
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-brand-400">
+              <Badge
+                variant="outline"
+                className="border-white/20 bg-white/5 text-emerald-brand-400 text-xs font-bold uppercase tracking-[0.18em]"
+              >
                 Specialized Service
-              </span>
+              </Badge>
             </div>
 
             <h1
@@ -180,29 +188,37 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               {service.data.primary_cta.link_type !== "Any" ? (
-                <PrismicNextLink
-                  field={service.data.primary_cta}
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl bg-emerald-brand-500 px-6 py-3.5 text-sm font-bold text-navy-950 shadow-sm transition hover:bg-emerald-brand-400 hover:shadow-md"
+                <Button
+                  asChild
+                  size="lg"
+                  variant="emerald"
+                  className="font-bold shadow-sm hover:shadow-md"
                 >
-                  Discuss This Service
-                </PrismicNextLink>
+                  <PrismicNextLink field={service.data.primary_cta}>
+                    Discuss This Service
+                  </PrismicNextLink>
+                </Button>
               ) : (
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl bg-emerald-brand-500 px-6 py-3.5 text-sm font-bold text-navy-950 shadow-sm transition hover:bg-emerald-brand-400 hover:shadow-md"
+                <Button
+                  asChild
+                  size="lg"
+                  variant="emerald"
+                  className="font-bold shadow-sm hover:shadow-md"
                 >
-                  Discuss Your Project
-                </Link>
+                  <Link href="/contact">Discuss Your Project</Link>
+                </Button>
               )}
 
               {service.data.pricing_plans &&
                 service.data.pricing_plans.length > 0 && (
-                  <a
-                    href="#pricing"
-                    className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 hover:border-white/40"
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10 hover:text-white"
                   >
-                    View Pricing Plans ↓
-                  </a>
+                    <a href="#pricing">View Pricing Plans ↓</a>
+                  </Button>
                 )}
             </div>
           </div>

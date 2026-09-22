@@ -31,17 +31,13 @@ export default async function BlogPage() {
   const featuredPost =
     posts.find((post) => post.data.featured) ?? posts[0] ?? null;
 
-  const remainingPosts = featuredPost
-    ? posts.filter((post) => post.id !== featuredPost.id)
-    : posts;
-
   return (
     <>
       <BlogHero />
 
       {featuredPost && <FeaturedPost post={featuredPost} />}
 
-      <BlogGrid posts={remainingPosts} />
+      <BlogGrid posts={posts} />
 
       <BlogCTA />
     </>

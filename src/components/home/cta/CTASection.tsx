@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import AvailabilityBadge from "./AvailabilityBadge";
 import TrustItem from "./TrustItem";
 
@@ -50,27 +52,34 @@ export default function CTASection() {
             </div>
 
             <div className="flex shrink-0 flex-col gap-3.5 sm:flex-row lg:flex-col">
-              <Link
-                href={HOME_CTA.primaryAction.href}
-                aria-label={HOME_CTA.primaryAction.ariaLabel}
-                className="group inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-emerald-brand-500 px-8 text-base font-bold text-navy-950 shadow-brand-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-brand-400 hover:shadow-brand-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              <Button
+                asChild
+                size="lg"
+                variant="emerald"
+                className="group h-13 px-8 text-base font-bold shadow-accent hover:-translate-y-0.5"
               >
-                {HOME_CTA.primaryAction.label}
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 group-hover:translate-x-1"
+                <Link
+                  href={HOME_CTA.primaryAction.href}
+                  aria-label={HOME_CTA.primaryAction.ariaLabel}
                 >
-                  →
-                </span>
-              </Link>
+                  {HOME_CTA.primaryAction.label}
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </Button>
 
-              <Link
-                href={HOME_CTA.secondaryAction.href}
-                aria-label={HOME_CTA.secondaryAction.ariaLabel}
-                className="inline-flex min-h-13 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-13 border-white/20 bg-white/5 px-8 text-base font-bold text-white hover:border-white/40 hover:bg-white/10 hover:text-white hover:-translate-y-0.5"
               >
-                {HOME_CTA.secondaryAction.label}
-              </Link>
+                <Link
+                  href={HOME_CTA.secondaryAction.href}
+                  aria-label={HOME_CTA.secondaryAction.ariaLabel}
+                >
+                  {HOME_CTA.secondaryAction.label}
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

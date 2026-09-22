@@ -6,10 +6,7 @@ import {
   LazyMotion,
   domAnimation,
   m,
-  useMotionValue,
   useReducedMotion,
-  useSpring,
-  useTransform,
 } from "framer-motion";
 
 import type { FeaturedProject } from "@/types/selected-work";
@@ -25,46 +22,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const shouldReduceMotion = useReducedMotion();
 
-  const pointerX = useMotionValue(0.5);
-  const pointerY = useMotionValue(0.5);
-
-  const smoothX = useSpring(pointerX, {
-    stiffness: 180,
-    damping: 24,
-    mass: 0.4,
-  });
-
-  const smoothY = useSpring(pointerY, {
-    stiffness: 180,
-    damping: 24,
-    mass: 0.4,
-  });
-
-  const imageX = useTransform(smoothX, [0, 1], [-8, 8]);
-  const imageY = useTransform(smoothY, [0, 1], [-6, 6]);
-
   const number = String(index + 1).padStart(2, "0");
-
-  function handlePointerMove(
-    event: React.PointerEvent<HTMLElement>
-  ) {
-    if (shouldReduceMotion) return;
-
-    const bounds = event.currentTarget.getBoundingClientRect();
-
-    pointerX.set(
-      (event.clientX - bounds.left) / bounds.width
-    );
-
-    pointerY.set(
-      (event.clientY - bounds.top) / bounds.height
-    );
-  }
-
-  function handlePointerLeave() {
-    pointerX.set(0.5);
-    pointerY.set(0.5);
-  }
 
   return (
     <LazyMotion features={domAnimation}>
@@ -90,8 +48,6 @@ export default function ProjectCard({
           delay: shouldReduceMotion ? 0 : index * 0.12,
           ease: [0.22, 1, 0.36, 1],
         }}
-        onPointerMove={handlePointerMove}
-        onPointerLeave={handlePointerLeave}
         className="group relative h-full"
       >
         <Link
@@ -128,16 +84,15 @@ export default function ProjectCard({
                 IMAGE AREA
             ====================================== */}
 
-            <div className="relative overflow-hidden bg-cool-gray-100">
-              <div className="aspect-[16/10] overflow-hidden">
+            <div className="relative overflow-hidden bg-navy-950">
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
                 {project.thumbnail?.url ? (
                   <m.div
                     initial={
                       shouldReduceMotion
                         ? false
                         : {
-                            clipPath:
-                              "inset(0 100% 0 0)",
+                            clipPath: "inset(0 100% 0 0)",
                           }
                     }
                     whileInView={{
@@ -147,56 +102,28 @@ export default function ProjectCard({
                       once: true,
                     }}
                     transition={{
-                      duration: 0.9,
+                      duration: 0.8,
                       delay: shouldReduceMotion
                         ? 0
                         : 0.1 + index * 0.12,
                       ease: [0.76, 0, 0.24, 1],
                     }}
-                    className="h-full w-full"
+                    className="relative h-full w-full"
                   >
-                    <m.div
-                      style={
-                        shouldReduceMotion
-                          ? undefined
-                          : {
-                              x: imageX,
-                              y: imageY,
-                            }
-                      }
-                      whileHover={
-                        shouldReduceMotion
-                          ? undefined
-                          : {
-                              scale: 1.06,
-                            }
-                      }
-                      transition={{
-                        scale: {
-                          duration: 0.7,
-                          ease: [0.22, 1, 0.36, 1],
-                        },
-                      }}
-                      className="h-full w-full"
-                    >
-                      <PrismicNextImage
-                        field={project.thumbnail}
-                        sizes="
-                          (max-width: 767px) 100vw,
-                          (max-width: 1023px) 50vw,
-                          33vw
-                        "
-                        className="
-                          h-full w-full
-                          scale-[1.03]
-                          object-cover
-                        "
-                        fallbackAlt=""
-                      />
-                    </m.div>
+                    <PrismicNextImage
+                      field={project.thumbnail}
+                      fill
+                      sizes="
+                        (max-width: 767px) 100vw,
+                        (max-width: 1023px) 50vw,
+                        33vw
+                      "
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      fallbackAlt=""
+                    />
                   </m.div>
                 ) : (
-                  <div className="h-full w-full bg-cool-gray-100" />
+                  <div className="h-full w-full bg-navy-900" />
                 )}
               </div>
 
@@ -224,7 +151,7 @@ export default function ProjectCard({
                       }
                 }
                 className="
-                  absolute left-5 top-5
+                  absolute left-5 top-5 z-20
                   flex size-11
                   items-center justify-center
                   border border-white/80
@@ -254,7 +181,7 @@ export default function ProjectCard({
                   },
                 }}
                 className="
-                  absolute bottom-5 right-5
+                  absolute bottom-5 right-5 z-20
                   grid size-12
                   place-items-center
                   bg-emerald-brand-700

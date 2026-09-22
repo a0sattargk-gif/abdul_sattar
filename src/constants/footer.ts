@@ -119,19 +119,19 @@ export const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
   {
     id: "github",
     label: "GitHub",
-    href: "https://github.com/your-username",
+    href: "https://github.com/abdulsattar576",
     icon: "github",
   },
   {
     id: "linkedin",
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/your-username",
+    href: "https://www.linkedin.com/in/abdul-sattar-se",
     icon: "linkedin",
   },
   {
     id: "upwork",
     label: "Upwork",
-    href: "https://www.upwork.com/freelancers/your-profile",
+    href: "https://www.upwork.com/freelancers/~0181bd0d715b412691",
     icon: "upwork",
   },
   {

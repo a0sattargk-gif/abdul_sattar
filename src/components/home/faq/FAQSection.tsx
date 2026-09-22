@@ -1,4 +1,9 @@
-import FAQItem from "@/components/home/faq/FAQItem";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import SectionHeading from "@/components/shared/SectionHeading";
 
 import { HOME_FAQS } from "@/constants/home/faq";
@@ -18,14 +23,26 @@ export default function FAQSection() {
           align="center"
         />
 
-        <div className="mx-auto mt-10 grid max-w-4xl gap-3">
-          {HOME_FAQS.map((item) => (
-            <FAQItem key={item.id} item={item} />
-          ))}
+        <div className="mx-auto mt-10 max-w-3xl">
+          <Accordion type="single" collapsible className="w-full space-y-3">
+            {HOME_FAQS.map((item) => (
+              <AccordionItem
+                key={item.id}
+                value={item.id}
+                className="rounded-2xl border border-cool-gray-200/80 bg-white px-6 shadow-sm transition-all hover:border-cool-gray-300 data-[state=open]:border-navy-900/20 data-[state=open]:shadow-md"
+              >
+                <AccordionTrigger className="text-base font-bold text-navy-950 hover:text-emerald-brand-700 py-5">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-cool-gray-600 text-sm leading-relaxed pb-5 pt-1">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-
-         
       </div>
     </section>
   );
 }
+

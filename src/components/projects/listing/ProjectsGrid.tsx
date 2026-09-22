@@ -48,7 +48,7 @@ export default function ProjectsGrid({
 
         {projects.length > 0 ? (
           <>
-            <div className="mt-10 grid gap-7 md:grid-cols-2">
+            <div className="h-full mt-10 grid gap-7 md:grid-cols-2">
               {pagination.paginatedItems.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}

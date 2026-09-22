@@ -36,7 +36,9 @@ export async function getFeaturedProjects(): Promise<FeaturedProject[]> {
       uid: project.uid,
       name: project.data.project_name ?? "",
       description: project.data.project_description ?? "",
-      thumbnail: project.data.card_thumnail,
+      thumbnail: project.data.card_thumnail?.url
+        ? project.data.card_thumnail
+        : project.data.hero_banner,
       industry: project.data.industry ?? null,
       role: project.data.role ?? null,
     }));

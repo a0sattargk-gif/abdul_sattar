@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { ExternalLink, Code2, Play, ArrowLeft } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import type { ProjectDocument } from "../../../../prismicio-types";
 
 interface ProjectHeroProps {
@@ -66,19 +69,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
             href="/projects"
             className="inline-flex items-center gap-1.5 font-semibold text-emerald-brand-400 hover:text-emerald-brand-300 transition"
           >
-            <svg
-              className="size-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-              />
-            </svg>
+            <ArrowLeft className="size-4" />
             All Projects
           </Link>
         </nav>
@@ -87,23 +78,32 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
         <div className="mx-auto max-w-4xl text-center">
           <div className="flex flex-wrap items-center justify-center gap-2.5">
             {project.data.featured && (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-brand-400/30 bg-emerald-brand-500/15 px-3 py-1 text-xs font-bold text-emerald-brand-300">
+              <Badge
+                variant="emerald"
+                className="border-emerald-brand-400/30 bg-emerald-brand-500/15 text-emerald-brand-300 gap-1.5"
+              >
                 <span className="size-1.5 rounded-full bg-emerald-brand-400" />
                 Featured Case Study
-              </span>
+              </Badge>
             )}
 
             {project.data.industry && (
-              <span className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold text-white">
+              <Badge
+                variant="outline"
+                className="border-white/20 bg-white/10 text-white font-bold"
+              >
                 {project.data.industry}
-              </span>
+              </Badge>
             )}
 
             {project.data.status && (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cool-gray-300/20 bg-white/5 px-3.5 py-1 text-xs font-bold text-cool-gray-200">
+              <Badge
+                variant="navyMuted"
+                className="border-cool-gray-300/20 bg-white/5 text-cool-gray-200 gap-1.5"
+              >
                 <span className="size-1.5 rounded-full bg-emerald-brand-400 animate-pulse" />
                 {project.data.status}
-              </span>
+              </Badge>
             )}
           </div>
 
@@ -123,70 +123,48 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           {/* Action Toolbar */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
             {isFilled.link(project.data.live_url) && (
-              <PrismicNextLink
-                field={project.data.live_url}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-emerald-brand-500 px-6 py-3.5 text-sm font-extrabold text-navy-950 shadow-brand-sm transition duration-150 hover:bg-emerald-brand-400 hover:shadow-brand-md"
+              <Button
+                asChild
+                size="lg"
+                variant="emerald"
+                className="font-extrabold shadow-brand-sm hover:shadow-brand-md"
               >
-                <svg
-                  className="size-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
-                Visit Live Site
-              </PrismicNextLink>
+                <PrismicNextLink field={project.data.live_url}>
+                  <ExternalLink className="size-4" />
+                  Visit Live Site
+                </PrismicNextLink>
+              </Button>
             )}
 
             {isFilled.link(project.data.github_link) && (
-              <PrismicNextLink
-                field={project.data.github_link}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition duration-150 hover:border-white/35 hover:bg-white/15"
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/20 bg-white/10 text-white hover:border-white/35 hover:bg-white/15 hover:text-white"
               >
-                <svg
-                  className="size-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                View Source
-              </PrismicNextLink>
+                <PrismicNextLink field={project.data.github_link}>
+                  <Code2 className="size-4" />
+                  View Source
+                </PrismicNextLink>
+              </Button>
             )}
 
             {isFilled.link(project.data.demo_video) && (
-              <PrismicNextLink
-                field={project.data.demo_video}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition duration-150 hover:border-white/35 hover:bg-white/15"
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/20 bg-white/10 text-white hover:border-white/35 hover:bg-white/15 hover:text-white"
               >
-                <svg
-                  className="size-4 text-emerald-brand-400"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-                Watch Demo
-              </PrismicNextLink>
+                <PrismicNextLink field={project.data.demo_video}>
+                  <Play className="size-4 fill-emerald-brand-400 text-emerald-brand-400" />
+                  Watch Demo
+                </PrismicNextLink>
+              </Button>
             )}
 
-            <a
-              href="#case-study"
-              className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl border border-transparent px-5 py-3.5 text-sm font-semibold text-cool-gray-300 transition duration-150 hover:text-white"
-            >
-              Case Study Details ↓
-            </a>
+             
           </div>
         </div>
 
@@ -223,14 +201,14 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           </div>
 
           {/* Banner Graphic */}
-          <div className="relative aspect-[16/9] w-full overflow-hidden bg-navy-900">
+          <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-navy-950">
             {heroImage?.url ? (
               <PrismicNextImage
                 field={heroImage}
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
-                className="object-cover"
+                className="object-cover object-top"
                 fallbackAlt=""
               />
             ) : (
