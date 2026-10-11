@@ -13,11 +13,11 @@ export default function FooterContact() {
       <dl className="mt-5 grid gap-4">
         {FOOTER_CONTACT_ITEMS.map((contactItem) => (
           <div key={contactItem.id}>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-cool-gray-500">
+            <dt className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
               {contactItem.label}
             </dt>
 
-            <dd className="mt-1 text-sm leading-6 text-cool-gray-300">
+            <dd className="mt-1 text-sm leading-6 text-slate-200">
               {contactItem.href ? (
                 <a
                   href={contactItem.href}

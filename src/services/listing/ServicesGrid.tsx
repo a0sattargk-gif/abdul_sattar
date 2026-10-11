@@ -25,22 +25,22 @@ export default function ServicesGrid({
   return (
     <section
       aria-labelledby="services-grid-heading"
-      className="bg-white py-16 sm:py-20 lg:py-24"
+      className="relative py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-brand-700">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-400">
             Core Services
           </p>
 
           <h2
             id="services-grid-heading"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl"
+            className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
           >
             Choose the support your product needs
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-cool-gray-700">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-cool-gray-300">
             Each service can be delivered as a complete project or as support
             for an existing team.
           </p>
@@ -64,8 +64,8 @@ export default function ServicesGrid({
             />
           </>
         ) : (
-          <div className="mt-10 rounded-2xl border border-cool-gray-300 bg-cool-gray-50 p-8 text-center">
-            <p className="text-cool-gray-700">
+          <div className="mt-10 rounded-2xl border border-white/10 bg-[#0b1120]/80 p-8 text-center backdrop-blur-xl">
+            <p className="text-cool-gray-400">
               Services are currently being updated.
             </p>
           </div>

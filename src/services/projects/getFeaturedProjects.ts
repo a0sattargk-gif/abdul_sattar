@@ -9,19 +9,23 @@ const HOME_PROJECT_LIMIT = 3;
 export async function getFeaturedProjects(): Promise<FeaturedProject[]> {
   const client = createClient();
 
-  const projects = await client.getAllByType("project", {
-    fetchOptions: { next: { tags: ["prismic", "projects"] } },
-    filters: [
-      filter.at("my.project.featured", true),
-    ],
-    orderings: [
-      {
-        field: "my.project.dispaly_order",
-        direction: "asc",
-      },
-    ],
-    limit: HOME_PROJECT_LIMIT,
-  });
+  let projects;
+  try {
+    projects = await client.getAllByType("project", {
+      fetchOptions: { next: { tags: ["prismic", "projects"] } },
+      filters: [filter.at("my.project.featured", true)],
+      orderings: [
+        {
+          field: "my.project.dispaly_order",
+          direction: "asc",
+        },
+      ],
+      limit: HOME_PROJECT_LIMIT,
+    });
+  } catch (error) {
+    console.error("Failed to fetch featured projects from Prismic:", error);
+    return [];
+  }
 
   return projects
     .filter(

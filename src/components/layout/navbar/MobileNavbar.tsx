@@ -31,7 +31,7 @@ export default function MobileNavbar({
   return (
     <div
       id="mobile-navigation"
-      className="border-t border-cool-gray-200 bg-cool-gray-50 lg:hidden"
+      className="border-t border-white/[0.08] bg-[#030712]/95 backdrop-blur-2xl lg:hidden"
     >
       <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6">
         <ul className="grid gap-1" role="list">
@@ -60,18 +60,18 @@ export default function MobileNavbar({
           })}
         </ul>
 
-        <div className="mt-5 border-t border-cool-gray-200 pt-5">
+        <div className="mt-5 border-t border-white/10 pt-5">
           <Link
             href={CONTACT_NAVIGATION_ITEM.href}
             onClick={onClose}
             aria-current={isContactActive ? "page" : undefined}
-            className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-emerald-brand-500 px-5 py-3 font-bold text-navy-950 transition-colors duration-200 hover:bg-emerald-brand-400"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-emerald-brand-500 px-5 py-3 font-bold text-navy-950 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-colors duration-200 hover:bg-emerald-brand-400"
           >
             {CONTACT_NAVIGATION_ITEM.label}
           </Link>
         </div>
 
-        <p className="mt-5 text-center text-sm text-cool-gray-500">
+        <p className="mt-5 text-center text-sm text-slate-300">
           Full-stack development, system design and AI solutions.
         </p>
       </div>
@@ -106,8 +106,8 @@ function MobileDropdown({ item, pathname, onNavigate }: MobileDropdownProps) {
         className={[
           "flex min-h-12 w-full items-center justify-between rounded-lg px-4 py-3 text-left text-base font-semibold transition-colors duration-200",
           isActive
-            ? "bg-emerald-brand-500/10 text-emerald-brand-700"
-            : "text-navy-700 hover:bg-cool-gray-100 hover:text-navy-900",
+            ? "bg-emerald-brand-500/15 text-emerald-brand-400"
+            : "text-slate-300 hover:bg-white/[0.06] hover:text-white",
         ].join(" ")}
       >
         <span>{item.label}</span>
@@ -116,12 +116,12 @@ function MobileDropdown({ item, pathname, onNavigate }: MobileDropdownProps) {
       </button>
 
       {isExpanded && (
-        <div id={menuId} className="mt-1 rounded-xl bg-white p-2">
+        <div id={menuId} className="mt-1 rounded-xl border border-white/10 bg-[#0b1120] p-2">
           {item.href && (
             <Link
               href={item.href}
               onClick={onNavigate}
-              className="mb-1 flex min-h-11 items-center justify-between rounded-lg bg-navy-900 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-navy-800"
+              className="mb-1 flex min-h-11 items-center justify-between rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-bold text-navy-950 transition-colors hover:bg-emerald-400"
             >
               <span>View all {item.label}</span>
 
@@ -140,7 +140,7 @@ function MobileDropdown({ item, pathname, onNavigate }: MobileDropdownProps) {
                 />
 
                 {dropdownItem.description && (
-                  <p className="-mt-2 px-4 pb-3 text-xs leading-5 text-cool-gray-500">
+                  <p className="-mt-2 px-4 pb-3 text-xs leading-5 text-slate-300">
                     {dropdownItem.description}
                   </p>
                 )}

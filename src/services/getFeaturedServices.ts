@@ -8,18 +8,22 @@ const HOME_SERVICE_LIMIT = 4;
 export async function getFeaturedServices(): Promise<FeaturedService[]> {
   const client = createClient();
 
-  const services = await client.getAllByType("service", {
-    fetchOptions: { next: { tags: ["prismic", "services"] } },
-    filters: [
-      filter.at("my.service.featured", true),
-    ],
-    orderings: [
-      {
-        field: "my.service.display_order",
-        direction: "asc",
-      },
-    ],
-  });
+  let services;
+  try {
+    services = await client.getAllByType("service", {
+      fetchOptions: { next: { tags: ["prismic", "services"] } },
+      filters: [filter.at("my.service.featured", true)],
+      orderings: [
+        {
+          field: "my.service.display_order",
+          direction: "asc",
+        },
+      ],
+    });
+  } catch (error) {
+    console.error("Failed to fetch featured services from Prismic:", error);
+    return [];
+  }
 
   return services
     .filter((service) => Boolean(service.uid))

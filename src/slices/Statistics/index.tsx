@@ -50,7 +50,7 @@ export default function Statistics({ slice }: StatisticsProps) {
               )}
 
               {item.desc && (
-                <dt className="mt-3 text-sm leading-relaxed text-cool-gray-300">
+                <dt className="mt-3 text-sm leading-relaxed text-slate-200">
                   {item.desc}
                 </dt>
               )}

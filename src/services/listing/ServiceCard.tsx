@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PrismicNextImage } from "@prismicio/next";
 import { ArrowRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import Card3D from "@/components/3d/Card3D";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { ServiceDocument } from "../../../prismicio-types";
@@ -26,49 +26,47 @@ export default function ServiceCard({
     : service.data.hero_image;
 
   return (
-    <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-cool-gray-300 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-lg">
+    <Card3D className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0b1120]/80 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/40 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)]">
       <Link
         href={`/services/${service.uid}`}
         aria-label={`View ${title} service`}
-        className="relative block aspect-[16/10] overflow-hidden bg-navy-800"
+        className="relative block aspect-[16/10] overflow-hidden bg-[#030712]"
       >
         <PrismicNextImage
           field={cardImage}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
+          className="object-cover transition duration-700 ease-out group-hover:scale-105"
           fallbackAlt=""
         />
 
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-navy-950/65 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1120] via-transparent to-transparent opacity-80"
         />
 
         {service.data.status && (
-          <div className="absolute bottom-4 left-4">
-            <Badge
-              variant="navyMuted"
-              className="border-white/20 bg-navy-950/85 backdrop-blur text-cool-gray-100"
-            >
+          <div className="absolute bottom-4 left-4 z-20">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
               {service.data.status}
-            </Badge>
+            </span>
           </div>
         )}
       </Link>
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <h2 className="text-2xl font-extrabold tracking-tight text-navy-900">
+        <h2 className="text-2xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-emerald-400">
           <Link
             href={`/services/${service.uid}`}
-            className="rounded-md transition-colors hover:text-emerald-brand-700"
+            className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           >
             {title}
           </Link>
         </h2>
 
-        <p className="mt-3 text-sm leading-7 text-cool-gray-700">
+        <p className="mt-3 text-sm leading-7 text-cool-gray-300">
           {description}
         </p>
 
@@ -82,7 +80,7 @@ export default function ServiceCard({
                 <li key={item.technology}>
                   <Badge
                     variant="secondary"
-                    className="font-semibold text-navy-700"
+                    className="border-white/10 bg-white/[0.04] text-cool-gray-300 hover:text-white"
                   >
                     {item.technology}
                   </Badge>
@@ -96,7 +94,7 @@ export default function ServiceCard({
           <Button
             asChild
             variant="ghost"
-            className="group/link -ml-4 px-4 font-bold text-emerald-brand-700 hover:text-emerald-brand-800 hover:bg-emerald-brand-50/50"
+            className="group/link -ml-4 px-4 font-semibold text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10"
           >
             <Link href={`/services/${service.uid}`}>
               View Service
@@ -105,6 +103,6 @@ export default function ServiceCard({
           </Button>
         </div>
       </div>
-    </Card>
+    </Card3D>
   );
 }

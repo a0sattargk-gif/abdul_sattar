@@ -11,7 +11,7 @@ export default function BlogCta({ slice }: BlogCtaProps) {
     <aside
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="my-12 overflow-hidden rounded-3xl border border-navy-800 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 shadow-xl"
+      className="my-12 overflow-hidden rounded-3xl border border-white/10 bg-[#0b1120]/80 shadow-2xl backdrop-blur-xl"
     >
       <div
         className={[
@@ -20,7 +20,7 @@ export default function BlogCta({ slice }: BlogCtaProps) {
         ].join(" ")}
       >
         <div className="p-8 sm:p-10">
-          <span className="inline-block rounded-full bg-emerald-brand-500/10 border border-emerald-brand-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-brand-400 mb-3">
+          <span className="inline-block rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
             Next Steps
           </span>
 
@@ -30,7 +30,7 @@ export default function BlogCta({ slice }: BlogCtaProps) {
             </h3>
           )}
 
-          <div className="mt-3 text-base leading-relaxed text-cool-gray-300 [&_p]:my-2">
+          <div className="mt-3 text-base leading-relaxed text-slate-200 [&_p]:my-2">
             <PrismicRichText field={slice.primary.description} />
           </div>
 
@@ -38,7 +38,7 @@ export default function BlogCta({ slice }: BlogCtaProps) {
             <div className="mt-6">
               <PrismicNextLink
                 field={slice.primary.button}
-                className="inline-flex min-h-11 items-center justify-center rounded-xl bg-emerald-brand-500 px-6 py-3 text-sm font-bold text-navy-950 shadow-sm transition hover:bg-emerald-brand-400 hover:shadow-md"
+                className="inline-flex min-h-11 items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-emerald-500/20 transition duration-300 hover:shadow-emerald-500/40 hover:brightness-110"
               />
             </div>
           )}

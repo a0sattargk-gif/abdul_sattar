@@ -20,23 +20,23 @@ export default function ServiceDeliverables({
   return (
     <section
       aria-labelledby="service-deliverables-heading"
-      className="border-b border-cool-gray-200/70 bg-white py-16 sm:py-24"
+      className="border-b border-white/[0.08] bg-[#030712]/40 py-16 backdrop-blur-md sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-brand-600/20 bg-emerald-brand-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-brand-800">
-            <span className="size-1.5 rounded-full bg-emerald-brand-600" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
+            <span className="size-1.5 rounded-full bg-emerald-400" />
             Deliverables & Artifacts
           </div>
 
           <h2
             id="service-deliverables-heading"
-            className="mt-4 text-2xl font-extrabold tracking-tight text-navy-950 sm:text-3xl lg:text-4xl"
+            className="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl"
           >
             What You Receive & Own
           </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-cool-gray-700 sm:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
             Every engagement produces battle-tested codebases and clear handover
             assets with 100% intellectual property ownership and zero lock-in.
           </p>
@@ -46,15 +46,15 @@ export default function ServiceDeliverables({
           {visibleDeliverables.map((item, index) => (
             <article
               key={`${item.title}-${index}`}
-              className="group relative flex flex-col justify-between rounded-3xl border border-cool-gray-200/80 bg-cool-gray-50/40 p-6 shadow-brand-sm transition duration-200 hover:-translate-y-1 hover:border-emerald-brand-500/40 hover:bg-white hover:shadow-brand-md sm:p-7"
+              className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0b1120]/80 p-6 shadow-2xl backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] sm:p-7"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center justify-center rounded-xl bg-emerald-brand-500/10 px-3 py-1 text-xs font-extrabold tracking-wider text-emerald-brand-800 border border-emerald-brand-500/20">
+                  <span className="inline-flex items-center justify-center rounded-xl bg-emerald-500/10 px-3 py-1 text-xs font-extrabold tracking-wider text-emerald-400 border border-emerald-500/30">
                     PHASE {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="flex size-7 items-center justify-center rounded-full bg-emerald-brand-500/10 text-emerald-brand-700 group-hover:bg-emerald-brand-500 group-hover:text-navy-950 transition-colors duration-150">
+                  <div className="flex size-7 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-colors duration-150">
                     <svg
                       className="size-4"
                       fill="none"
@@ -72,20 +72,20 @@ export default function ServiceDeliverables({
                 </div>
 
                 {item.title && (
-                  <h3 className="mt-5 text-lg font-extrabold tracking-tight text-navy-950 sm:text-xl">
+                  <h3 className="mt-5 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {item.title}
                   </h3>
                 )}
 
                 {item.description && (
-                  <p className="mt-2.5 text-sm leading-relaxed text-cool-gray-700">
+                  <p className="mt-2.5 text-sm leading-relaxed text-slate-200">
                     {item.description}
                   </p>
                 )}
               </div>
 
-              <div className="mt-6 flex items-center gap-2 border-t border-cool-gray-200/60 pt-4 text-xs font-semibold text-emerald-brand-700">
-                <span className="size-1.5 rounded-full bg-emerald-brand-600" />
+              <div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-xs font-semibold text-emerald-400">
+                <span className="size-1.5 rounded-full bg-emerald-400" />
                 Production-ready handover
               </div>
             </article>
@@ -93,19 +93,19 @@ export default function ServiceDeliverables({
         </div>
 
         {/* Tailored scope banner */}
-        <div className="mt-12 rounded-2xl border border-cool-gray-200 bg-cool-gray-50/70 p-6 text-center sm:flex sm:items-center sm:justify-between sm:text-left sm:p-7">
+        <div className="mt-12 rounded-2xl border border-white/10 bg-[#0b1120]/90 p-6 text-center sm:flex sm:items-center sm:justify-between sm:text-left sm:p-7 backdrop-blur-xl">
           <div>
-            <h4 className="text-base font-bold text-navy-950">
+            <h4 className="text-base font-bold text-white">
               Need custom deliverables or legacy integrations?
             </h4>
-            <p className="mt-1 text-sm text-cool-gray-700">
+            <p className="mt-1 text-sm text-slate-200">
               Engagements can be adapted to integrate with your existing CI/CD,
               cloud providers, or security policies.
             </p>
           </div>
           <Link
             href="/contact"
-            className="mt-4 inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-navy-900 bg-white px-5 py-2.5 text-xs font-bold text-navy-950 shadow-brand-sm transition hover:bg-navy-900 hover:text-white sm:mt-0"
+            className="mt-4 inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-2.5 text-xs font-bold text-emerald-400 shadow-sm transition hover:bg-emerald-500 hover:text-navy-950 sm:mt-0"
           >
             Inquire About Custom Scope →
           </Link>

@@ -32,7 +32,7 @@ export default function BlogPostHeader({
     : null;
 
   return (
-    <header className="border-b border-cool-gray-200 bg-gradient-to-b from-navy-50/80 via-white to-white pt-10 pb-12 sm:pt-14 sm:pb-16">
+    <header className="border-b border-white/[0.08] bg-[#030712]/60 backdrop-blur-md pt-10 pb-12 sm:pt-14 sm:pb-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb & Navigation */}
         <BlogBreadcrumbs category={category} title={title} />
@@ -40,14 +40,14 @@ export default function BlogPostHeader({
         {/* Category & Badge */}
         <div className="mt-4 flex flex-wrap items-center gap-2.5">
           {category && (
-            <span className="inline-flex items-center rounded-full border border-emerald-brand-200 bg-emerald-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-brand-800">
+            <span className="inline-flex items-center rounded-md border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400">
               {category}
             </span>
           )}
           {readingTime && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-cool-gray-200 bg-white px-3 py-1 text-xs font-medium text-cool-gray-600 shadow-2xs">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-md">
               <svg
-                className="w-3.5 h-3.5 text-cool-gray-400"
+                className="w-3.5 h-3.5 text-emerald-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -65,21 +65,21 @@ export default function BlogPostHeader({
         </div>
 
         {/* Article Title */}
-        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl lg:text-5xl leading-tight sm:leading-tight">
+        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight sm:leading-tight">
           {title}
         </h1>
 
         {/* Excerpt */}
         {excerpt && (
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-cool-gray-700 sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg sm:leading-8">
             {excerpt}
           </p>
         )}
 
         {/* Author Bar & Social Sharing */}
-        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-cool-gray-200 pt-6">
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-white/10 pt-6">
           <div className="flex items-center gap-3">
-            <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border border-emerald-brand-500/30">
+            <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border border-emerald-500/40">
               <Image
                 src="/images/abdul-sattar.webp"
                 alt={authorName || "Abdul Sattar"}
@@ -89,10 +89,10 @@ export default function BlogPostHeader({
               />
             </div>
             <div>
-              <p className="text-sm font-bold text-navy-950">
+              <p className="text-sm font-bold text-white">
                 {authorName || "Abdul Sattar"}
               </p>
-              <div className="flex items-center gap-2 text-xs text-cool-gray-500">
+              <div className="flex items-center gap-2 text-xs text-slate-300">
                 <span>Full-Stack Engineer</span>
                 {formattedDate && (
                   <>
@@ -111,7 +111,7 @@ export default function BlogPostHeader({
 
         {/* Hero Featured Image */}
         {heroImage?.url && (
-          <div className="relative mt-8 sm:mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-cool-gray-200 bg-navy-900 shadow-md">
+          <div className="relative mt-8 sm:mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/15 bg-[#030712] shadow-2xl">
             <PrismicNextImage
               field={heroImage}
               fill

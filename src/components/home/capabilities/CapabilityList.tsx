@@ -10,7 +10,7 @@ export default function CapabilityList({
   services,
 }: CapabilityListProps) {
   return (
-    <div className="border-t border-cool-gray-300">
+    <div className="border-t border-white/10">
       {services.map((service, index) => (
         <CapabilityItem
           key={service.id}

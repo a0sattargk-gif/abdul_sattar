@@ -25,22 +25,22 @@ export default function ProjectsGrid({
   return (
     <section
       aria-labelledby="projects-grid-heading"
-      className="bg-cool-gray-50 py-16 sm:py-20 lg:py-24"
+      className="relative py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-brand-700">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-400">
             Selected Work
           </p>
 
           <h2
             id="projects-grid-heading"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl"
+            className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
           >
             Explore my project case studies
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-cool-gray-700">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate-200">
             Review the challenges, solutions, processes, and results behind each
             product.
           </p>
@@ -60,8 +60,8 @@ export default function ProjectsGrid({
             />
           </>
         ) : (
-          <div className="mt-10 rounded-2xl border border-cool-gray-300 bg-white p-8 text-center">
-            <p className="text-cool-gray-700">
+          <div className="mt-10 rounded-2xl border border-white/10 bg-[#0b1120]/80 p-8 text-center backdrop-blur-xl">
+            <p className="text-slate-200">
               Project case studies are being prepared.
             </p>
           </div>

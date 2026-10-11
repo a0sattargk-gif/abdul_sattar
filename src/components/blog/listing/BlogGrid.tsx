@@ -74,23 +74,23 @@ export default function BlogGrid({ posts, pageSize = 6 }: BlogGridProps) {
   return (
     <section
       aria-labelledby="latest-articles-heading"
-      className="bg-cool-gray-50 py-16 sm:py-20 lg:py-24"
+      className="relative py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-brand-700">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-400">
             Latest Articles
           </p>
 
           <h2
             id="latest-articles-heading"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl"
+            className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
           >
             Notes from building real software
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-cool-gray-700">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate-200">
             Practical lessons from frontend, backend, architecture, and
             production engineering.
           </p>
@@ -101,7 +101,7 @@ export default function BlogGrid({ posts, pageSize = 6 }: BlogGridProps) {
           <div
             role="tablist"
             aria-label="Filter articles by category"
-            className="flex max-w-full flex-wrap items-center justify-center gap-2 rounded-2xl border border-cool-gray-200 bg-white p-1.5 shadow-sm"
+            className="flex max-w-full flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-[#0b1120]/80 p-1.5 shadow-xl backdrop-blur-xl"
           >
             {categories.map((category) => {
               const isActive =
@@ -122,10 +122,10 @@ export default function BlogGrid({ posts, pageSize = 6 }: BlogGridProps) {
                     pagination.reset();
                   }}
                   className={cn(
-                    "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-500",
+                    "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500",
                     isActive
-                      ? "bg-navy-950 text-white shadow-sm"
-                      : "text-cool-gray-600 hover:bg-cool-gray-100 hover:text-navy-950"
+                      ? "bg-emerald-500 text-navy-950 font-bold shadow-[0_0_15px_rgba(16,185,129,0.35)]"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
                   )}
                 >
                   <span>{category}</span>
@@ -133,8 +133,8 @@ export default function BlogGrid({ posts, pageSize = 6 }: BlogGridProps) {
                     className={cn(
                       "rounded-full px-2 py-0.5 text-xs font-bold transition-colors",
                       isActive
-                        ? "bg-emerald-brand-500 text-navy-950"
-                        : "bg-cool-gray-100 text-cool-gray-600"
+                        ? "bg-black/30 text-navy-950"
+                        : "bg-white/10 text-slate-300"
                     )}
                   >
                     {count}
@@ -157,20 +157,20 @@ export default function BlogGrid({ posts, pageSize = 6 }: BlogGridProps) {
             <PaginationControls {...pagination} itemLabel="articles" />
           </>
         ) : (
-          <div className="mx-auto mt-10 max-w-md rounded-3xl border border-cool-gray-200 bg-white p-8 text-center shadow-sm">
-            <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-cool-gray-100 text-cool-gray-500">
+          <div className="mx-auto mt-10 max-w-md rounded-3xl border border-white/10 bg-[#0b1120]/80 p-8 text-center shadow-2xl backdrop-blur-xl">
+            <div className="mx-auto grid size-12 place-items-center rounded-2xl border border-white/10 bg-white/5 text-emerald-400">
               <BookOpen className="size-6" />
             </div>
-            <h3 className="mt-4 text-lg font-bold text-navy-950">
+            <h3 className="mt-4 text-lg font-bold text-white">
               No articles in &ldquo;{selectedCategory}&rdquo; yet
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-cool-gray-600">
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
               New deep-dive case studies and tutorials are published regularly.
             </p>
             <Button
               variant="default"
               size="sm"
-              className="mt-5 font-bold"
+              className="mt-5 font-bold bg-gradient-to-r from-emerald-500 to-teal-400 text-black hover:opacity-90"
               onClick={() => {
                 setSelectedCategory("All");
                 pagination.reset();

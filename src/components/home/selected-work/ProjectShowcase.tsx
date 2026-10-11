@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 
 import type { FeaturedProject } from "@/types/selected-work";
+import Card3D from "@/components/3d/Card3D";
 
 interface ProjectCardProps {
   project: FeaturedProject;
@@ -57,112 +58,109 @@ export default function ProjectCard({
             relative block h-full
             focus-visible:outline-none
             focus-visible:ring-2
-            focus-visible:ring-emerald-brand-700
+            focus-visible:ring-emerald-brand-400
             focus-visible:ring-offset-4
           "
         >
-          <m.div
-            whileHover={
-              shouldReduceMotion
-                ? undefined
-                : {
-                    y: -7,
-                  }
-            }
-            transition={{
-              duration: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="
-              relative flex h-full flex-col
-              overflow-hidden
-              border border-cool-gray-300
-              bg-white
-            "
-          >
-            {/* =====================================
-                IMAGE AREA
-            ====================================== */}
+          <Card3D maxTilt={8} scale={1.02} depth={18} className="h-full">
+            <div
+              className="
+                relative flex h-full flex-col
+                overflow-hidden rounded-2xl
+                border border-white/10
+                bg-[#0b1120]/80 backdrop-blur-xl
+                shadow-[0_15px_35px_rgba(0,0,0,0.7)]
+                ring-1 ring-white/5
+                transition-all duration-300
+                group-hover:border-emerald-500/40
+                group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_30px_rgba(16,185,129,0.2)]
+              "
+            >
+              {/* =====================================
+                  IMAGE AREA
+              ====================================== */}
 
-            <div className="relative overflow-hidden bg-navy-950">
-              <div className="relative aspect-[16/10] w-full overflow-hidden">
-                {project.thumbnail?.url ? (
-                  <m.div
-                    initial={
-                      shouldReduceMotion
-                        ? false
-                        : {
-                            clipPath: "inset(0 100% 0 0)",
-                          }
-                    }
-                    whileInView={{
-                      clipPath: "inset(0 0% 0 0)",
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      delay: shouldReduceMotion
-                        ? 0
-                        : 0.1 + index * 0.12,
-                      ease: [0.76, 0, 0.24, 1],
-                    }}
-                    className="relative h-full w-full"
-                  >
-                    <PrismicNextImage
-                      field={project.thumbnail}
-                      fill
-                      sizes="
-                        (max-width: 767px) 100vw,
-                        (max-width: 1023px) 50vw,
-                        33vw
-                      "
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      fallbackAlt=""
-                    />
-                  </m.div>
-                ) : (
-                  <div className="h-full w-full bg-navy-900" />
-                )}
-              </div>
-
-              {/* Dark image overlay */}
-              <div
-                aria-hidden="true"
-                className="
-                  pointer-events-none
-                  absolute inset-0
-                  bg-navy-950/0
-                  transition-colors
-                  duration-500
-                  group-hover:bg-navy-950/15
-                "
-              />
-
-              {/* Project number */}
-              <m.div
-                aria-hidden="true"
-                whileHover={
-                  shouldReduceMotion
-                    ? undefined
-                    : {
-                        scale: 1.05,
+              <div className="relative overflow-hidden bg-navy-950">
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  {project.thumbnail?.url ? (
+                    <m.div
+                      initial={
+                        shouldReduceMotion
+                          ? false
+                          : {
+                              clipPath: "inset(0 100% 0 0)",
+                            }
                       }
-                }
-                className="
-                  absolute left-5 top-5 z-20
-                  flex size-11
-                  items-center justify-center
-                  border border-white/80
-                  bg-white/95
-                  font-mono text-xs
-                  font-bold tracking-[0.12em]
-                  text-navy-950
-                "
-              >
-                {number}
-              </m.div>
+                      whileInView={{
+                        clipPath: "inset(0 0% 0 0)",
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        delay: shouldReduceMotion
+                          ? 0
+                          : 0.1 + index * 0.12,
+                        ease: [0.76, 0, 0.24, 1],
+                      }}
+                      className="relative h-full w-full"
+                    >
+                      <PrismicNextImage
+                        field={project.thumbnail}
+                        fill
+                        sizes="
+                          (max-width: 767px) 100vw,
+                          (max-width: 1023px) 50vw,
+                          33vw
+                        "
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        fallbackAlt=""
+                      />
+                    </m.div>
+                  ) : (
+                    <div className="h-full w-full bg-navy-900" />
+                  )}
+                </div>
+
+                {/* Dark image overlay */}
+                <div
+                  aria-hidden="true"
+                  className="
+                    pointer-events-none
+                    absolute inset-0
+                    bg-navy-950/0
+                    transition-colors
+                    duration-500
+                    group-hover:bg-navy-950/20
+                  "
+                />
+
+                {/* Project number */}
+                <m.div
+                  aria-hidden="true"
+                  whileHover={
+                    shouldReduceMotion
+                      ? undefined
+                      : {
+                          scale: 1.05,
+                        }
+                  }
+                  className="
+                    absolute left-5 top-5 z-20
+                    flex size-11
+                    items-center justify-center
+                    rounded-xl
+                    border border-white/20
+                    bg-[#030712]/85 backdrop-blur-md
+                    font-mono text-xs
+                    font-bold tracking-[0.12em]
+                    text-emerald-brand-400
+                    shadow-lg
+                  "
+                >
+                  {number}
+                </m.div>
 
               {/* View project button */}
               <m.div
@@ -184,8 +182,10 @@ export default function ProjectCard({
                   absolute bottom-5 right-5 z-20
                   grid size-12
                   place-items-center
-                  bg-emerald-brand-700
-                  text-xl font-medium text-white
+                  rounded-xl
+                  bg-emerald-brand-500
+                  text-xl font-bold text-navy-950
+                  shadow-[0_0_20px_rgba(16,185,129,0.5)]
                   opacity-0
                   transition-all duration-300
                   group-hover:translate-x-0
@@ -203,7 +203,8 @@ export default function ProjectCard({
                 className="
                   absolute bottom-0 left-0
                   h-[3px] w-0
-                  bg-emerald-brand-700
+                  bg-emerald-brand-400
+                  shadow-[0_0_12px_rgba(52,211,153,0.8)]
                   transition-[width]
                   duration-500
                   ease-out
@@ -224,7 +225,7 @@ export default function ProjectCard({
                     className="
                       text-xs font-bold uppercase
                       tracking-[0.14em]
-                      text-emerald-brand-700
+                      text-emerald-brand-400
                     "
                   >
                     {project.industry}
@@ -237,8 +238,8 @@ export default function ProjectCard({
                   aria-hidden="true"
                   className="
                     font-mono text-[11px]
-                    font-semibold tracking-[0.14em]
-                    text-cool-gray-700
+                    font-bold tracking-[0.14em]
+                    text-slate-300
                   "
                 >
                   PROJECT / {number}
@@ -252,10 +253,10 @@ export default function ProjectCard({
                   text-2xl font-bold
                   leading-[1.15]
                   tracking-[-0.03em]
-                  text-navy-950
+                  text-white
                   transition-colors
                   duration-300
-                  group-hover:text-emerald-brand-700
+                  group-hover:text-emerald-300
                 "
               >
                 {project.name}
@@ -268,7 +269,7 @@ export default function ProjectCard({
                     mt-3
                     line-clamp-3
                     text-sm leading-6
-                    text-cool-gray-700
+                    text-slate-200
                   "
                 >
                   {project.description}
@@ -282,7 +283,7 @@ export default function ProjectCard({
                     flex items-end
                     justify-between
                     gap-5
-                    border-t border-cool-gray-300
+                    border-t border-white/10
                     pt-4
                   "
                 >
@@ -293,7 +294,7 @@ export default function ProjectCard({
                           block text-[11px]
                           font-bold uppercase
                           tracking-[0.12em]
-                          text-cool-gray-700
+                          text-slate-300
                         "
                       >
                         Role
@@ -303,7 +304,7 @@ export default function ProjectCard({
                         className="
                           mt-1 block
                           text-sm font-semibold
-                          text-navy-950
+                          text-white
                         "
                       >
                         {project.role}
@@ -318,7 +319,9 @@ export default function ProjectCard({
                       flex items-center
                       gap-3
                       text-sm font-bold
-                      text-navy-950
+                      text-white
+                      transition-colors
+                      group-hover:text-emerald-brand-300
                     "
                   >
                     <span>Explore</span>
@@ -356,7 +359,7 @@ export default function ProjectCard({
                 pointer-events-none
                 absolute left-0 top-0
                 h-[2px] w-0
-                bg-emerald-brand-700
+                bg-emerald-brand-400
                 transition-[width]
                 duration-500
                 group-hover:w-full
@@ -369,7 +372,7 @@ export default function ProjectCard({
                 pointer-events-none
                 absolute right-0 top-0
                 h-0 w-[2px]
-                bg-emerald-brand-700
+                bg-emerald-brand-400
                 transition-[height]
                 delay-100 duration-500
                 group-hover:h-full
@@ -382,7 +385,7 @@ export default function ProjectCard({
                 pointer-events-none
                 absolute bottom-0 right-0
                 h-[2px] w-0
-                bg-emerald-brand-700
+                bg-emerald-brand-400
                 transition-[width]
                 delay-150 duration-500
                 group-hover:w-full
@@ -395,13 +398,14 @@ export default function ProjectCard({
                 pointer-events-none
                 absolute bottom-0 left-0
                 h-0 w-[2px]
-                bg-emerald-brand-700
+                bg-emerald-brand-400
                 transition-[height]
                 delay-200 duration-500
                 group-hover:h-full
               "
             />
-          </m.div>
+            </div>
+          </Card3D>
         </Link>
       </m.article>
     </LazyMotion>

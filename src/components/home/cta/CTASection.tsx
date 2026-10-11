@@ -11,18 +11,18 @@ export default function CTASection() {
   return (
     <section
       aria-labelledby="cta-heading"
-      className="border-b border-cool-gray-200 bg-white py-16 sm:py-20 lg:py-24"
+      className="relative border-b border-white/[0.08] bg-transparent py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[32px] border border-cool-gray-300/15 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 p-8 shadow-brand-lg sm:rounded-[40px] sm:p-12 lg:p-16">
-          {/* Subtle Ambient Glow */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#0b1120] via-[#020617] to-[#0b1120] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.9)] ring-1 ring-emerald-500/20 sm:rounded-[40px] sm:p-12 lg:p-16">
+          {/* Cyber Ambient Glows */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-emerald-brand-500/10 blur-[120px]"
+            className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-emerald-500/20 blur-[140px]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -left-20 bottom-0 size-72 rounded-full bg-emerald-brand-400/10 blur-[120px]"
+            className="pointer-events-none absolute -left-20 bottom-0 size-80 rounded-full bg-cyan-500/15 blur-[140px]"
           />
 
           <div className="relative grid gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -40,7 +40,7 @@ export default function CTASection() {
                 {HOME_CTA.title}
               </h2>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-cool-gray-300 sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg sm:leading-8">
                 {HOME_CTA.description}
               </p>
 

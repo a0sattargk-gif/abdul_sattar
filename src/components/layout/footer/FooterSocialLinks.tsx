@@ -24,7 +24,7 @@ export default function FooterSocialLinks() {
                   ? socialLink.label
                   : `${socialLink.label}, opens in a new tab`
               }
-              className="grid size-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-cool-gray-300 transition duration-200 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:text-white"
+              className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-200 backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:text-emerald-400 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]"
             >
               <SocialIcon icon={socialLink.icon} />
             </a>

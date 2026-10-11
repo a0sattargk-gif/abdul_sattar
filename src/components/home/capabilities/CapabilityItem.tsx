@@ -46,7 +46,7 @@ export default function CapabilityItem({
           delay: shouldReduceMotion ? 0 : index * 0.08,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="group relative border-b border-cool-gray-300"
+        className="group relative border-b border-white/10"
       >
         <Link
           href={`/services/${service.uid}`}
@@ -57,7 +57,7 @@ export default function CapabilityItem({
             focus-visible:outline-none
             focus-visible:ring-2
             focus-visible:ring-inset
-            focus-visible:ring-emerald-brand-700
+            focus-visible:ring-emerald-brand-400
             sm:py-8
           "
         >
@@ -67,7 +67,7 @@ export default function CapabilityItem({
             className="
               absolute inset-0
               origin-left scale-x-0
-              bg-white
+              bg-white/[0.04]
               transition-transform
               duration-500
               ease-[cubic-bezier(0.22,1,0.36,1)]
@@ -82,7 +82,8 @@ export default function CapabilityItem({
               absolute bottom-0 left-0 top-0
               w-[3px]
               origin-bottom scale-y-0
-              bg-emerald-brand-700
+              bg-emerald-brand-400
+              shadow-[0_0_12px_rgba(52,211,153,0.8)]
               transition-transform
               duration-500
               group-hover:scale-y-100
@@ -96,10 +97,10 @@ export default function CapabilityItem({
                 className="
                   font-mono text-xs font-bold
                   tracking-[0.16em]
-                  text-cool-gray-700
+                  text-emerald-brand-400
                   transition-colors
                   duration-300
-                  group-hover:text-emerald-brand-700
+                  group-hover:text-emerald-brand-300
                 "
               >
                 {number}
@@ -112,10 +113,10 @@ export default function CapabilityItem({
                 className="
                   text-xl font-bold
                   tracking-[-0.025em]
-                  text-navy-950
+                  text-white
                   transition-colors
                   duration-300
-                  group-hover:text-emerald-brand-700
+                  group-hover:text-emerald-brand-300
                   sm:text-2xl
                 "
               >
@@ -123,7 +124,7 @@ export default function CapabilityItem({
               </h3>
 
               {service.description && (
-                <p className="mt-3 max-w-xl text-sm leading-6 text-cool-gray-700 sm:text-base sm:leading-7">
+                <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200 sm:text-base sm:leading-7">
                   {service.description}
                 </p>
               )}
@@ -135,10 +136,10 @@ export default function CapabilityItem({
                     <div className="flex items-center gap-2">
                       <span
                         aria-hidden="true"
-                        className="size-1.5 bg-emerald-brand-700"
+                        className="size-1.5 rounded-full bg-emerald-brand-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
                       />
 
-                      <span className="text-xs font-semibold text-cool-gray-700">
+                      <span className="text-xs font-semibold text-slate-200">
                         {service.timeline}
                       </span>
                     </div>
@@ -148,10 +149,10 @@ export default function CapabilityItem({
                     <div className="flex items-center gap-2">
                       <span
                         aria-hidden="true"
-                        className="size-1.5 bg-emerald-brand-700"
+                        className="size-1.5 rounded-full bg-emerald-brand-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
                       />
 
-                      <span className="text-xs font-semibold text-cool-gray-700">
+                      <span className="text-xs font-semibold text-slate-200">
                         {service.deliveryModel}
                       </span>
                     </div>
@@ -166,13 +167,17 @@ export default function CapabilityItem({
                 aria-hidden="true"
                 className="
                   grid size-11 place-items-center
-                  border border-cool-gray-300
-                  text-lg text-navy-950
+                  rounded-xl
+                  border border-white/20
+                  bg-white/[0.04]
+                  text-lg text-white
+                  shadow-sm
                   transition-all
                   duration-300
-                  group-hover:border-navy-950
-                  group-hover:bg-navy-950
-                  group-hover:text-white
+                  group-hover:border-emerald-500/50
+                  group-hover:bg-emerald-500
+                  group-hover:text-navy-950
+                  group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]
                 "
               >
                 <span
@@ -190,7 +195,7 @@ export default function CapabilityItem({
           </div>
 
           {/* Mobile action */}
-          <div className="relative z-10 mt-5 flex items-center gap-2 text-sm font-bold text-navy-950 sm:hidden">
+          <div className="relative z-10 mt-5 flex items-center gap-2 text-sm font-bold text-white transition-colors group-hover:text-emerald-brand-300 sm:hidden">
             Explore service
 
             <span

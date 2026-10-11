@@ -18,7 +18,7 @@ export default function MobileMenuButton({
       aria-label={accessibleLabel}
       aria-expanded={isOpen}
       aria-controls="mobile-navigation"
-      className="grid size-11 place-items-center rounded-lg border border-cool-gray-200 bg-white text-navy-900 transition-colors duration-200 hover:bg-cool-gray-100 lg:hidden"
+      className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/[0.05] text-white shadow-sm transition-all duration-200 hover:border-emerald-500/40 hover:bg-white/10 lg:hidden"
     >
       {isOpen ? <CloseIcon /> : <MenuIcon />}
     </button>

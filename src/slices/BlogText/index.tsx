@@ -25,14 +25,14 @@ function renderFormattedInline(text: string) {
       parts.push(
         <code
           key={lastIndex}
-          className="rounded-md bg-cool-gray-100 px-1.5 py-0.5 font-mono text-sm text-emerald-brand-800 border border-cool-gray-200"
+          className="rounded-md bg-white/[0.06] px-1.5 py-0.5 font-mono text-sm text-emerald-300 border border-white/10"
         >
           {token.slice(1, -1)}
         </code>
       );
     } else if (token.startsWith("**")) {
       parts.push(
-        <strong key={lastIndex} className="font-bold text-navy-950">
+        <strong key={lastIndex} className="font-bold text-white">
           {token.slice(2, -2)}
         </strong>
       );
@@ -51,7 +51,7 @@ const richTextComponents: JSXMapSerializer = {
     return (
       <h1
         id={id}
-        className="scroll-mt-24 mt-12 mb-5 text-3xl sm:text-4xl font-extrabold text-navy-950 tracking-tight"
+        className="scroll-mt-24 mt-12 mb-5 text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
       >
         {children}
       </h1>
@@ -62,7 +62,7 @@ const richTextComponents: JSXMapSerializer = {
     return (
       <h2
         id={id}
-        className="scroll-mt-24 mt-12 mb-4 text-2xl sm:text-3xl font-extrabold text-navy-950 tracking-tight border-b border-cool-gray-100 pb-2"
+        className="scroll-mt-24 mt-12 mb-4 text-2xl sm:text-3xl font-extrabold text-white tracking-tight border-b border-white/10 pb-2"
       >
         {children}
       </h2>
@@ -73,7 +73,7 @@ const richTextComponents: JSXMapSerializer = {
     return (
       <h3
         id={id}
-        className="scroll-mt-24 mt-8 mb-3 text-xl sm:text-2xl font-bold text-navy-900 tracking-tight"
+        className="scroll-mt-24 mt-8 mb-3 text-xl sm:text-2xl font-bold text-white tracking-tight"
       >
         {children}
       </h3>
@@ -84,7 +84,7 @@ const richTextComponents: JSXMapSerializer = {
     return (
       <h4
         id={id}
-        className="scroll-mt-24 mt-6 mb-2 text-lg sm:text-xl font-bold text-navy-900"
+        className="scroll-mt-24 mt-6 mb-2 text-lg sm:text-xl font-bold text-white"
       >
         {children}
       </h4>
@@ -100,7 +100,7 @@ const richTextComponents: JSXMapSerializer = {
       return (
         <h2
           id={id}
-          className="scroll-mt-24 mt-12 mb-4 text-2xl sm:text-3xl font-extrabold text-navy-950 tracking-tight border-b border-cool-gray-100 pb-2"
+          className="scroll-mt-24 mt-12 mb-4 text-2xl sm:text-3xl font-extrabold text-white tracking-tight border-b border-white/10 pb-2"
         >
           {cleanText}
         </h2>
@@ -114,7 +114,7 @@ const richTextComponents: JSXMapSerializer = {
       return (
         <h3
           id={id}
-          className="scroll-mt-24 mt-8 mb-3 text-xl sm:text-2xl font-bold text-navy-900 tracking-tight"
+          className="scroll-mt-24 mt-8 mb-3 text-xl sm:text-2xl font-bold text-white tracking-tight"
         >
           {cleanText}
         </h3>
@@ -125,10 +125,10 @@ const richTextComponents: JSXMapSerializer = {
     if (rawText.startsWith("- ") || rawText.startsWith("* ")) {
       const cleanText = rawText.replace(/^[-*]\s+/, "");
       return (
-        <div className="flex items-start gap-3 my-2 pl-3 text-base sm:text-lg leading-relaxed text-cool-gray-700">
+        <div className="flex items-start gap-3 my-2 pl-3 text-base sm:text-lg leading-relaxed text-slate-200">
           <span
             aria-hidden="true"
-            className="mt-2.5 h-1.5 w-1.5 rounded-full bg-emerald-brand-600 flex-shrink-0"
+            className="mt-2.5 h-1.5 w-1.5 rounded-full bg-emerald-400 flex-shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.8)]"
           />
           <span className="flex-1">{renderFormattedInline(cleanText)}</span>
         </div>
@@ -138,32 +138,32 @@ const richTextComponents: JSXMapSerializer = {
     // Normal paragraph with possible inline markdown code/bold
     if (node.spans.length === 0 && (rawText.includes("`") || rawText.includes("**"))) {
       return (
-        <p className="my-5 text-base sm:text-lg leading-relaxed text-cool-gray-700">
+        <p className="my-5 text-base sm:text-lg leading-relaxed text-slate-200">
           {renderFormattedInline(rawText)}
         </p>
       );
     }
 
     return (
-      <p className="my-5 text-base sm:text-lg leading-relaxed text-cool-gray-700">
+      <p className="my-5 text-base sm:text-lg leading-relaxed text-slate-200">
         {children}
       </p>
     );
   },
   list: ({ children }) => (
-    <ul className="my-5 list-none space-y-2 pl-2 text-cool-gray-700">{children}</ul>
+    <ul className="my-5 list-none space-y-2 pl-2 text-slate-200">{children}</ul>
   ),
   listItem: ({ children }) => (
-    <li className="flex items-start gap-3 my-1.5 text-base sm:text-lg leading-relaxed text-cool-gray-700">
+    <li className="flex items-start gap-3 my-1.5 text-base sm:text-lg leading-relaxed text-slate-200">
       <span
         aria-hidden="true"
-        className="mt-2.5 h-1.5 w-1.5 rounded-full bg-emerald-brand-600 flex-shrink-0"
+        className="mt-2.5 h-1.5 w-1.5 rounded-full bg-emerald-400 flex-shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.8)]"
       />
       <span className="flex-1">{children}</span>
     </li>
   ),
   oList: ({ children }) => (
-    <ol className="my-5 list-decimal space-y-2 pl-6 text-cool-gray-700 text-base sm:text-lg leading-relaxed">
+    <ol className="my-5 list-decimal space-y-2 pl-6 text-slate-200 text-base sm:text-lg leading-relaxed">
       {children}
     </ol>
   ),
@@ -171,11 +171,11 @@ const richTextComponents: JSXMapSerializer = {
     <li className="leading-relaxed pl-1">{children}</li>
   ),
   preformatted: ({ children }) => (
-    <div className="my-7 overflow-hidden rounded-2xl border border-navy-800 bg-navy-950 shadow-md">
-      <div className="flex items-center justify-between border-b border-navy-800 bg-navy-900/60 px-4 py-2.5 text-xs text-cool-gray-400">
+    <div className="my-7 overflow-hidden rounded-2xl border border-white/10 bg-black/80 shadow-xl">
+      <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs text-slate-300">
         <span className="font-mono font-medium">Code Snippet</span>
       </div>
-      <pre className="overflow-x-auto p-5 text-sm text-cool-gray-100 font-mono leading-relaxed">
+      <pre className="overflow-x-auto p-5 text-sm text-slate-100 font-mono leading-relaxed">
         {children}
       </pre>
     </div>
@@ -183,15 +183,15 @@ const richTextComponents: JSXMapSerializer = {
   hyperlink: ({ children, node }) => (
     <PrismicLink
       field={node.data}
-      className="font-semibold text-emerald-brand-700 hover:text-emerald-800 underline underline-offset-4 transition-colors"
+      className="font-semibold text-emerald-400 hover:text-emerald-300 underline underline-offset-4 transition-colors"
     >
       {children}
     </PrismicLink>
   ),
   strong: ({ children }) => (
-    <strong className="font-bold text-navy-950">{children}</strong>
+    <strong className="font-bold text-white">{children}</strong>
   ),
-  em: ({ children }) => <em className="italic text-navy-900">{children}</em>,
+  em: ({ children }) => <em className="italic text-slate-200">{children}</em>,
 };
 
 export default function BlogText({ slice }: BlogTextProps) {
@@ -199,7 +199,7 @@ export default function BlogText({ slice }: BlogTextProps) {
     <div
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="text-base sm:text-lg leading-relaxed text-cool-gray-700"
+      className="text-base sm:text-lg leading-relaxed text-slate-200"
     >
       <PrismicRichText
         field={slice.primary.content}

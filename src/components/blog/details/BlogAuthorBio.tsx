@@ -14,10 +14,10 @@ export default function BlogAuthorBio({
   return (
     <aside
       aria-labelledby="author-bio-heading"
-      className="mt-14 overflow-hidden rounded-3xl border border-cool-gray-300 bg-navy-50/50 p-6 sm:p-8"
+      className="mt-14 overflow-hidden rounded-3xl border border-white/10 bg-[#0b1120]/80 p-6 backdrop-blur-xl sm:p-8"
     >
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-        <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border-2 border-emerald-brand-500/30 shadow-md">
+        <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border-2 border-emerald-500/40 shadow-xl">
           <Image
             src="/images/abdul-sattar.webp"
             alt={`${name} - Full-Stack Software Engineer`}
@@ -30,12 +30,12 @@ export default function BlogAuthorBio({
         <div className="flex-1 text-center sm:text-left">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-emerald-brand-700">
+              <p className="text-xs font-bold uppercase tracking-wider text-emerald-400">
                 Written by
               </p>
               <h3
                 id="author-bio-heading"
-                className="text-xl font-extrabold text-navy-950"
+                className="text-xl font-extrabold text-white"
               >
                 {name}
               </h3>
@@ -44,34 +44,34 @@ export default function BlogAuthorBio({
             <div className="flex items-center justify-center sm:justify-start gap-3">
               <Link
                 href="/about"
-                className="text-xs font-bold text-navy-800 hover:text-emerald-brand-700 underline underline-offset-4 transition"
+                className="text-xs font-bold text-slate-200 hover:text-emerald-400 underline underline-offset-4 transition"
               >
                 About Me
               </Link>
-              <span aria-hidden="true" className="text-cool-gray-300">
+              <span aria-hidden="true" className="text-slate-400">
                 •
               </span>
               <a
                 href={createMailtoLink(PRIMARY_CONTACT_EMAIL, "Blog Inquiry")}
-                className="text-xs font-bold text-navy-800 hover:text-emerald-brand-700 underline underline-offset-4 transition"
+                className="text-xs font-bold text-slate-200 hover:text-emerald-400 underline underline-offset-4 transition"
               >
                 Email
               </a>
-              <span aria-hidden="true" className="text-cool-gray-300">
+              <span aria-hidden="true" className="text-slate-400">
                 •
               </span>
               <Link
                 href="/contact"
-                className="text-xs font-bold text-emerald-brand-700 hover:text-emerald-brand-800 underline underline-offset-4 transition"
+                className="text-xs font-bold text-emerald-400 hover:text-emerald-300 underline underline-offset-4 transition"
               >
                 Get in Touch
               </Link>
             </div>
           </div>
 
-          <p className="mt-3 text-sm leading-relaxed text-cool-gray-700">
+          <p className="mt-3 text-sm leading-relaxed text-slate-200">
             Full-stack software engineer and founder of{" "}
-            <strong className="text-navy-950 font-semibold">
+            <strong className="text-white font-semibold">
               Sattar Web Studio
             </strong>
             . Specializing in high-performance web applications, robust backend

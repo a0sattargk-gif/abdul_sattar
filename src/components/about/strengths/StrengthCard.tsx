@@ -1,3 +1,4 @@
+import Card3D from "@/components/3d/Card3D";
 import type { StrengthIconName, StrengthItem } from "@/types/about";
 
 interface StrengthCardProps {
@@ -6,46 +7,46 @@ interface StrengthCardProps {
 
 export default function StrengthCard({ item }: StrengthCardProps) {
   return (
-    <article className="group flex h-full flex-col justify-between rounded-2xl border border-cool-gray-300 bg-white p-6 shadow-brand-sm transition-all duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-md sm:p-7">
+    <Card3D className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-[#0b1120]/80 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] sm:p-7">
       <div>
-        <div className="grid size-11 place-items-center rounded-xl bg-emerald-brand-500/10 text-emerald-brand-700 transition-colors duration-300 group-hover:bg-emerald-brand-600 group-hover:text-white">
+        <div className="grid size-11 place-items-center rounded-xl border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 transition-colors duration-300 group-hover:bg-emerald-500 group-hover:text-black">
           <StrengthIcon icon={item.icon} />
         </div>
 
-        <h3 className="mt-5 text-lg font-extrabold tracking-tight text-navy-950">
+        <h3 className="mt-5 text-lg font-extrabold tracking-tight text-white">
           {item.title}
         </h3>
 
-        <p className="mt-2 text-sm leading-relaxed text-navy-900">
+        <p className="mt-2 text-sm leading-relaxed text-slate-200">
           {item.description}
         </p>
 
         {/* Tangible Client Takeaway */}
-        <div className="mt-4 rounded-xl border-l-4 border-l-emerald-brand-700 border-y border-r border-cool-gray-300 bg-navy-50/50 p-3.5">
-          <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-brand-800">
+        <div className="mt-4 rounded-xl border-l-4 border-l-emerald-400 border border-white/10 bg-white/[0.03] p-3.5">
+          <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
             Client Impact
           </p>
-          <p className="mt-1 text-xs font-semibold leading-relaxed text-navy-950">
+          <p className="mt-1 text-xs font-semibold leading-relaxed text-white">
             {item.clientBenefit}
           </p>
         </div>
       </div>
 
-      <ul className="mt-6 border-t border-cool-gray-200 pt-4 space-y-2" aria-label={`${item.title} standards`}>
+      <ul className="mt-6 border-t border-white/10 pt-4 space-y-2" aria-label={`${item.title} standards`}>
         {item.points.map((point) => (
           <li
             key={point}
-            className="flex items-center gap-2.5 text-xs font-semibold text-cool-gray-700"
+            className="flex items-center gap-2.5 text-xs font-semibold text-slate-200"
           >
             <span
               aria-hidden="true"
-              className="size-1.5 shrink-0 rounded-full bg-emerald-brand-600"
+              className="size-1.5 shrink-0 rounded-full bg-emerald-400"
             />
             <span>{point}</span>
           </li>
         ))}
       </ul>
-    </article>
+    </Card3D>
   );
 }
 

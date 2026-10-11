@@ -126,7 +126,7 @@ export default function ContactForm() {
     <form
       noValidate
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-cool-gray-200 bg-white p-5 shadow-brand-lg sm:p-7 lg:p-8"
+      className="rounded-3xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-2xl backdrop-blur-xl sm:p-7 lg:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <FormField id="contact-name" label="Name" error={errors.name} required>
@@ -200,10 +200,16 @@ export default function ContactForm() {
             }
             className={getInputClasses(Boolean(errors.projectType))}
           >
-            <option value="">Select project type</option>
+            <option value="" className="bg-[#0b1120] text-slate-300">
+              Select project type
+            </option>
 
             {CONTACT_PROJECT_TYPES.map((option) => (
-              <option key={option.value} value={option.value}>
+              <option
+                key={option.value}
+                value={option.value}
+                className="bg-[#0b1120] text-white"
+              >
                 {option.label}
               </option>
             ))}
@@ -219,10 +225,16 @@ export default function ContactForm() {
               onChange={handleChange}
               className={getInputClasses(false)}
             >
-              <option value="">Select an approximate budget</option>
+              <option value="" className="bg-[#0b1120] text-slate-300">
+                Select an approximate budget
+              </option>
 
               {CONTACT_BUDGET_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
+                <option
+                  key={option.value}
+                  value={option.value}
+                  className="bg-[#0b1120] text-white"
+                >
                   {option.label}
                 </option>
               ))}
@@ -260,12 +272,12 @@ export default function ContactForm() {
             <div className="mt-2 flex items-center justify-between gap-4">
               <p
                 id="contact-message-help"
-                className="text-xs text-cool-gray-600"
+                className="text-xs font-medium text-slate-300"
               >
                 Minimum 20 characters
               </p>
 
-              <p className="text-xs text-cool-gray-600">
+              <p className="text-xs font-medium text-slate-300">
                 {formData.message.length}/3000
               </p>
             </div>
@@ -294,7 +306,7 @@ export default function ContactForm() {
       {errors.form && (
         <p
           role="alert"
-          className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm font-semibold text-red-800"
+          className="mt-5 rounded-xl border border-rose-500/30 bg-rose-500/10 p-4 text-sm font-semibold text-rose-400"
         >
           {errors.form}
         </p>
@@ -307,10 +319,10 @@ export default function ContactForm() {
           className={[
             "mt-5 rounded-xl border p-4 text-sm font-semibold",
             submissionState === "success"
-              ? "border-l-4 border-l-emerald-brand-700 border-y border-r border-cool-gray-300 bg-navy-50 text-navy-950 font-bold"
+              ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
               : submissionState === "error"
-                ? "border-red-200 bg-red-50 text-red-800"
-                : "border-cool-gray-200 bg-cool-gray-50 text-navy-800",
+                ? "border-rose-500/30 bg-rose-500/10 text-rose-300"
+                : "border-cyan-500/30 bg-cyan-500/10 text-cyan-300",
           ].join(" ")}
         >
           {statusMessage}
@@ -320,7 +332,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-emerald-brand-500 px-6 py-3 font-bold text-navy-950 transition duration-200 hover:bg-emerald-brand-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-emerald-500/20 transition duration-300 hover:shadow-emerald-500/40 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? (
           <>
@@ -335,7 +347,7 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="mt-4 text-center text-xs leading-5 text-cool-gray-600">
+      <p className="mt-4 text-center text-xs leading-5 text-slate-300">
         Your information will only be used to respond to your enquiry.
       </p>
     </form>
@@ -363,20 +375,20 @@ function FormField({
     <div>
       <label
         htmlFor={id}
-        className="flex items-center justify-between gap-3 text-sm font-bold text-navy-900"
+        className="flex items-center justify-between gap-3 text-sm font-semibold text-slate-100"
       >
         <span>
           {label}
 
           {required && (
-            <span aria-hidden="true" className="ml-1 text-red-700">
+            <span aria-hidden="true" className="ml-1 text-emerald-400">
               *
             </span>
           )}
         </span>
 
         {optional && (
-          <span className="text-xs font-medium text-cool-gray-600">
+          <span className="text-xs font-medium text-slate-300">
             Optional
           </span>
         )}
@@ -388,7 +400,7 @@ function FormField({
         <p
           id={`${id}-error`}
           role="alert"
-          className="mt-2 text-sm font-semibold text-red-700"
+          className="mt-2 text-sm font-semibold text-rose-400"
         >
           {error}
         </p>
@@ -399,10 +411,10 @@ function FormField({
 
 function getInputClasses(hasError: boolean): string {
   return [
-    "min-h-12 w-full rounded-xl border bg-white px-4 py-3 text-base text-navy-900 outline-none transition placeholder:text-cool-gray-500",
-    "hover:border-cool-gray-400",
-    "focus:border-navy-950 focus:ring-4 focus:ring-navy-950/10",
-    hasError ? "border-red-500" : "border-cool-gray-300",
+    "min-h-12 w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-base text-white outline-none transition placeholder:text-slate-400",
+    "hover:border-white/20 hover:bg-white/[0.06]",
+    "focus:border-emerald-500 focus:bg-white/[0.07] focus:ring-2 focus:ring-emerald-500/20",
+    hasError ? "border-rose-500/80 bg-rose-500/10" : "border-white/10",
   ].join(" ");
 }
 

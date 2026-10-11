@@ -35,37 +35,37 @@ export default function PrivacyPolicyPage() {
   const lastUpdated = "September 19, 2026";
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent text-slate-200">
       {/* Header Banner */}
       <section
         aria-labelledby="privacy-heading"
-        className="border-b border-cool-gray-200 bg-navy-50/40 py-14 sm:py-16 lg:py-20"
+        className="border-b border-white/10 bg-transparent py-14 sm:py-16 lg:py-20"
       >
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <span aria-hidden="true" className="h-px w-8 bg-emerald-brand-700" />
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-brand-700">
-              Legal & Transparency
+            <span aria-hidden="true" className="h-px w-8 bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">
+              Legal &amp; Transparency
             </p>
           </div>
 
           <h1
             id="privacy-heading"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl lg:text-5xl"
+            className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
             Privacy Policy
           </h1>
 
-          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-cool-gray-700">
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
             <span>
-              Effective & Last Updated:{" "}
-              <strong className="text-navy-950">{lastUpdated}</strong>
+              Effective &amp; Last Updated:{" "}
+              <strong className="text-white">{lastUpdated}</strong>
             </span>
             <span aria-hidden="true">•</span>
             <span>Sattar Web Studio</span>
           </div>
 
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-navy-900 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
             This Privacy Policy explains how Sattar Web Studio (&quot;we&quot;,
             &quot;our&quot;, or &quot;us&quot;), operated by Abdul Sattar,
             collects, uses, and protects personal information when you visit
@@ -80,8 +80,8 @@ export default function PrivacyPolicyPage() {
         <div className="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-14">
           {/* Sticky Table of Contents */}
           <aside className="hidden lg:block">
-            <div className="sticky top-24 rounded-2xl border border-cool-gray-300 bg-navy-50/40 p-5 shadow-2xs">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-navy-950">
+            <div className="sticky top-24 rounded-2xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-xl backdrop-blur-xl">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-white">
                 Contents
               </h2>
               <nav aria-label="Privacy sections" className="mt-3">
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
                     <li key={sec.id}>
                       <a
                         href={`#${sec.id}`}
-                        className="block rounded py-1 text-cool-gray-700 transition hover:text-emerald-brand-700"
+                        className="block rounded py-1 text-slate-300 transition hover:text-emerald-400"
                       >
                         {sec.title}
                       </a>
@@ -99,10 +99,10 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </nav>
 
-              <div className="mt-6 border-t border-cool-gray-200 pt-4">
+              <div className="mt-6 border-t border-white/10 pt-4">
                 <Link
                   href="/contact"
-                  className="block text-xs font-bold text-emerald-brand-800 hover:underline"
+                  className="block text-xs font-bold text-emerald-400 hover:text-emerald-300 hover:underline"
                 >
                   Have privacy questions? Contact us →
                 </Link>
@@ -111,11 +111,11 @@ export default function PrivacyPolicyPage() {
           </aside>
 
           {/* Policy Clauses */}
-          <article className="space-y-12 text-sm leading-relaxed text-navy-900 sm:text-base sm:leading-7">
+          <article className="space-y-12 text-sm leading-relaxed text-slate-200 sm:text-base sm:leading-7">
             {/* 1. Overview & Scope */}
             <section id="overview" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                1. Overview & Scope
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                1. Overview &amp; Scope
               </h2>
               <p>
                 Sattar Web Studio is an independent software engineering
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
                 We do not sell, rent, or trade personal data to third parties for
                 monetization or marketing purposes. This policy applies strictly
                 to information gathered through our domain{" "}
-                <strong className="text-navy-950">
+                <strong className="text-white">
                   https://sattarwebstudio.com
                 </strong>{" "}
                 and direct email or project correspondence.
@@ -137,30 +137,30 @@ export default function PrivacyPolicyPage() {
 
             {/* 2. Information We Collect */}
             <section id="information-collected" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 2. Information We Collect
               </h2>
               <p>
                 We collect information through two channels: direct user
                 submissions and automated technical data.
               </p>
-              <div className="rounded-xl border border-cool-gray-300 bg-navy-50/30 p-5 space-y-4">
+              <div className="rounded-xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-xl backdrop-blur-xl space-y-4">
                 <div>
-                  <h3 className="text-sm font-bold text-navy-950 sm:text-base">
+                  <h3 className="text-sm font-bold text-white sm:text-base">
                     A. Voluntarily Submitted Information
                   </h3>
-                  <p className="mt-1 text-sm text-cool-gray-700">
+                  <p className="mt-1 text-sm text-slate-200">
                     When you contact us through our website contact form, inquiry
                     forms, or directly via email, you provide details such as
                     your name, email address, company name, project goals,
                     timeline estimates, and budget ranges.
                   </p>
                 </div>
-                <div className="border-t border-cool-gray-200 pt-3">
-                  <h3 className="text-sm font-bold text-navy-950 sm:text-base">
-                    B. Automated Technical & Log Data
+                <div className="border-t border-white/10 pt-3">
+                  <h3 className="text-sm font-bold text-white sm:text-base">
+                    B. Automated Technical &amp; Log Data
                   </h3>
-                  <p className="mt-1 text-sm text-cool-gray-700">
+                  <p className="mt-1 text-sm text-slate-200">
                     When accessing our site, standard server infrastructure logs
                     record technical attributes including browser type, operating
                     system, referrer URL, IP address (anonymized where feasible),
@@ -173,28 +173,28 @@ export default function PrivacyPolicyPage() {
 
             {/* 3. How We Use Information */}
             <section id="how-we-use-information" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 3. How We Use Information
               </h2>
               <p>We process personal and technical information strictly for:</p>
-              <ul className="list-disc space-y-2 pl-6 text-cool-gray-800">
+              <ul className="list-disc space-y-2 pl-6 text-slate-200">
                 <li>
-                  <strong className="text-navy-950">Communication:</strong>{" "}
+                  <strong className="text-white">Communication:</strong>{" "}
                   Responding to project briefs, quote requests, and technical
                   inquiries.
                 </li>
                 <li>
-                  <strong className="text-navy-950">Contract Fulfillment:</strong>{" "}
+                  <strong className="text-white">Contract Fulfillment:</strong>{" "}
                   Drafting proposals, statements of work, and delivering
                   engineering services.
                 </li>
                 <li>
-                  <strong className="text-navy-950">Infrastructure Security:</strong>{" "}
+                  <strong className="text-white">Infrastructure Security:</strong>{" "}
                   Preventing spam, monitoring site health, mitigating DDoS
                   threats, and ensuring uptime.
                 </li>
                 <li>
-                  <strong className="text-navy-950">Continuous Improvement:</strong>{" "}
+                  <strong className="text-white">Continuous Improvement:</strong>{" "}
                   Evaluating user engagement to improve site structure and content
                   quality.
                 </li>
@@ -203,8 +203,8 @@ export default function PrivacyPolicyPage() {
 
             {/* 4. Cookies & Analytics */}
             <section id="cookies-tracking" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                4. Cookies & Analytics
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                4. Cookies &amp; Analytics
               </h2>
               <p>
                 Our website utilizes minimal, privacy-conscious technologies. We
@@ -226,25 +226,25 @@ export default function PrivacyPolicyPage() {
 
             {/* 5. Third-Party Services */}
             <section id="third-party-services" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                5. Third-Party Services & Infrastructure
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                5. Third-Party Services &amp; Infrastructure
               </h2>
               <p>
                 To deliver reliable performance and fast global delivery, we
                 utilize reputable service providers:
               </p>
-              <ul className="list-disc space-y-2 pl-6 text-cool-gray-800">
+              <ul className="list-disc space-y-2 pl-6 text-slate-200">
                 <li>
-                  <strong className="text-navy-950">Hosting & Edge CDN:</strong>{" "}
+                  <strong className="text-white">Hosting &amp; Edge CDN:</strong>{" "}
                   Vercel Inc. (cloud hosting and global edge delivery).
                 </li>
                 <li>
-                  <strong className="text-navy-950">Headless CMS:</strong>{" "}
+                  <strong className="text-white">Headless CMS:</strong>{" "}
                   Prismic (content management for portfolio case studies and
                   articles).
                 </li>
                 <li>
-                  <strong className="text-navy-950">Search Engine Tools:</strong>{" "}
+                  <strong className="text-white">Search Engine Tools:</strong>{" "}
                   Google Search Console (verification and search indexing).
                 </li>
               </ul>
@@ -257,8 +257,8 @@ export default function PrivacyPolicyPage() {
 
             {/* 6. Data Retention & Security */}
             <section id="data-retention-security" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                6. Data Retention & Security
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                6. Data Retention &amp; Security
               </h2>
               <p>
                 We apply industry-standard security practices, including HTTPS /
@@ -275,15 +275,15 @@ export default function PrivacyPolicyPage() {
 
             {/* 7. Your Rights & Choices */}
             <section id="your-rights" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                7. Your Rights & Choices
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                7. Your Rights &amp; Choices
               </h2>
               <p>
                 Depending on your geographic location (including under GDPR in
                 the European Union and CCPA in California), you possess specific
                 statutory rights concerning your personal information:
               </p>
-              <ul className="list-disc space-y-1.5 pl-6 text-cool-gray-800">
+              <ul className="list-disc space-y-1.5 pl-6 text-slate-200">
                 <li>Right to access the personal data we hold about you.</li>
                 <li>Right to request correction of inaccurate information.</li>
                 <li>Right to request deletion (&quot;Right to be Forgotten&quot;).</li>
@@ -294,7 +294,7 @@ export default function PrivacyPolicyPage() {
                 To exercise any of these rights, email us at{" "}
                 <a
                   href={createMailtoLink(PRIMARY_CONTACT_EMAIL, "Data Privacy Request")}
-                  className="font-bold text-emerald-brand-800 underline hover:text-navy-950"
+                  className="font-bold text-emerald-400 underline hover:text-emerald-300"
                 >
                   {PRIMARY_CONTACT_EMAIL}
                 </a>
@@ -304,7 +304,7 @@ export default function PrivacyPolicyPage() {
 
             {/* 8. Contact Information */}
             <section id="contact-information" className="scroll-mt-24 space-y-4">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 8. Contact Information
               </h2>
               <p>
@@ -312,38 +312,38 @@ export default function PrivacyPolicyPage() {
                 Privacy Policy or our data management practices, please contact:
               </p>
 
-              <div className="rounded-2xl border-l-4 border-l-emerald-brand-700 border-y border-r border-cool-gray-300 bg-navy-50/50 p-6">
-                <p className="text-base font-bold text-navy-950">
+              <div className="rounded-2xl border-l-4 border-l-emerald-400 border border-white/10 bg-[#0b1120]/80 p-6 shadow-xl backdrop-blur-xl">
+                <p className="text-base font-bold text-white">
                   Abdul Sattar — Sattar Web Studio
                 </p>
-                <p className="mt-1 text-sm text-cool-gray-700">
-                  Full-Stack Development, Backend Systems & Architecture
+                <p className="mt-1 text-sm text-slate-300">
+                  Full-Stack Development, Backend Systems &amp; Architecture
                 </p>
                 <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4 text-sm font-semibold">
                   <div>
-                    <span className="text-xs text-cool-gray-600 block">General & Privacy:</span>
+                    <span className="text-xs text-slate-300 block">General &amp; Privacy:</span>
                     <a
                       href={createMailtoLink(PRIMARY_CONTACT_EMAIL)}
-                      className="text-emerald-brand-800 underline hover:text-navy-950"
+                      className="text-emerald-400 underline hover:text-emerald-300"
                     >
                       {PRIMARY_CONTACT_EMAIL}
                     </a>
                   </div>
-                  <span aria-hidden="true" className="hidden sm:inline text-cool-gray-300">•</span>
+                  <span aria-hidden="true" className="hidden sm:inline text-white/20">•</span>
                   <div>
-                    <span className="text-xs text-cool-gray-600 block">System & Postmaster:</span>
+                    <span className="text-xs text-slate-300 block">System &amp; Postmaster:</span>
                     <a
                       href={createMailtoLink(POSTMASTER_EMAIL)}
-                      className="text-navy-900 underline hover:text-emerald-brand-800"
+                      className="text-slate-100 underline hover:text-emerald-400"
                     >
                       {POSTMASTER_EMAIL}
                     </a>
                   </div>
-                  <span aria-hidden="true" className="hidden sm:inline text-cool-gray-300">•</span>
+                  <span aria-hidden="true" className="hidden sm:inline text-white/20">•</span>
                   <div className="sm:self-end">
                     <Link
                       href="/contact"
-                      className="text-navy-900 underline hover:text-emerald-brand-800"
+                      className="text-slate-100 underline hover:text-emerald-400"
                     >
                       Online Contact Form
                     </Link>

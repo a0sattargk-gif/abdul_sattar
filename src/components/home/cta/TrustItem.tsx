@@ -9,7 +9,7 @@ export default function TrustItem({ text }: TrustItemProps) {
         ✓
       </span>
 
-      <span className="text-cool-gray-200">{text}</span>
+      <span className="text-slate-200">{text}</span>
     </li>
   );
 }

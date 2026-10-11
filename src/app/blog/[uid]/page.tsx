@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       />
       <ReadingProgressBar />
 
-      <article className="min-h-screen bg-white">
+      <article className="min-h-screen bg-transparent">
         {/* Editorial Article Header */}
         <BlogPostHeader
           title={title}
@@ -241,8 +241,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {/* Share & Feedback Bottom Bar */}
-              <div className="mt-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-y border-cool-gray-200 py-6">
-                <div className="text-sm text-cool-gray-600">
+              <div className="mt-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-y border-white/10 py-6">
+                <div className="text-sm font-medium text-slate-200">
                   Enjoyed this article? Share it with your network:
                 </div>
                 <BlogShareBar title={title} url={canonicalUrl} />

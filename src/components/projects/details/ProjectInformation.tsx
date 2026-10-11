@@ -13,7 +13,7 @@ export default function ProjectInformation({
       value: project.data.role,
       icon: (
         <svg
-          className="size-4 text-emerald-brand-700"
+          className="size-4 text-emerald-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -32,7 +32,7 @@ export default function ProjectInformation({
       value: project.data.client_type,
       icon: (
         <svg
-          className="size-4 text-emerald-brand-700"
+          className="size-4 text-emerald-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -51,7 +51,7 @@ export default function ProjectInformation({
       value: project.data.industry,
       icon: (
         <svg
-          className="size-4 text-emerald-brand-700"
+          className="size-4 text-emerald-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -70,7 +70,7 @@ export default function ProjectInformation({
       value: project.data.duration,
       icon: (
         <svg
-          className="size-4 text-emerald-brand-700"
+          className="size-4 text-emerald-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -89,7 +89,7 @@ export default function ProjectInformation({
       value: project.data.team_size,
       icon: (
         <svg
-          className="size-4 text-emerald-brand-700"
+          className="size-4 text-emerald-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -115,7 +115,7 @@ export default function ProjectInformation({
     <section
       id="case-study"
       aria-labelledby="project-information-heading"
-      className="border-b border-cool-gray-200/70 bg-white py-10 sm:py-14"
+      className="border-b border-white/[0.08] bg-[#030712]/50 py-10 backdrop-blur-md sm:py-14"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 id="project-information-heading" className="sr-only">
@@ -126,18 +126,18 @@ export default function ProjectInformation({
           {information.map((item) => (
             <div
               key={item.label}
-              className="group flex flex-col justify-between rounded-2xl border border-cool-gray-200/80 bg-cool-gray-50/50 p-5 transition duration-150 hover:-translate-y-0.5 hover:border-emerald-brand-400 hover:bg-white hover:shadow-brand-sm"
+              className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0b1120]/70 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]"
             >
               <div className="flex items-center justify-between">
-                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-brand-800">
+                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-400">
                   {item.label}
                 </dt>
-                <div className="flex size-7 items-center justify-center rounded-lg bg-emerald-brand-500/10">
+                <div className="flex size-7 items-center justify-center rounded-lg border border-emerald-500/20 bg-emerald-500/10 text-emerald-400">
                   {item.icon}
                 </div>
               </div>
 
-              <dd className="mt-3 text-base font-extrabold tracking-tight text-navy-950 sm:text-lg">
+              <dd className="mt-3 text-base font-extrabold tracking-tight text-white sm:text-lg">
                 {item.value}
               </dd>
             </div>

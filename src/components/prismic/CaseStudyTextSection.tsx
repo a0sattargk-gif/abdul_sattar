@@ -39,9 +39,9 @@ export default function CaseStudyTextSection({
   const eyebrow = getEyebrow(heading, background);
 
   const sectionClasses = {
-    white: "border-b border-cool-gray-200/70 bg-white",
-    gray: "border-b border-cool-gray-200/70 bg-cool-gray-50/60",
-    dark: "border-y border-white/10 bg-navy-950 text-white relative overflow-hidden",
+    white: "border-b border-white/10 bg-transparent text-slate-200",
+    gray: "border-b border-white/10 bg-white/[0.02] text-slate-200",
+    dark: "border-y border-white/10 bg-[#0b1120]/60 text-white relative overflow-hidden backdrop-blur-md",
   };
 
   return (
@@ -55,11 +55,11 @@ export default function CaseStudyTextSection({
         <>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-emerald-brand-500/10 blur-3xl"
+            className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-emerald-500/10 blur-3xl"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(203,213,225,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(203,213,225,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"
           />
         </>
       )}
@@ -68,45 +68,29 @@ export default function CaseStudyTextSection({
         <div className="flex items-center gap-2">
           <span
             aria-hidden="true"
-            className={[
-              "h-1.5 w-1.5 rounded-full",
-              isDark ? "bg-emerald-brand-400" : "bg-emerald-brand-600",
-            ].join(" ")}
+            className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]"
           />
-          <p
-            className={[
-              "text-xs font-bold uppercase tracking-[0.18em]",
-              isDark ? "text-emerald-brand-400" : "text-emerald-brand-800",
-            ].join(" ")}
-          >
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-400">
             {eyebrow}
           </p>
         </div>
 
         {heading && (
-          <h2
-            className={[
-              "mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl",
-              isDark ? "text-white" : "text-navy-950",
-            ].join(" ")}
-          >
+          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
             {heading}
           </h2>
         )}
 
         <span
           aria-hidden="true"
-          className={[
-            "mt-4 block h-1 w-12 rounded-full",
-            isDark ? "bg-emerald-brand-400" : "bg-emerald-brand-600",
-          ].join(" ")}
+          className="mt-4 block h-1 w-12 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
         />
 
         <div className="mt-8">
           <PortfolioRichText
             field={content}
-            dark={isDark}
-            className="leading-relaxed"
+            dark={true}
+            className="leading-relaxed text-slate-200"
           />
         </div>
       </div>

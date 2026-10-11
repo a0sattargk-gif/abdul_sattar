@@ -9,29 +9,17 @@ interface PortfolioRichTextProps {
 export default function PortfolioRichText({
   field,
   className = "",
-  dark = false,
 }: PortfolioRichTextProps) {
-  const textClasses = dark
-    ? [
-        "text-cool-gray-200",
-        "[&_h1]:text-white",
-        "[&_h2]:text-white",
-        "[&_h3]:text-white",
-        "[&_h4]:text-white",
-        "[&_strong]:text-white",
-        "[&_a]:text-emerald-brand-300",
-        "[&_blockquote]:text-cool-gray-200",
-      ]
-    : [
-        "text-cool-gray-700",
-        "[&_h1]:text-navy-900",
-        "[&_h2]:text-navy-900",
-        "[&_h3]:text-navy-900",
-        "[&_h4]:text-navy-900",
-        "[&_strong]:text-navy-900",
-        "[&_a]:text-emerald-brand-700",
-        "[&_blockquote]:text-navy-800",
-      ];
+  const textClasses = [
+    "text-slate-200",
+    "[&_h1]:text-white",
+    "[&_h2]:text-white",
+    "[&_h3]:text-white",
+    "[&_h4]:text-white",
+    "[&_strong]:text-white",
+    "[&_a]:text-emerald-400 [&_a]:hover:text-emerald-300",
+    "[&_blockquote]:text-slate-200",
+  ];
 
   return (
     <div
@@ -45,14 +33,14 @@ export default function PortfolioRichText({
         "[&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6",
         "[&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-4",
         "[&_blockquote]:border-l-4",
-        "[&_blockquote]:border-emerald-brand-700",
+        "[&_blockquote]:border-emerald-400",
         "[&_blockquote]:pl-5",
         "[&_pre]:overflow-x-auto",
         "[&_pre]:rounded-xl",
-        "[&_pre]:bg-navy-950",
+        "[&_pre]:bg-black/80",
         "[&_pre]:p-5",
         "[&_pre]:text-sm",
-        "[&_pre]:text-cool-gray-100",
+        "[&_pre]:text-slate-100",
         "[&_img]:rounded-2xl",
         ...textClasses,
         className,

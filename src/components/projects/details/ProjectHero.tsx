@@ -41,7 +41,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumbs"
-          className="mb-8 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm text-cool-gray-300"
+          className="mb-8 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm text-slate-300"
         >
           <div className="flex items-center gap-2">
             <Link
@@ -50,7 +50,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
             >
               Home
             </Link>
-            <span aria-hidden="true" className="text-cool-gray-600">
+            <span aria-hidden="true" className="text-slate-400">
               /
             </span>
             <Link
@@ -59,7 +59,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
             >
               Projects
             </Link>
-            <span aria-hidden="true" className="text-cool-gray-600">
+            <span aria-hidden="true" className="text-slate-400">
               /
             </span>
             <span className="font-medium text-white">{title}</span>
@@ -99,7 +99,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
             {project.data.status && (
               <Badge
                 variant="navyMuted"
-                className="border-cool-gray-300/20 bg-white/5 text-cool-gray-200 gap-1.5"
+                className="border-white/20 bg-white/5 text-slate-200 gap-1.5"
               >
                 <span className="size-1.5 rounded-full bg-emerald-brand-400 animate-pulse" />
                 {project.data.status}
@@ -115,7 +115,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           </h1>
 
           {description && (
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-cool-gray-200 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
               {description}
             </p>
           )}
@@ -178,7 +178,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
               <span className="size-3 rounded-full bg-green-500/80" />
             </div>
 
-            <div className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-4 py-1 text-xs font-mono text-cool-gray-300">
+            <div className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-4 py-1 text-xs font-mono text-slate-300">
               <svg
                 className="size-3 text-emerald-brand-400"
                 fill="none"
@@ -195,7 +195,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
               <span>{liveUrlText}</span>
             </div>
 
-            <div className="w-12 text-right text-xs text-cool-gray-500">
+            <div className="w-12 text-right text-xs text-slate-300">
               SSL
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 fallbackAlt=""
               />
             ) : (
-              <div className="grid size-full place-items-center bg-navy-900 text-cool-gray-400">
+              <div className="grid size-full place-items-center bg-navy-900 text-slate-300">
                 <span className="text-sm font-semibold">
                   Project Preview Graphic
                 </span>

@@ -67,15 +67,15 @@ export default function BlogTableOfContents({
   // Mobile / Inline Collapsible version
   if (inline) {
     return (
-      <div className="mb-8 block lg:hidden rounded-2xl border border-cool-gray-300 bg-navy-50/50 p-4">
+      <div className="mb-8 block lg:hidden rounded-2xl border border-white/10 bg-[#0b1120]/80 p-4 backdrop-blur-xl">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex w-full items-center justify-between text-left text-sm font-bold text-navy-950 cursor-pointer"
+          className="flex w-full items-center justify-between text-left text-sm font-bold text-white cursor-pointer"
         >
           <span className="flex items-center gap-2">
             <svg
-              className="w-4 h-4 text-emerald-brand-700"
+              className="w-4 h-4 text-emerald-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -90,7 +90,7 @@ export default function BlogTableOfContents({
             Table of Contents ({headings.length})
           </span>
           <svg
-            className={`w-4 h-4 text-cool-gray-500 transition-transform ${
+            className={`w-4 h-4 text-slate-300 transition-transform ${
               isOpen ? "rotate-180" : ""
             }`}
             fill="none"
@@ -107,7 +107,7 @@ export default function BlogTableOfContents({
         </button>
 
         {isOpen && (
-          <ul className="mt-4 space-y-2 border-t border-cool-gray-200 pt-3 text-xs">
+          <ul className="mt-4 space-y-2 border-t border-white/10 pt-3 text-xs">
             {headings.map((item) => (
               <li
                 key={item.id}
@@ -123,8 +123,8 @@ export default function BlogTableOfContents({
                   className={[
                     "block py-1 transition-colors",
                     activeId === item.id
-                      ? "font-bold text-emerald-brand-700"
-                      : "text-cool-gray-600 hover:text-navy-900",
+                      ? "font-bold text-emerald-400"
+                      : "text-slate-300 hover:text-white",
                   ].join(" ")}
                 >
                   {item.text}
@@ -141,11 +141,11 @@ export default function BlogTableOfContents({
   return (
     <nav
       aria-label="Table of contents"
-      className="rounded-2xl border border-cool-gray-300 bg-navy-50/40 p-5 shadow-2xs"
+      className="rounded-2xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-xl backdrop-blur-xl"
     >
-      <div className="flex items-center gap-2 pb-3 border-b border-cool-gray-200">
+      <div className="flex items-center gap-2 pb-3 border-b border-white/10">
         <svg
-          className="w-4 h-4 text-emerald-brand-700"
+          className="w-4 h-4 text-emerald-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -157,7 +157,7 @@ export default function BlogTableOfContents({
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h12"
           />
         </svg>
-        <p className="text-xs font-bold uppercase tracking-wider text-navy-950">
+        <p className="text-xs font-bold uppercase tracking-wider text-white">
           Table of Contents
         </p>
       </div>
@@ -177,8 +177,8 @@ export default function BlogTableOfContents({
               className={[
                 "block py-1 transition-colors leading-normal",
                 activeId === item.id
-                  ? "font-bold text-emerald-brand-700"
-                  : "text-cool-gray-600 hover:text-navy-900",
+                  ? "font-bold text-emerald-400"
+                  : "text-slate-300 hover:text-white",
               ].join(" ")}
             >
               {item.text}

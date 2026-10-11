@@ -33,20 +33,20 @@ export default function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-emerald-brand-700">
+        <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-emerald-brand-400">
           {eyebrow}
         </p>
       )}
 
       <HeadingTag
         id={id}
-        className="text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl lg:text-5xl"
+        className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
       >
         {title}
       </HeadingTag>
 
       {description && (
-        <p className="mt-5 max-w-2xl text-base leading-7 text-cool-gray-500 sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
           {description}
         </p>
       )}

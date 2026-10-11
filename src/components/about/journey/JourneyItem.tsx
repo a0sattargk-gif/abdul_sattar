@@ -14,25 +14,25 @@ export default function JourneyItem({ item, isLast }: JourneyItemProps) {
       {!isLast && (
         <span
           aria-hidden="true"
-          className="absolute left-5 top-11 hidden h-[calc(100%+1rem)] w-px bg-cool-gray-300 md:block"
+          className="absolute left-5 top-11 hidden h-[calc(100%+1rem)] w-px bg-white/10 md:block"
         />
       )}
 
-      <article className="grid gap-4 rounded-2xl border border-cool-gray-300 bg-white p-5 shadow-brand-sm transition duration-300 hover:border-navy-950 hover:shadow-brand-md sm:grid-cols-[auto_1fr] sm:p-6">
-        <div className="relative z-10 grid size-10 shrink-0 place-items-center rounded-xl bg-navy-900 text-emerald-brand-300">
+      <article className="grid gap-4 rounded-2xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-xl backdrop-blur-xl transition duration-300 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] sm:grid-cols-[auto_1fr] sm:p-6">
+        <div className="relative z-10 grid size-10 shrink-0 place-items-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
           <JourneyIcon icon={item.icon} />
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-brand-700">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-400">
             {item.period}
           </p>
 
-          <h3 className="mt-2 text-lg font-extrabold text-navy-900">
+          <h3 className="mt-2 text-lg font-extrabold text-white">
             {item.title}
           </h3>
 
-          <p className="mt-2 text-sm leading-6 text-cool-gray-700">
+          <p className="mt-2 text-sm leading-6 text-slate-200">
             {item.description}
           </p>
 
@@ -40,7 +40,7 @@ export default function JourneyItem({ item, isLast }: JourneyItemProps) {
             {item.highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="rounded-full bg-cool-gray-100 px-3 py-1.5 text-xs font-semibold text-navy-700"
+                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-slate-200"
               >
                 {highlight}
               </li>

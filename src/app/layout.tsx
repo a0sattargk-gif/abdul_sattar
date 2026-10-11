@@ -25,19 +25,22 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="dark">
+      <body className="relative min-h-screen overflow-x-hidden bg-[#030712] text-foreground antialiased selection:bg-emerald-400 selection:text-navy-950">
         <a
           href="#main-content"
-          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-navy-900 px-4 py-3 font-semibold text-white transition-transform focus:translate-y-0"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-emerald-500 px-4 py-3 font-bold text-navy-950 transition-transform focus:translate-y-0 shadow-lg"
         >
           Skip to main content
         </a>
 
-        <Navbar />
+        <div className="relative z-10 flex min-h-screen flex-col">
+          <Navbar />
 
-        <main id="main-content">{children}</main>
-        <Footer />
+          <main id="main-content" className="flex-1">{children}</main>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -37,37 +37,37 @@ export default function TermsOfServicePage() {
   const lastUpdated = "September 19, 2026";
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent text-slate-200">
       {/* Header Banner */}
       <section
         aria-labelledby="terms-heading"
-        className="border-b border-cool-gray-200 bg-navy-50/40 py-14 sm:py-16 lg:py-20"
+        className="border-b border-white/10 bg-transparent py-14 sm:py-16 lg:py-20"
       >
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <span aria-hidden="true" className="h-px w-8 bg-emerald-brand-700" />
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-brand-700">
-              Legal & Transparency
+            <span aria-hidden="true" className="h-px w-8 bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">
+              Legal &amp; Transparency
             </p>
           </div>
 
           <h1
             id="terms-heading"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl lg:text-5xl"
+            className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
             Terms of Service
           </h1>
 
-          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-cool-gray-700">
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
             <span>
-              Effective & Last Updated:{" "}
-              <strong className="text-navy-950">{lastUpdated}</strong>
+              Effective &amp; Last Updated:{" "}
+              <strong className="text-white">{lastUpdated}</strong>
             </span>
             <span aria-hidden="true">•</span>
             <span>Sattar Web Studio</span>
           </div>
 
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-navy-900 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
             These Terms of Service (&quot;Terms&quot;) govern your use of the
             Sattar Web Studio website and define the general terms under which
             we provide software engineering, web application development, and
@@ -81,8 +81,8 @@ export default function TermsOfServicePage() {
         <div className="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-14">
           {/* Sticky Table of Contents */}
           <aside className="hidden lg:block">
-            <div className="sticky top-24 rounded-2xl border border-cool-gray-300 bg-navy-50/40 p-5 shadow-2xs">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-navy-950">
+            <div className="sticky top-24 rounded-2xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-xl backdrop-blur-xl">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-white">
                 Contents
               </h2>
               <nav aria-label="Terms sections" className="mt-3">
@@ -91,7 +91,7 @@ export default function TermsOfServicePage() {
                     <li key={sec.id}>
                       <a
                         href={`#${sec.id}`}
-                        className="block rounded py-1 text-cool-gray-700 transition hover:text-emerald-brand-700"
+                        className="block rounded py-1 text-slate-300 transition hover:text-emerald-400"
                       >
                         {sec.title}
                       </a>
@@ -100,10 +100,10 @@ export default function TermsOfServicePage() {
                 </ul>
               </nav>
 
-              <div className="mt-6 border-t border-cool-gray-200 pt-4">
+              <div className="mt-6 border-t border-white/10 pt-4">
                 <Link
                   href="/contact"
-                  className="block text-xs font-bold text-emerald-brand-800 hover:underline"
+                  className="block text-xs font-bold text-emerald-400 hover:text-emerald-300 hover:underline"
                 >
                   Ready to collaborate? Start a project →
                 </Link>
@@ -112,15 +112,15 @@ export default function TermsOfServicePage() {
           </aside>
 
           {/* Policy Clauses */}
-          <article className="space-y-12 text-sm leading-relaxed text-navy-900 sm:text-base sm:leading-7">
+          <article className="space-y-12 text-sm leading-relaxed text-slate-200 sm:text-base sm:leading-7">
             {/* 1. Acceptance of Terms */}
             <section id="acceptance" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 1. Acceptance of Terms
               </h2>
               <p>
                 By accessing or using the website at{" "}
-                <strong className="text-navy-950">
+                <strong className="text-white">
                   https://sattarwebstudio.com
                 </strong>
                 , or by commissioning professional consulting services from
@@ -136,29 +136,29 @@ export default function TermsOfServicePage() {
 
             {/* 2. Engineering Services & Scope */}
             <section id="services" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                2. Engineering Services & Scope
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                2. Engineering Services &amp; Scope
               </h2>
               <p>
                 Sattar Web Studio provides bespoke technology services,
                 including:
               </p>
-              <ul className="list-disc space-y-1.5 pl-6 text-cool-gray-800">
+              <ul className="list-disc space-y-1.5 pl-6 text-slate-200">
                 <li>
-                  <strong className="text-navy-950">
+                  <strong className="text-white">
                     Frontend Engineering:
                   </strong>{" "}
                   React, Next.js App Router, responsive interfaces, state
                   management, and performance tuning.
                 </li>
                 <li>
-                  <strong className="text-navy-950">Backend Development:</strong>{" "}
+                  <strong className="text-white">Backend Development:</strong>{" "}
                   Node.js, NestJS, .NET APIs, microservices, and database
                   architectures (PostgreSQL, Redis).
                 </li>
                 <li>
-                  <strong className="text-navy-950">
-                    System Design & Scalability:
+                  <strong className="text-white">
+                    System Design &amp; Scalability:
                   </strong>{" "}
                   Distributed pipelines, caching layers, high-throughput
                   concurrency, and cloud deployment.
@@ -173,12 +173,12 @@ export default function TermsOfServicePage() {
 
             {/* 3. Intellectual Property & Ownership */}
             <section id="intellectual-property" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                3. Intellectual Property & Ownership
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                3. Intellectual Property &amp; Ownership
               </h2>
-              <div className="rounded-xl border border-cool-gray-300 bg-navy-50/30 p-5 space-y-3">
+              <div className="rounded-xl border border-white/10 bg-[#0b1120]/80 p-5 shadow-xl backdrop-blur-xl space-y-3">
                 <p>
-                  <strong className="text-navy-950">
+                  <strong className="text-white">
                     A. Client Work-Product:
                   </strong>{" "}
                   Upon full and final payment of all agreed fees for a project,
@@ -186,10 +186,10 @@ export default function TermsOfServicePage() {
                   created specifically for the client become the sole property
                   of the client, unless otherwise agreed in writing.
                 </p>
-                <div className="border-t border-cool-gray-200 pt-3">
+                <div className="border-t border-white/10 pt-3">
                   <p>
-                    <strong className="text-navy-950">
-                      B. Pre-Existing Tools & Open-Source:
+                    <strong className="text-white">
+                      B. Pre-Existing Tools &amp; Open-Source:
                     </strong>{" "}
                     We retain ownership of general methodologies, pre-existing
                     libraries, snippets, and boilerplate utilities. Standard
@@ -197,9 +197,9 @@ export default function TermsOfServicePage() {
                     Apache, or BSD licenses.
                   </p>
                 </div>
-                <div className="border-t border-cool-gray-200 pt-3">
+                <div className="border-t border-white/10 pt-3">
                   <p>
-                    <strong className="text-navy-950">
+                    <strong className="text-white">
                       C. Portfolio Showcase:
                     </strong>{" "}
                     Unless restricted by a signed Non-Disclosure Agreement
@@ -213,11 +213,11 @@ export default function TermsOfServicePage() {
 
             {/* 4. Client Responsibilities */}
             <section id="client-responsibilities" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 4. Client Responsibilities
               </h2>
               <p>Timely project delivery depends on mutual cooperation. Clients agree to:</p>
-              <ul className="list-disc space-y-1.5 pl-6 text-cool-gray-800">
+              <ul className="list-disc space-y-1.5 pl-6 text-slate-200">
                 <li>
                   Provide required credentials, brand assets, API keys, and
                   technical documentation in a timely manner.
@@ -235,15 +235,15 @@ export default function TermsOfServicePage() {
 
             {/* 5. Fees, Estimates & Invoicing */}
             <section id="payment-terms" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                5. Fees, Estimates & Invoicing
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                5. Fees, Estimates &amp; Invoicing
               </h2>
               <p>
                 Project fees are billed on either a milestone-based fixed-price
                 basis or time-and-materials, as documented in the applicable
                 engagement agreement.
               </p>
-              <ul className="list-disc space-y-1.5 pl-6 text-cool-gray-800">
+              <ul className="list-disc space-y-1.5 pl-6 text-slate-200">
                 <li>
                   Invoices are typically due within 14 calendar days of receipt
                   unless otherwise stipulated.
@@ -261,8 +261,8 @@ export default function TermsOfServicePage() {
 
             {/* 6. Confidentiality & Privacy */}
             <section id="confidentiality" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                6. Confidentiality & Non-Disclosure
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                6. Confidentiality &amp; Non-Disclosure
               </h2>
               <p>
                 Both parties agree to treat all proprietary business data, code
@@ -274,8 +274,8 @@ export default function TermsOfServicePage() {
 
             {/* 7. Warranties & Disclaimers */}
             <section id="warranties-disclaimers" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                7. Warranties & Disclaimers
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                7. Warranties &amp; Disclaimers
               </h2>
               <p>
                 We deliver engineering services in a professional, workmanlike
@@ -293,7 +293,7 @@ export default function TermsOfServicePage() {
 
             {/* 8. Limitation of Liability */}
             <section id="liability" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
                 8. Limitation of Liability
               </h2>
               <p>
@@ -313,8 +313,8 @@ export default function TermsOfServicePage() {
 
             {/* 9. Term & Termination */}
             <section id="termination" className="scroll-mt-24 space-y-3">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                9. Term & Termination
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                9. Term &amp; Termination
               </h2>
               <p>
                 Either party may terminate a project agreement upon written
@@ -331,8 +331,8 @@ export default function TermsOfServicePage() {
 
             {/* 10. Governing Law & Contact */}
             <section id="contact-legal" className="scroll-mt-24 space-y-4">
-              <h2 className="text-xl font-extrabold text-navy-950 sm:text-2xl">
-                10. Governing Law & Contact
+              <h2 className="text-xl font-extrabold text-white sm:text-2xl">
+                10. Governing Law &amp; Contact
               </h2>
               <p>
                 These Terms shall be interpreted and governed in accordance with
@@ -343,38 +343,38 @@ export default function TermsOfServicePage() {
                 Terms of Service, please contact:
               </p>
 
-              <div className="rounded-2xl border-l-4 border-l-emerald-brand-700 border-y border-r border-cool-gray-300 bg-navy-50/50 p-6">
-                <p className="text-base font-bold text-navy-950">
+              <div className="rounded-2xl border-l-4 border-l-emerald-400 border border-white/10 bg-[#0b1120]/80 p-6 shadow-xl backdrop-blur-xl">
+                <p className="text-base font-bold text-white">
                   Abdul Sattar — Sattar Web Studio
                 </p>
-                <p className="mt-1 text-sm text-cool-gray-700">
-                  Engineering & Technical Consultancy
+                <p className="mt-1 text-sm text-slate-300">
+                  Engineering &amp; Technical Consultancy
                 </p>
                 <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4 text-sm font-semibold">
                   <div>
-                    <span className="text-xs text-cool-gray-600 block">General & Legal:</span>
+                    <span className="text-xs text-slate-300 block">General &amp; Legal:</span>
                     <a
                       href={createMailtoLink(PRIMARY_CONTACT_EMAIL, "Terms of Service Inquiry")}
-                      className="text-emerald-brand-800 underline hover:text-navy-950"
+                      className="text-emerald-400 underline hover:text-emerald-300"
                     >
                       {PRIMARY_CONTACT_EMAIL}
                     </a>
                   </div>
-                  <span aria-hidden="true" className="hidden sm:inline text-cool-gray-300">•</span>
+                  <span aria-hidden="true" className="hidden sm:inline text-white/20">•</span>
                   <div>
-                    <span className="text-xs text-cool-gray-600 block">Technical Ops & Postmaster:</span>
+                    <span className="text-xs text-slate-300 block">Technical Ops &amp; Postmaster:</span>
                     <a
                       href={createMailtoLink(POSTMASTER_EMAIL)}
-                      className="text-navy-900 underline hover:text-emerald-brand-800"
+                      className="text-slate-100 underline hover:text-emerald-400"
                     >
                       {POSTMASTER_EMAIL}
                     </a>
                   </div>
-                  <span aria-hidden="true" className="hidden sm:inline text-cool-gray-300">•</span>
+                  <span aria-hidden="true" className="hidden sm:inline text-white/20">•</span>
                   <div className="sm:self-end">
                     <Link
                       href="/contact"
-                      className="text-navy-900 underline hover:text-emerald-brand-800"
+                      className="text-slate-100 underline hover:text-emerald-400"
                     >
                       Contact Form
                     </Link>

@@ -11,24 +11,27 @@ export default function NavbarBrand({ onClick }: NavbarBrandProps) {
       href="/"
       onClick={onClick}
       aria-label="Sattar Web Studio home"
-      className="group inline-flex min-h-11 shrink-0 items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-500"
+      className="group inline-flex min-h-11 shrink-0 items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-400"
     >
-      <span
+      <div
         aria-hidden="true"
-        className="flex h-11 items-center justify-center bg-navy-950 px-3 py-2 shadow-sm    transition-transform duration-200 group-hover:scale-105 rounded-xl"
+        className="flex h-11 items-center justify-center rounded-xl bg-gradient-to-br from-navy-900 to-navy-950 px-3 py-1.5 shadow-md ring-1 ring-white/10 transition-transform duration-200 group-hover:scale-105 group-hover:ring-emerald-500/30"
       >
         <Image
-          src="/images/logo.png"
+          src="/images/logo-mark.png"
           alt="Sattar Web Studio Logo"
-          width={40}
+          width={76}
           height={28}
-          className="h-20 w-auto object-cover"
+          className="h-7 w-auto object-contain"
           priority
         />
-      </span>
+      </div>
 
-      
-     
+      <span className="flex flex-col">
+        <span className="text-base font-extrabold leading-tight tracking-tight text-white sm:text-lg">
+          Sattar <span className="text-emerald-brand-400">Web Studio</span>
+        </span>
+      </span>
     </Link>
   );
 }

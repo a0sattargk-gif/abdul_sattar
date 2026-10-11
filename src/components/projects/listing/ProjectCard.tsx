@@ -2,8 +2,7 @@ import Link from "next/link";
 import { PrismicNextImage } from "@prismicio/next";
 import { ArrowRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import Card3D from "@/components/3d/Card3D";
 import { Button } from "@/components/ui/button";
 import type { ProjectDocument } from "../../../../prismicio-types";
 
@@ -22,11 +21,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     : project.data.hero_banner;
 
   return (
-    <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-cool-gray-300 bg-white shadow-brand-sm transition duration-300 hover:-translate-y-1 hover:border-navy-950 hover:shadow-brand-lg">
+    <Card3D className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0b1120]/80 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/40 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)]">
       <Link
         href={`/projects/${project.uid}`}
         aria-label={`View ${title} case study`}
-        className="relative block aspect-[16/10] overflow-hidden bg-navy-900"
+        className="relative block aspect-[16/10] overflow-hidden bg-[#030712]"
       >
         {imageField?.url ? (
           <>
@@ -34,17 +33,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               field={imageField}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-top transition duration-500 group-hover:scale-105"
+              className="object-cover object-top transition duration-700 ease-out group-hover:scale-105"
               fallbackAlt=""
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1120] via-transparent to-transparent opacity-80"
             />
           </>
         ) : (
-          <div className="grid size-full place-items-center bg-navy-900">
-            <span className="text-sm font-semibold text-cool-gray-300">
+          <div className="grid size-full place-items-center bg-[#0b1120]">
+            <span className="text-sm font-semibold text-slate-300">
               Project preview
             </span>
           </div>
@@ -52,38 +51,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {project.data.status && (
           <div className="absolute bottom-4 left-4 z-20">
-            <Badge
-              variant="navyMuted"
-              className="border-white/20 bg-navy-950/85 backdrop-blur text-cool-gray-100"
-            >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
               {project.data.status}
-            </Badge>
+            </span>
           </div>
         )}
       </Link>
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         {project.data.industry && (
-          <div className="mb-2">
-            <Badge
-              variant="emerald"
-              className="text-[10px] uppercase tracking-wider"
-            >
+          <div className="mb-3">
+            <span className="inline-flex items-center rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-semibold tracking-wider uppercase text-emerald-400">
               {project.data.industry}
-            </Badge>
+            </span>
           </div>
         )}
 
-        <h2 className="text-2xl font-extrabold tracking-tight text-navy-900">
+        <h2 className="text-2xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-emerald-400">
           <Link
             href={`/projects/${project.uid}`}
-            className="rounded-md transition-colors hover:text-emerald-brand-700"
+            className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           >
             {title}
           </Link>
         </h2>
 
-        <p className="mt-3 line-clamp-3 text-sm leading-7 text-cool-gray-700">
+        <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-200">
           {description}
         </p>
 
@@ -91,7 +85,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <Button
             asChild
             variant="ghost"
-            className="group/link -ml-4 px-4 font-bold text-emerald-brand-700 hover:text-emerald-brand-800 hover:bg-emerald-brand-50/50"
+            className="group/link -ml-4 px-4 font-semibold text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10"
           >
             <Link href={`/projects/${project.uid}`}>
               View Case Study
@@ -100,6 +94,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </Button>
         </div>
       </div>
-    </Card>
+    </Card3D>
   );
 }

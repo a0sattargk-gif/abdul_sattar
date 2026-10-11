@@ -11,8 +11,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-950 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+    <footer className="relative overflow-hidden border-t border-white/[0.08] bg-[#030712]/90 text-white backdrop-blur-xl">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+      <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 size-96 rounded-full bg-emerald-500/5 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr_1fr]">
           <FooterBrand />
 
@@ -30,7 +32,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-            <p className="text-sm text-cool-gray-400">
+            <p className="text-sm text-slate-300">
               © {currentYear} Sattar Web Studio. All rights reserved.
             </p>
 
@@ -43,7 +45,7 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-md text-sm text-cool-gray-400 transition-colors duration-200 hover:text-emerald-brand-400"
+                        className="rounded-md text-sm text-slate-300 transition-colors duration-200 hover:text-emerald-brand-400"
                       >
                         {link.label}
 
@@ -52,7 +54,7 @@ export default function Footer() {
                     ) : (
                       <Link
                         href={link.href}
-                        className="rounded-md text-sm text-cool-gray-400 transition-colors duration-200 hover:text-emerald-brand-400"
+                        className="rounded-md text-sm text-slate-300 transition-colors duration-200 hover:text-emerald-brand-400"
                       >
                         {link.label}
                       </Link>
@@ -63,7 +65,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          <p className="mt-5 text-xs leading-6 text-cool-gray-500">
+          <p className="mt-5 text-xs leading-6 text-slate-400">
             Designed and developed with scalability, high performance,
             maintainability, and modern engineering standards.
           </p>

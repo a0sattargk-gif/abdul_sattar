@@ -13,7 +13,7 @@ export default async function SelectedWorkSection() {
   return (
     <section
       aria-labelledby="selected-work-heading"
-      className="border-b border-cool-gray-200 bg-white"
+      className="relative border-b border-white/[0.08] bg-transparent"
     >
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <SelectedWorkHeader />

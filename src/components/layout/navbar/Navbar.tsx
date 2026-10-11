@@ -87,7 +87,7 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cool-gray-200 bg-cool-gray-50/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#030712]/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
       <nav aria-label="Main navigation">
         <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <NavbarBrand onClick={closeMobileMenu} />

@@ -17,7 +17,7 @@ export default function BlogImage({ slice }: BlogImageProps) {
       data-slice-variation={slice.variation}
       className="my-8 sm:my-10"
     >
-      <div className="relative overflow-hidden rounded-2xl border border-cool-gray-200 bg-cool-gray-100 shadow-sm">
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/60 shadow-xl">
         <PrismicNextImage
           field={slice.primary.image}
           width={1600}
@@ -28,7 +28,7 @@ export default function BlogImage({ slice }: BlogImageProps) {
         />
       </div>
       {altText && (
-        <figcaption className="mt-2.5 text-center text-xs text-cool-gray-500">
+        <figcaption className="mt-2.5 text-center text-xs font-medium text-slate-300">
           {altText}
         </figcaption>
       )}

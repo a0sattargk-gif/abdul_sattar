@@ -36,7 +36,6 @@ export default function BlogHero({ slice, context }: BlogHeroProps) {
 
 function ArticleAuthorMeta({
   post,
-  light = false,
 }: {
   post?: BlogPostDocument;
   light?: boolean;
@@ -52,7 +51,7 @@ function ArticleAuthorMeta({
 
   return (
     <div className="flex items-center gap-3 text-left">
-      <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-full border border-emerald-brand-500/30">
+      <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-full border border-emerald-500/30 shadow-[0_0_12px_rgba(16,185,129,0.2)]">
         <Image
           src="/images/abdul-sattar.webp"
           alt={authorName}
@@ -62,20 +61,10 @@ function ArticleAuthorMeta({
         />
       </div>
       <div>
-        <p
-          className={[
-            "text-sm font-bold",
-            light ? "text-white" : "text-navy-950",
-          ].join(" ")}
-        >
+        <p className="text-sm font-bold text-white">
           {authorName}
         </p>
-        <div
-          className={[
-            "flex items-center gap-2 text-xs",
-            light ? "text-cool-gray-300" : "text-cool-gray-500",
-          ].join(" ")}
-        >
+        <div className="flex items-center gap-2 text-xs text-slate-300">
           <span>Full-Stack Engineer</span>
           {publishedDate && (
             <>
@@ -104,20 +93,20 @@ function ThumbnailHero({
   const readingTime = post?.data?.reading_time;
 
   return (
-    <header className="border-b border-cool-gray-200 bg-gradient-to-b from-navy-50/70 via-white to-white pt-8 pb-12 sm:pt-12 sm:pb-16">
+    <header className="border-b border-white/10 bg-transparent pt-8 pb-12 sm:pt-12 sm:pb-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <BlogBreadcrumbs category={category} title={title} />
 
         <div className="mt-4 flex flex-wrap items-center gap-2.5">
           {category && (
-            <span className="inline-flex items-center rounded-full border border-emerald-brand-200 bg-emerald-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-brand-800">
+            <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400">
               {category}
             </span>
           )}
           {readingTime && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-cool-gray-200 bg-white px-3 py-1 text-xs font-medium text-cool-gray-600 shadow-2xs">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200">
               <svg
-                className="w-3.5 h-3.5 text-cool-gray-400"
+                className="w-3.5 h-3.5 text-emerald-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -134,22 +123,22 @@ function ThumbnailHero({
           )}
         </div>
 
-        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl lg:text-5xl leading-tight sm:leading-tight">
+        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight sm:leading-tight">
           {title}
         </h1>
 
         {description && (
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-cool-gray-700 sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg sm:leading-8">
             {description}
           </p>
         )}
 
-        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-cool-gray-200 pt-6">
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-white/10 pt-6">
           <ArticleAuthorMeta post={post} />
           <BlogShareBar title={title} />
         </div>
 
-        <div className="relative mt-8 sm:mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-cool-gray-200 bg-navy-900 shadow-md">
+        <div className="relative mt-8 sm:mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-black/60 shadow-2xl">
           <PrismicNextImage
             field={slice.primary.hero_image}
             fill
@@ -177,7 +166,7 @@ function BackgroundImageHero({
   const readingTime = post?.data?.reading_time;
 
   return (
-    <header className="relative min-h-[500px] overflow-hidden bg-navy-950 py-16 sm:py-20 lg:py-24">
+    <header className="relative min-h-[500px] overflow-hidden bg-transparent py-16 sm:py-20 lg:py-24">
       <PrismicNextImage
         field={slice.primary.background_image}
         fill
@@ -188,7 +177,7 @@ function BackgroundImageHero({
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/80 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent"
       />
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -196,14 +185,14 @@ function BackgroundImageHero({
 
         <div className="mt-4 flex flex-wrap items-center gap-2.5">
           {category && (
-            <span className="inline-flex items-center rounded-full border border-emerald-brand-400/30 bg-emerald-brand-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-brand-300">
+            <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400">
               {category}
             </span>
           )}
           {readingTime && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-cool-gray-300">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200">
               <svg
-                className="w-3.5 h-3.5 text-cool-gray-400"
+                className="w-3.5 h-3.5 text-emerald-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -225,13 +214,13 @@ function BackgroundImageHero({
         </h1>
 
         {description && (
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-cool-gray-200 sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg sm:leading-8">
             {description}
           </p>
         )}
 
-        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-white/15 pt-6">
-          <ArticleAuthorMeta post={post} light />
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-white/10 pt-6">
+          <ArticleAuthorMeta post={post} />
           <BlogShareBar title={title} />
         </div>
       </div>
@@ -252,20 +241,20 @@ function SimpleHero({
   const readingTime = post?.data?.reading_time;
 
   return (
-    <header className="border-b border-cool-gray-200 bg-gradient-to-b from-navy-50/70 via-white to-white pt-8 pb-12 sm:pt-12 sm:pb-16">
+    <header className="border-b border-white/10 bg-transparent pt-8 pb-12 sm:pt-12 sm:pb-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <BlogBreadcrumbs category={category} title={title} />
 
         <div className="mt-4 flex flex-wrap items-center gap-2.5">
           {category && (
-            <span className="inline-flex items-center rounded-full border border-emerald-brand-200 bg-emerald-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-brand-800">
+            <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400">
               {category}
             </span>
           )}
           {readingTime && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-cool-gray-200 bg-white px-3 py-1 text-xs font-medium text-cool-gray-600 shadow-2xs">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200">
               <svg
-                className="w-3.5 h-3.5 text-cool-gray-400"
+                className="w-3.5 h-3.5 text-emerald-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -282,17 +271,17 @@ function SimpleHero({
           )}
         </div>
 
-        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl lg:text-5xl leading-tight sm:leading-tight">
+        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight sm:leading-tight">
           {title}
         </h1>
 
         {description && (
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-cool-gray-700 sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg sm:leading-8">
             {description}
           </p>
         )}
 
-        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-cool-gray-200 pt-6">
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-t border-white/10 pt-6">
           <ArticleAuthorMeta post={post} />
           <BlogShareBar title={title} />
         </div>

@@ -18,7 +18,7 @@ export default function ContactPage() {
 
       <section
         aria-label="Contact form and project information"
-        className="bg-cool-gray-50 py-16 sm:py-20 lg:py-24"
+        className="relative py-16 sm:py-20 lg:py-24"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:px-8">
           <ContactDetails />

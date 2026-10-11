@@ -10,33 +10,9 @@ interface ServicePricingProps {
 
 const darkFeatureComponents: JSXMapSerializer = {
   listItem: ({ children }) => (
-    <li className="flex items-start gap-3 text-sm leading-relaxed text-cool-gray-200">
+    <li className="flex items-start gap-3 text-sm leading-relaxed text-slate-200">
       <svg
-        className="mt-1 size-4 shrink-0 text-emerald-brand-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.5 12.75l6 6 9-13.5"
-        />
-      </svg>
-      <span>{children}</span>
-    </li>
-  ),
-  list: ({ children }) => <ul className="space-y-3">{children}</ul>,
-  paragraph: ({ children }) => <p className="inline">{children}</p>,
-};
-
-const lightFeatureComponents: JSXMapSerializer = {
-  listItem: ({ children }) => (
-    <li className="flex items-start gap-3 text-sm leading-relaxed text-cool-gray-700">
-      <svg
-        className="mt-1 size-4 shrink-0 text-emerald-brand-600"
+        className="mt-1 size-4 shrink-0 text-emerald-400"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -58,13 +34,7 @@ const lightFeatureComponents: JSXMapSerializer = {
 
 const darkDescComponents: JSXMapSerializer = {
   paragraph: ({ children }) => (
-    <p className="mt-2 text-sm leading-relaxed text-cool-gray-300">{children}</p>
-  ),
-};
-
-const lightDescComponents: JSXMapSerializer = {
-  paragraph: ({ children }) => (
-    <p className="mt-2 text-sm leading-relaxed text-cool-gray-600">{children}</p>
+    <p className="mt-2 text-sm leading-relaxed text-slate-300">{children}</p>
   ),
 };
 
@@ -88,23 +58,23 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
     <section
       id="pricing"
       aria-labelledby="service-pricing-heading"
-      className="border-b border-cool-gray-200/70 bg-cool-gray-50/70 py-16 sm:py-24"
+      className="border-b border-white/[0.08] bg-[#030712]/50 py-16 backdrop-blur-md sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-brand-600/20 bg-emerald-brand-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-brand-800">
-            <span className="size-1.5 rounded-full bg-emerald-brand-600" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
+            <span className="size-1.5 rounded-full bg-emerald-400" />
             Transparent Pricing
           </div>
 
           <h2
             id="service-pricing-heading"
-            className="mt-4 text-2xl font-extrabold tracking-tight text-navy-950 sm:text-3xl lg:text-4xl"
+            className="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl"
           >
             Predictable Investment, Real Impact
           </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-cool-gray-700 sm:text-base">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
             Choose the engagement model that matches your current product stage.
             All tiers feature direct senior execution with zero agency overhead.
           </p>
@@ -119,14 +89,14 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
               <article
                 key={`${plan.plan_name}-${index}`}
                 className={[
-                  "relative flex flex-col justify-between rounded-3xl p-7 transition duration-200 sm:p-8",
+                  "relative flex flex-col justify-between rounded-3xl p-7 backdrop-blur-xl transition duration-300 sm:p-8",
                   isFeatured
-                    ? "z-10 border-2 border-emerald-brand-400 bg-navy-950 text-white shadow-brand-lg"
-                    : "border border-cool-gray-200 bg-white text-navy-900 shadow-brand-sm hover:border-cool-gray-300 hover:shadow-brand-md",
+                    ? "z-10 border-2 border-emerald-400 bg-[#0b1120]/95 text-white shadow-[0_0_35px_rgba(16,185,129,0.2)]"
+                    : "border border-white/10 bg-[#0b1120]/80 text-white shadow-2xl hover:border-white/20",
                 ].join(" ")}
               >
                 {isFeatured && (
-                  <span className="absolute -top-3.5 right-6 rounded-full bg-emerald-brand-500 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-navy-950 shadow-md">
+                  <span className="absolute -top-3.5 right-6 rounded-full bg-emerald-400 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-black shadow-lg">
                     Recommended
                   </span>
                 )}
@@ -135,12 +105,7 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
                   <div className="flex items-start justify-between">
                     <div>
                       {plan.plan_name && (
-                        <h3
-                          className={[
-                            "text-xl font-extrabold tracking-tight sm:text-2xl",
-                            isFeatured ? "text-white" : "text-navy-950",
-                          ].join(" ")}
-                        >
+                        <h3 className="text-xl font-extrabold tracking-tight text-white sm:text-2xl">
                           {plan.plan_name}
                         </h3>
                       )}
@@ -150,8 +115,8 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
                           className={[
                             "mt-1 text-xs font-semibold uppercase tracking-wider",
                             isFeatured
-                              ? "text-cool-gray-400"
-                              : "text-cool-gray-500",
+                              ? "text-slate-300"
+                              : "text-slate-400",
                           ].join(" ")}
                         >
                           Typical delivery: {plan.timeline}
@@ -163,9 +128,7 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
                   {plan.plan_description && (
                     <PrismicRichText
                       field={plan.plan_description}
-                      components={
-                        isFeatured ? darkDescComponents : lightDescComponents
-                      }
+                      components={darkDescComponents}
                     />
                   )}
 
@@ -173,46 +136,20 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
                     {hasCustomPrice ? (
                       <div>
                         <p
-                          className={[
-                            "text-3xl font-extrabold tracking-tight sm:text-4xl",
-                            isFeatured
-                              ? "text-emerald-brand-300"
-                              : "text-navy-950",
-                          ].join(" ")}
+                          className="text-3xl font-extrabold tracking-tight sm:text-4xl text-emerald-400"
                         >
                           Custom Scope
                         </p>
-                        <p
-                          className={[
-                            "mt-1 text-xs font-medium",
-                            isFeatured
-                              ? "text-cool-gray-400"
-                              : "text-cool-gray-500",
-                          ].join(" ")}
-                        >
+                        <p className="mt-1 text-xs font-medium text-slate-300">
                           Tailored quote based on your exact requirements
                         </p>
                       </div>
                     ) : (
                       <div>
-                        <p
-                          className={[
-                            "text-3xl font-extrabold tracking-tight sm:text-4xl",
-                            isFeatured
-                              ? "text-emerald-brand-300"
-                              : "text-navy-950",
-                          ].join(" ")}
-                        >
+                        <p className="text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
                           {plan.price}
                         </p>
-                        <p
-                          className={[
-                            "mt-1 text-xs font-medium",
-                            isFeatured
-                              ? "text-cool-gray-400"
-                              : "text-cool-gray-500",
-                          ].join(" ")}
-                        >
+                        <p className="mt-1 text-xs font-medium text-slate-300">
                           Fixed-price milestone engagement
                         </p>
                       </div>
@@ -220,35 +157,26 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
                   </div>
 
                   <div className="mt-6">
-                    <p
-                      className={[
-                        "text-xs font-bold uppercase tracking-wider mb-4",
-                        isFeatured ? "text-cool-gray-300" : "text-navy-900",
-                      ].join(" ")}
-                    >
+                    <p className="text-xs font-bold uppercase tracking-wider mb-4 text-emerald-400">
                       Included in this tier:
                     </p>
 
                     <PrismicRichText
                       field={plan.features}
-                      components={
-                        isFeatured
-                          ? darkFeatureComponents
-                          : lightFeatureComponents
-                      }
+                      components={darkFeatureComponents}
                     />
                   </div>
                 </div>
 
-                <div className="mt-8 border-t pt-6">
+                <div className="mt-8 border-t border-white/10 pt-6">
                   {plan.button && plan.button.link_type !== "Any" ? (
                     <PrismicNextLink
                       field={plan.button}
                       className={[
-                        "inline-flex min-h-12 w-full items-center justify-center rounded-xl px-5 py-3.5 text-sm font-extrabold transition shadow-sm",
+                        "inline-flex min-h-12 w-full items-center justify-center rounded-xl px-5 py-3.5 text-sm font-extrabold transition duration-200",
                         isFeatured
-                          ? "bg-emerald-brand-500 text-navy-950 hover:bg-emerald-brand-400 hover:shadow-brand-md"
-                          : "bg-navy-900 text-white hover:bg-navy-800",
+                          ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)]"
+                          : "border border-white/15 bg-white/[0.04] text-white hover:border-white/30 hover:bg-white/10",
                       ].join(" ")}
                     >
                       Choose This Plan →
@@ -257,10 +185,10 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
                     <Link
                       href="/contact"
                       className={[
-                        "inline-flex min-h-12 w-full items-center justify-center rounded-xl px-5 py-3.5 text-sm font-extrabold transition shadow-sm",
+                        "inline-flex min-h-12 w-full items-center justify-center rounded-xl px-5 py-3.5 text-sm font-extrabold transition duration-200",
                         isFeatured
-                          ? "bg-emerald-brand-500 text-navy-950 hover:bg-emerald-brand-400 hover:shadow-brand-md"
-                          : "bg-navy-900 text-white hover:bg-navy-800",
+                          ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)]"
+                          : "border border-white/15 bg-white/[0.04] text-white hover:border-white/30 hover:bg-white/10",
                       ].join(" ")}
                     >
                       Choose This Plan →
@@ -273,7 +201,7 @@ export default function ServicePricing({ plans }: ServicePricingProps) {
         </div>
 
         {/* Pricing assurance footnotes */}
-        <div className="mt-12 text-center text-xs text-cool-gray-500 max-w-2xl mx-auto">
+        <div className="mt-12 text-center text-xs text-slate-400 max-w-2xl mx-auto">
           <p>
             ✓ 100% code ownership &amp; clean Git history &nbsp;•&nbsp; ✓ Direct
             senior developer communication &nbsp;•&nbsp; ✓ Comprehensive

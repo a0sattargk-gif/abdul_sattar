@@ -4,26 +4,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-brand-500 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-navy-900 text-white shadow-sm hover:bg-navy-800 hover:shadow-md active:scale-[0.98]",
+          "bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-bold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/35 hover:brightness-110 active:scale-[0.98]",
         destructive:
-          "bg-red-600 text-white shadow-sm hover:bg-red-500 active:scale-[0.98]",
+          "bg-rose-600 text-white shadow-sm hover:bg-rose-500 active:scale-[0.98]",
         outline:
-          "border border-cool-gray-300 bg-white text-navy-950 shadow-sm hover:bg-cool-gray-50 hover:border-cool-gray-400 active:scale-[0.98]",
+          "border border-white/15 bg-white/[0.04] text-white shadow-sm backdrop-blur-md hover:border-white/30 hover:bg-white/10 active:scale-[0.98]",
         secondary:
-          "bg-cool-gray-100 text-navy-900 shadow-sm hover:bg-cool-gray-200 active:scale-[0.98]",
+          "border border-white/10 bg-[#0b1120] text-slate-200 hover:border-emerald-500/30 hover:bg-[#0f172a] hover:text-white active:scale-[0.98]",
         ghost:
-          "text-navy-800 hover:bg-cool-gray-100 hover:text-navy-950",
+          "text-slate-200 hover:bg-white/[0.08] hover:text-white",
         link:
-          "text-emerald-brand-700 underline-offset-4 hover:underline",
+          "text-emerald-400 underline-offset-4 hover:underline hover:text-emerald-300",
         emerald:
-          "bg-emerald-brand-500 text-navy-950 font-bold shadow-md shadow-emerald-brand-500/20 hover:bg-emerald-brand-400 hover:shadow-lg hover:shadow-emerald-brand-500/25 active:scale-[0.98]",
+          "bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-bold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:brightness-110 active:scale-[0.98]",
         emeraldOutline:
-          "border-2 border-emerald-brand-500 text-emerald-brand-700 bg-emerald-brand-50/50 hover:bg-emerald-brand-500 hover:text-navy-950 font-semibold active:scale-[0.98]",
+          "border border-emerald-500/40 text-emerald-400 bg-emerald-500/10 hover:border-emerald-500 hover:bg-emerald-500/20 hover:text-emerald-300 font-semibold active:scale-[0.98]",
       },
       size: {
         default: "h-11 px-5 py-2.5",

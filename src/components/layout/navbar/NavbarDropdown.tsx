@@ -68,10 +68,10 @@ export default function NavbarDropdown({
         onClick={onToggle}
         onKeyDown={handleButtonKeyDown}
         className={[
-          "relative inline-flex min-h-11 items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold transition-colors duration-200",
+          "relative inline-flex min-h-11 items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors duration-200",
           isActive
-            ? "text-emerald-brand-700"
-            : "text-navy-700 hover:bg-cool-gray-100 hover:text-navy-900",
+            ? "text-emerald-brand-400 font-semibold"
+            : "text-slate-300 hover:bg-white/[0.06] hover:text-white",
         ].join(" ")}
       >
         <span>{item.label}</span>
@@ -81,7 +81,7 @@ export default function NavbarDropdown({
         {isActive && (
           <span
             aria-hidden="true"
-            className="absolute inset-x-3 -bottom-[19px] h-0.5 rounded-full bg-emerald-brand-500"
+            className="absolute inset-x-3 -bottom-[19px] h-0.5 rounded-full bg-emerald-brand-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]"
           />
         )}
       </button>
@@ -90,13 +90,13 @@ export default function NavbarDropdown({
         <div
           id={menuId}
           onKeyDown={handleMenuKeyDown}
-          className="absolute left-1/2 top-full z-50 mt-4 w-80 -translate-x-1/2 rounded-2xl border border-cool-gray-200 bg-white p-2 shadow-xl"
+          className="absolute left-1/2 top-full z-50 mt-4 w-80 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#0b1120]/95 p-2.5 shadow-[0_25px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl ring-1 ring-white/10"
         >
           {item.href && (
             <Link
               href={item.href}
               onClick={onClose}
-              className="mb-2 flex min-h-12 items-center justify-between rounded-xl bg-navy-900 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-navy-800"
+              className="mb-2 flex min-h-12 items-center justify-between rounded-xl bg-emerald-500 px-4 py-3 text-sm font-bold text-navy-950 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-colors hover:bg-emerald-400"
             >
               <span>View all {item.label}</span>
 
@@ -118,16 +118,16 @@ export default function NavbarDropdown({
                     className={[
                       "block rounded-xl px-4 py-3 transition-colors duration-200",
                       isItemActive
-                        ? "bg-emerald-brand-500/10"
-                        : "hover:bg-cool-gray-100",
+                        ? "bg-emerald-brand-500/15"
+                        : "hover:bg-white/[0.06]",
                     ].join(" ")}
                   >
-                    <span className="block text-sm font-bold text-navy-900">
+                    <span className="block text-sm font-bold text-white">
                       {dropdownItem.label}
                     </span>
 
                     {dropdownItem.description && (
-                      <span className="mt-1 block text-xs leading-5 text-cool-gray-600">
+                      <span className="mt-1 block text-xs leading-5 text-slate-300">
                         {dropdownItem.description}
                       </span>
                     )}

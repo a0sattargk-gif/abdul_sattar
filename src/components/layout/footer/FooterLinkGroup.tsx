@@ -24,7 +24,7 @@ export default function FooterLinkGroup({ group }: FooterLinkGroupProps) {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-md text-sm text-cool-gray-400 transition-colors duration-200 hover:text-emerald-brand-400"
+                className="inline-flex rounded-md text-sm text-slate-300 transition-colors duration-200 hover:text-emerald-brand-400"
               >
                 {link.label}
 
@@ -33,7 +33,7 @@ export default function FooterLinkGroup({ group }: FooterLinkGroupProps) {
             ) : (
               <Link
                 href={link.href}
-                className="inline-flex rounded-md text-sm text-cool-gray-400 transition-colors duration-200 hover:text-emerald-brand-400"
+                className="inline-flex rounded-md text-sm text-slate-300 transition-colors duration-200 hover:text-emerald-brand-400"
               >
                 {link.label}
               </Link>

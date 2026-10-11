@@ -15,24 +15,24 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
   return (
     <section
       aria-labelledby="service-heading"
-      className="relative overflow-hidden bg-navy-900 py-14 sm:py-20 lg:py-24"
+      className="relative overflow-hidden border-b border-white/[0.08] bg-[#030712]/60 py-14 backdrop-blur-md sm:py-20 lg:py-24"
     >
       {/* Background glow & subtle grid */}
-      <div aria-hidden="true" className="absolute inset-0">
-        <div className="absolute -left-28 -top-28 size-96 rounded-full bg-emerald-brand-500/10 blur-3xl" />
-        <div className="absolute right-0 bottom-0 size-96 rounded-full bg-emerald-brand-400/10 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-28 -top-28 size-96 rounded-full bg-emerald-500/10 blur-3xl" />
+        <div className="absolute right-0 bottom-0 size-96 rounded-full bg-cyan-500/10 blur-3xl" />
       </div>
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(rgba(203,213,225,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(203,213,225,0.04)_1px,transparent_1px)] bg-[size:48px_48px]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px]"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumbs"
-          className="mb-8 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm text-cool-gray-300"
+          className="mb-8 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm text-slate-300"
         >
           <div className="flex items-center gap-2">
             <Link
@@ -41,7 +41,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
             >
               Home
             </Link>
-            <span aria-hidden="true" className="text-cool-gray-600">
+            <span aria-hidden="true" className="text-slate-400">
               /
             </span>
             <Link
@@ -50,7 +50,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
             >
               Services
             </Link>
-            <span aria-hidden="true" className="text-cool-gray-600">
+            <span aria-hidden="true" className="text-slate-400">
               /
             </span>
             <span className="font-medium text-white">{title}</span>
@@ -105,7 +105,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
             </h1>
 
             {service.data.short_description && (
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-cool-gray-200 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
                 {service.data.short_description}
               </p>
             )}
@@ -114,7 +114,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
             <dl className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {service.data.typical_timeline && (
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xs transition hover:border-white/20">
-                  <dt className="flex items-center gap-1.5 text-xs font-medium text-cool-gray-300">
+                  <dt className="flex items-center gap-1.5 text-xs font-medium text-slate-300">
                     <svg
                       className="h-3.5 w-3.5 text-emerald-brand-400"
                       fill="none"
@@ -138,7 +138,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
 
               {service.data.delivery_model && (
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xs transition hover:border-white/20">
-                  <dt className="flex items-center gap-1.5 text-xs font-medium text-cool-gray-300">
+                  <dt className="flex items-center gap-1.5 text-xs font-medium text-slate-300">
                     <svg
                       className="h-3.5 w-3.5 text-emerald-brand-400"
                       fill="none"
@@ -162,7 +162,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
 
               {service.data.starting_price && (
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xs transition hover:border-white/20">
-                  <dt className="flex items-center gap-1.5 text-xs font-medium text-cool-gray-300">
+                  <dt className="flex items-center gap-1.5 text-xs font-medium text-slate-300">
                     <svg
                       className="h-3.5 w-3.5 text-emerald-brand-400"
                       fill="none"

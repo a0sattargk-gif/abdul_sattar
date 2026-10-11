@@ -38,7 +38,7 @@ export default function NavbarLink({
       {variant === "desktop" && isActive && (
         <span
           aria-hidden="true"
-          className="absolute inset-x-3 -bottom-[19px] h-0.5 rounded-full bg-emerald-brand-500"
+          className="absolute inset-x-3 -bottom-[19px] h-0.5 rounded-full bg-emerald-brand-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]"
         />
       )}
     </Link>
@@ -50,15 +50,15 @@ function getNavbarLinkClasses(
   isActive: boolean,
 ): string {
   const baseClasses =
-    "relative inline-flex items-center rounded-lg font-semibold transition-colors duration-200";
+    "relative inline-flex items-center rounded-lg font-medium transition-all duration-200";
 
   if (variant === "mobile") {
     return [
       baseClasses,
       "min-h-12 w-full px-4 py-3 text-base",
       isActive
-        ? "bg-emerald-brand-500/10 text-emerald-brand-700"
-        : "text-navy-700 hover:bg-cool-gray-100 hover:text-navy-900",
+        ? "bg-emerald-brand-500/15 text-emerald-brand-400 font-semibold"
+        : "text-slate-300 hover:bg-white/[0.06] hover:text-white",
     ].join(" ");
   }
 
@@ -67,16 +67,16 @@ function getNavbarLinkClasses(
       baseClasses,
       "min-h-12 w-full px-4 py-3 text-sm",
       isActive
-        ? "bg-emerald-brand-500/10 text-emerald-brand-700"
-        : "text-navy-700 hover:bg-cool-gray-100 hover:text-navy-900",
+        ? "bg-emerald-brand-500/15 text-emerald-brand-400 font-semibold"
+        : "text-slate-300 hover:bg-white/[0.06] hover:text-white",
     ].join(" ");
   }
 
   return [
     baseClasses,
-    "min-h-11 px-3 py-2 text-sm",
+    "min-h-11 px-3.5 py-2 text-sm",
     isActive
-      ? "text-emerald-brand-700"
-      : "text-navy-700 hover:bg-cool-gray-100 hover:text-navy-900",
+      ? "text-emerald-brand-400 font-semibold"
+      : "text-slate-300 hover:bg-white/[0.06] hover:text-white",
   ].join(" ");
 }
