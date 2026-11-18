@@ -11,12 +11,12 @@ export const ABOUT_CTA_CONTENT: AboutCTAContent = {
   primaryAction: {
     label: "Discuss a Project",
     href: "/contact",
-    ariaLabel: "Contact me to discuss a software project",
+    ariaLabel: "Contact Sattar Web Studio to discuss a software project",
   },
 
   secondaryAction: {
-    label: "View My Projects",
+    label: "View Selected Work",
     href: "/projects",
-    ariaLabel: "View my software development projects",
+    ariaLabel: "View selected software development projects",
   },
 };

@@ -1,58 +1,58 @@
 import type { CareerJourneyContent } from "@/types/about";
 
 export const ABOUT_CAREER_JOURNEY: CareerJourneyContent = {
-  eyebrow: "Experience & Evolution",
-  title: "A journey defined by craftsmanship and continuous growth",
+  eyebrow: "Our Evolution & Delivery Framework",
+  title: "Engineering evolution backed by proven production systems",
   description:
-    "From specialized frontend component engineering to architecting complete, distributed full-stack applications with end-to-end accountability.",
+    "How Sattar Web Studio grew from specialized frontend engineering into a full-cycle software agency delivering mission-critical applications globally.",
 
   items: [
     {
       id: "frontend-focus",
-      period: "Phase 01",
-      title: "Modern Frontend Engineering",
-      role: "Frontend Engineer",
+      period: "Domain 01",
+      title: "Design Systems & High-Velocity Frontend",
+      role: "Frontend & UX Engineering",
       description:
-        "Focused on building responsive, performant user interfaces, state management systems, and reusable design tokens with React, Next.js, and TypeScript.",
+        "Building responsive, pixel-perfect user interfaces, fluid design token systems, and sub-second web experiences with React, Next.js, and TypeScript.",
       icon: "foundation",
       highlights: [
         "Component-driven UI architecture with Next.js App Router & React 19",
-        "Responsive, fluid layouts and client-side performance optimization",
+        "Accessible, high-contrast interfaces adhering strictly to WCAG guidelines",
         "Sub-second load times and Core Web Vitals performance tuning",
       ],
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "State Management"],
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Design Systems"],
       order: 1,
     },
     {
       id: "fullstack-systems",
-      period: "Phase 02",
-      title: "Backend Services & Distributed APIs",
-      role: "Full-Stack Engineer",
+      period: "Domain 02",
+      title: "Backend Microservices & Distributed APIs",
+      role: "Backend & Cloud Architecture",
       description:
-        "Expanded into scalable backend systems, database modeling, and contract-driven API design. Engineered resilient REST & GraphQL services with robust error boundaries.",
+        "Engineering high-throughput backend services, relational database structures, and contract-driven API endpoints with resilient error boundaries.",
       icon: "professional",
       highlights: [
         "Modular backend architecture with Node.js, NestJS, and .NET",
         "Relational schema design, query tuning, and caching with PostgreSQL & Redis",
-        "Secure authentication, role-based access control, and webhook integrations",
+        "Enterprise authentication, RBAC, webhooks, and third-party integrations",
       ],
       technologies: ["Node.js", "NestJS", ".NET", "PostgreSQL", "Redis", "REST/GraphQL"],
       order: 2,
     },
     {
       id: "studio-ownership",
-      period: "Phase 03",
-      title: "Sattar Web Studio & Product Leadership",
-      role: "Lead Full-Stack Developer",
+      period: "Domain 03",
+      title: "Full-Cycle Product Engineering & Cloud DevOps",
+      role: "End-to-End Delivery",
       description:
-        "Founding Sattar Web Studio to deliver end-to-end digital solutions for founders and business clients. Overseeing architecture, deployment, and ongoing system resilience.",
+        "Delivering complete digital solutions from technical discovery and cloud infrastructure to automated CI/CD and long-term product evolution.",
       icon: "leadership",
       highlights: [
-        "End-to-end delivery of SaaS platforms, admin portals, and web products",
-        "Zero-downtime CI/CD workflows and serverless cloud setups on Supabase & AWS",
-        "Pragmatic technical consulting helping clients prioritize high-ROI features",
+        "End-to-end delivery of SaaS platforms, client portals, and web applications",
+        "Zero-downtime CI/CD workflows and resilient cloud setups on Supabase & AWS",
+        "Continuous technical advisory helping founders prioritize high-impact features",
       ],
-      technologies: ["Supabase", "AWS", "Microservices", "Docker", "Architecture"],
+      technologies: ["AWS", "Docker", "Supabase", "CI/CD", "System Architecture"],
       order: 3,
     },
   ],

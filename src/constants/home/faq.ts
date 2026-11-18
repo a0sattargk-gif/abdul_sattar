@@ -3,38 +3,38 @@ import type { HomeFAQItem } from "@/types/home";
 export const HOME_FAQS: HomeFAQItem[] = [
   {
     id: "services",
-    question: "What services do you provide?",
+    question: "What services does your agency provide?",
     answer:
-      "I build full-stack web applications, mobile apps, APIs, dashboards, SaaS products, and scalable software systems.",
+      "We provide end-to-end software engineering, including full-stack web platforms, mobile apps, scalable backend APIs, SaaS architectures, UI/UX product design, and cloud DevOps.",
   },
   {
     id: "technologies",
-    question: "Which technologies do you use?",
+    question: "Which technologies does your team use?",
     answer:
-      "I work with React, Next.js, Node.js, NestJS, React Native, Django REST Framework, PostgreSQL, MongoDB, Supabase, and AWS.",
+      "Our engineering stack includes React, Next.js, Node.js, NestJS, TypeScript, React Native, Python/Django, PostgreSQL, Redis, Supabase, Docker, and AWS.",
   },
   {
     id: "existing-projects",
-    question: "Can you work on an existing project?",
+    question: "Can your team work on an existing project or codebase?",
     answer:
-      "Yes, I can add features, fix bugs, improve architecture, integrate APIs, and prepare existing applications for production.",
+      "Yes. We conduct thorough architectural audits, modernize legacy components, optimize performance bottlenecks, resolve technical debt, and build new feature modules seamlessly.",
   },
   {
     id: "mvp",
-    question: "Can you build an MVP or SaaS product?",
+    question: "Can you build an MVP or full-scale SaaS product from scratch?",
     answer:
-      "Yes, I can develop the complete product from architecture and database design through deployment.",
+      "Yes. We guide clients through discovery, technical system design, interactive prototyping, full-stack sprint development, and production launch with continuous integration.",
   },
   {
     id: "deployment",
-    question: "Do you handle deployment?",
+    question: "Do you handle cloud deployment and infrastructure?",
     answer:
-      "Yes, I can deploy applications using AWS, Docker, Linux, Nginx, databases, storage, and CI/CD workflows.",
+      "Yes. Our DevOps engineers configure robust cloud infrastructure using AWS, Docker, Kubernetes, Linux, Nginx, automated CI/CD pipelines, SSL, and enterprise monitoring.",
   },
   {
     id: "collaboration",
-    question: "Do you work with remote clients?",
+    question: "What engagement models do you offer for clients?",
     answer:
-      "Yes, I am available for freelance, contract, remote, and long-term software development projects.",
+      "We partner with clients globally across three engagement models: Dedicated Engineering Pods, Fixed-Scope Sprint Delivery, and Monthly Architecture & Maintenance Retainers.",
   },
 ];

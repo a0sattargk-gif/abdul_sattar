@@ -11,7 +11,7 @@ export const HOME_CTA: CTAContent = {
   primaryAction: {
     label: "Start a Project",
     href: "/contact",
-    ariaLabel: "Contact Abdul Sattar to discuss a software project",
+    ariaLabel: "Contact Sattar Web Studio to discuss a software project",
   },
 
   secondaryAction: {
@@ -21,9 +21,9 @@ export const HOME_CTA: CTAContent = {
   },
 
   trustItems: [
-    "Available for select contracts & projects",
-    "Remote collaboration across timezones",
-    "Full-stack architecture from UI to cloud",
-    "High standards for system design & architecture",
+    "Dedicated cross-functional engineering pods",
+    "Global collaboration across all major timezones",
+    "Full-cycle delivery from system architecture to cloud",
+    "Guaranteed milestones, SLAs, & complete code ownership",
   ],
 };

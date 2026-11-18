@@ -39,8 +39,8 @@ export default async function CapabilitiesSection() {
               </h2>
 
               <p className="mt-5 max-w-md text-base leading-7 text-slate-200">
-                I help turn product requirements into reliable digital
-                experiences across frontend, backend, mobile, and application
+                We turn complex product requirements into reliable digital
+                experiences across frontend, backend, mobile, and scalable cloud
                 architecture.
               </p>
 

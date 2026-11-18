@@ -43,9 +43,9 @@ const QUICK_LINKS = [
     icon: BookOpen,
   },
   {
-    name: "About Me",
+    name: "About Us",
     href: "/about",
-    description: "Background & career stack",
+    description: "Agency stack & methodology",
     icon: User,
   },
 ];
@@ -134,9 +134,9 @@ export default function NotFound() {
                 variant="outline"
                 className="h-12 border-white/20 bg-white/5 px-6 text-sm font-bold text-white hover:border-white/35 hover:bg-white/10 hover:text-white hover:-translate-y-0.5"
               >
-                <Link href="/contact" aria-label="Contact Abdul Sattar">
+                <Link href="/contact" aria-label="Contact Sattar Web Studio">
                   <Send className="size-4" />
-                  <span>Contact Me</span>
+                  <span>Contact Us</span>
                 </Link>
               </Button>
             </div>

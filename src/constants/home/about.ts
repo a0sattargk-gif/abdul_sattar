@@ -1,38 +1,39 @@
 import type { HomeAboutContent } from "@/types/home/about";
 
 export const HOME_ABOUT_CONTENT: HomeAboutContent = {
-  eyebrow: "About",
-  statusText: "Available for projects & roles",
+  eyebrow: "About Our Studio",
+  statusText: "Accepting new client engagements & retainers",
   title: "Engineering dependable software with",
   highlightedText: "architectural precision.",
   brief:
-    "I'm Abdul Sattar, full-stack software engineer and the developer behind Sattar Web Studio. I design and engineer scalable web applications, robust backend APIs, and high-performance digital products built for longevity.",
+    "We are Sattar Web Studio, a full-cycle software engineering agency. Led by founder Abdul Sattar, our team partners with founders, scaling businesses, and product leaders to design, architect, and ship high-performance digital products engineered for long-term scale.",
   stats: [
     {
-      value: "2+",
-      label: "Experience",
-      sublabel: "Professional Delivery",
+      value: "15+",
+      label: "Production Systems",
+      sublabel: "Shipped Worldwide",
     },
     {
-      value: "Full-Stack",
-      label: "Scope",
-      sublabel: "UI, APIs & Systems",
+      value: "Full-Cycle",
+      label: "Engineering Scope",
+      sublabel: "Discovery to Cloud Scale",
     },
     {
-      value: "100%",
-      label: "System Design",
+      value: "99.9%",
+      label: "System Reliability",
       sublabel: "Architecture & Scale",
     },
   ],
   action: {
-    label: "More about me",
+    label: "About Our Studio",
     href: "/about",
-    ariaLabel: "Learn more about Abdul Sattar's full background and experience",
+    ariaLabel: "Learn more about Sattar Web Studio's team, process, and capabilities",
   },
   categories: [
     { key: "all", label: "All Stack" },
     { key: "frontend", label: "Frontend" },
     { key: "backend", label: "Backend" },
+    { key: "cms", label: "CMS & E-Com" },
     { key: "cloud", label: "Data & Cloud" },
     { key: "practices", label: "Architecture" },
   ],
@@ -43,8 +44,9 @@ export const HOME_ABOUT_CONTENT: HomeAboutContent = {
     { name: "Tailwind CSS", category: "frontend", highlight: "Design Tokens & UX" },
     { name: "Node.js", category: "backend", highlight: "Fast Async Runtime" },
     { name: "NestJS", category: "backend", highlight: "Modular Architecture" },
-    { name: ".NET", category: "backend", highlight: "High-Throughput APIs" },
     { name: "REST & GraphQL", category: "backend", highlight: "Clean Contract APIs" },
+    { name: "Shopify", category: "cms", highlight: "Custom Stores & Liquid" },
+    { name: "WordPress", category: "cms", highlight: "Headless & Custom Themes" },
     { name: "PostgreSQL", category: "cloud", highlight: "Relational Schemas" },
     { name: "Supabase", category: "cloud", highlight: "Auth & Storage" },
     { name: "Redis", category: "cloud", highlight: "In-Memory Caching" },

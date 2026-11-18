@@ -1,53 +1,53 @@
 import type { AboutHeroContent } from "@/types/about";
 
 export const ABOUT_HERO_CONTENT: AboutHeroContent = {
-  eyebrow: "About Abdul Sattar",
-  statusBadge: "Available for select contracts & roles",
+  eyebrow: "About Sattar Web Studio",
+  statusBadge: "Accepting new client engagements & partnerships",
 
-  title: "Software engineering with",
-  highlightedText: "craft, rigor, and accountability.",
+  title: "Engineering digital platforms with",
+  highlightedText: "craft, scale, and accountability.",
 
   description:
-    "I’m Abdul Sattar, a full-stack software engineer and the developer behind Sattar Web Studio. I partner with founders, teams, and businesses to build high-performance web applications, resilient backend systems, and scalable digital platforms.",
+    "Sattar Web Studio is an independent software engineering and digital product agency. Led by founder and principal architect Abdul Sattar, our team partners with founders, scaling startups, and enterprise teams to design and build mission-critical web platforms, robust cloud APIs, and high-performance applications.",
 
   secondaryDescription:
-    "My engineering approach emphasizes modular architecture, strict type safety, clean API contracts, and scalable system design so products evolve with minimal technical debt.",
+    "Our studio methodology combines modular clean architecture, strict type safety, contract-driven APIs, and scalable infrastructure so your products ship faster with zero technical debt.",
 
   image: {
     src: "/images/abdul-sattar.webp",
-    alt: "Abdul Sattar, full-stack software engineer and developer behind Sattar Web Studio",
+    alt: "Abdul Sattar, Founder & Principal Solutions Architect at Sattar Web Studio",
   },
 
   primaryAction: {
     label: "Discuss a Project",
     href: "/contact",
-    ariaLabel: "Contact Abdul Sattar to discuss a software engineering project",
+    ariaLabel: "Contact Sattar Web Studio to discuss a software engineering project",
   },
 
   secondaryAction: {
     label: "View Selected Work",
     href: "/projects",
-    ariaLabel: "Explore projects built by Abdul Sattar",
+    ariaLabel: "Explore projects built by Sattar Web Studio",
   },
 
   stats: [
     {
       id: "experience",
-      value: "2+",
-      label: "Years Experience",
-      sublabel: "Professional Delivery",
+      value: "15+",
+      label: "Production Deployments",
+      sublabel: "Global Clients",
     },
     {
       id: "scope",
-      value: "Full-Stack",
-      label: "End-to-End Scope",
-      sublabel: "Frontend to Backend",
+      value: "Full-Cycle",
+      label: "Engineering Scope",
+      sublabel: "Architecture to Cloud",
     },
     {
       id: "standards",
       value: "100%",
-      label: "System Design",
-      sublabel: "Architecture & Scalability",
+      label: "Code & IP Ownership",
+      sublabel: "Strict Architecture & CI/CD",
     },
   ],
 };

@@ -13,157 +13,104 @@ import Card3D from "@/components/3d/Card3D";
 export default function HeroVisual() {
   const reduceMotion = useReducedMotion();
 
-  const lineTransition = (delay: number) => ({
-    duration: 3.6,
-    delay,
-    repeat: Infinity,
-    repeatDelay: 0.2,
-    ease: "easeInOut" as const,
-  });
-
   return (
     <LazyMotion features={domAnimation}>
-      <div className="relative mx-auto w-full max-w-135 lg:ml-auto">
+      <div className="relative mx-auto flex items-center justify-center w-full max-w-[520px] py-6 sm:py-8 lg:ml-auto">
+        {/* 3D WebGL Background Orb */}
         <HeroOrb />
-        <div aria-hidden="true" className="absolute inset-x-[9%] -top-7 bottom-7 rotate-[-5deg] rounded-3xl border border-emerald-500/30 bg-emerald-500/10 shadow-[0_0_40px_rgba(16,185,129,0.2)] backdrop-blur-md" />
-        <div aria-hidden="true" className="absolute -right-2 top-[12%] z-20 hidden rounded-xl border border-white/10 bg-[#0b1120]/90 px-4 py-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl ring-1 ring-white/10 sm:block">
-          <span className="block font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-slate-300">Crafting</span>
-          <span className="mt-1 block text-sm font-bold tracking-tight text-white">Digital products<span className="text-emerald-brand-400">.</span></span>
-        </div>
 
-        <div className="relative z-10 mx-auto w-[78%] sm:w-[76%]">
+        {/* Outer Cyber Ambient Glows */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute size-72 sm:size-96 rounded-full bg-emerald-500/20 blur-[100px] animate-pulse"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute size-60 sm:size-80 rounded-full bg-cyan-500/15 blur-[90px]"
+        />
 
-          {/* TOP LEFT */}
-          <div
+        {/* Circular Animation Frame & Orbitals */}
+        <div className="relative z-10 flex items-center justify-center size-64 sm:size-80 md:size-96 lg:size-[400px]">
+          {/* Animated Orbital Ring 1: Outer Dashed Counter-Clockwise */}
+          <m.div
             aria-hidden="true"
-            className="absolute -left-4 -top-4 z-30"
+            className="pointer-events-none absolute -inset-6 sm:-inset-8 rounded-full border border-dashed border-emerald-400/25"
+            animate={
+              reduceMotion
+                ? undefined
+                : { rotate: [0, 360] }
+            }
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "linear",
+            }}
           >
-            <m.span
-              className="absolute left-0 top-0 h-0.5 origin-left bg-emerald-brand-600"
-              initial={{ width: 0 }}
-              animate={
-                reduceMotion
-                  ? { width: 70 }
-                  : { width: [24, 72, 72, 24] }
-              }
-              transition={lineTransition(0)}
-            />
+            {/* Orbital Satellite Node */}
+            <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 size-3 rounded-full bg-emerald-400 shadow-[0_0_12px_#34d399]" />
+          </m.div>
 
-            <m.span
-              className="absolute left-0 top-0 w-0.5 origin-top bg-emerald-brand-600"
-              initial={{ height: 0 }}
-              animate={
-                reduceMotion
-                  ? { height: 70 }
-                  : { height: [24, 72, 72, 24] }
-              }
-              transition={lineTransition(0)}
-            />
-          </div>
-
-          {/* TOP RIGHT */}
-          <div
+          {/* Animated Orbital Ring 2: Concentric Cyan Ring with Reverse Rotation */}
+          <m.div
             aria-hidden="true"
-            className="absolute -right-4 -top-4 z-30"
+            className="pointer-events-none absolute -inset-3 sm:-inset-4 rounded-full border border-cyan-400/30"
+            animate={
+              reduceMotion
+                ? undefined
+                : { rotate: [360, 0] }
+            }
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
           >
-            <m.span
-              className="absolute right-0 top-0 h-0.5 bg-emerald-brand-600"
-              animate={
-                reduceMotion
-                  ? { width: 70 }
-                  : { width: [24, 24, 72, 24] }
-              }
-              transition={lineTransition(0.35)}
-            />
+            {/* Orbital Satellite Node */}
+            <span className="absolute -bottom-1.5 right-1/4 size-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
+          </m.div>
 
-            <m.span
-              className="absolute right-0 top-0 w-0.5 bg-emerald-brand-600"
-              animate={
-                reduceMotion
-                  ? { height: 70 }
-                  : { height: [24, 24, 72, 24] }
-              }
-              transition={lineTransition(0.35)}
-            />
-          </div>
-
-          {/* BOTTOM RIGHT */}
-          <div
+          {/* Animated Radar Pulse Wave */}
+          <m.div
             aria-hidden="true"
-            className="absolute -bottom-4 -right-4 z-30"
-          >
-            <m.span
-              className="absolute bottom-0 right-0 h-0.5 bg-emerald-brand-600"
-              animate={
-                reduceMotion
-                  ? { width: 70 }
-                  : { width: [24, 24, 72, 24] }
-              }
-              transition={lineTransition(0.7)}
-            />
+            className="pointer-events-none absolute -inset-1 rounded-full border border-emerald-400/40"
+            animate={
+              reduceMotion
+                ? undefined
+                : {
+                    scale: [1, 1.08, 1],
+                    opacity: [0.3, 0.7, 0.3],
+                  }
+            }
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
 
-            <m.span
-              className="absolute bottom-0 right-0 w-0.5 bg-emerald-brand-600"
-              animate={
-                reduceMotion
-                  ? { height: 70 }
-                  : { height: [24, 24, 72, 24] }
-              }
-              transition={lineTransition(0.7)}
-            />
-          </div>
+          {/* CIRCULAR IMAGE CONTAINER WITH 3D INTERACTIVE TILT */}
+          <Card3D maxTilt={12} scale={1.03} depth={20} className="size-full rounded-full">
+            <div className="relative size-full rounded-full border-4 border-emerald-500/30 bg-[#0b1120] p-1.5 shadow-[0_0_60px_rgba(16,185,129,0.25)] ring-1 ring-white/10 sm:border-[6px] sm:p-2">
+              <div className="relative size-full overflow-hidden rounded-full aspect-square bg-[#030712]">
+                <Image
+                  src="/images/abdul-sattar.webp"
+                  alt="Sattar Web Studio"
+                  fill
+                  priority
+                  fetchPriority="high"
+                  quality={90}
+                  sizes="(max-width: 640px) 260px, (max-width: 1024px) 380px, 400px"
+                  className="size-full object-cover object-[50%_25%] transition-transform duration-700 ease-out hover:scale-105"
+                />
 
-          {/* BOTTOM LEFT */}
-          <div
-            aria-hidden="true"
-            className="absolute -bottom-4 -left-4 z-30"
-          >
-            <m.span
-              className="absolute bottom-0 left-0 h-0.5 bg-emerald-brand-600"
-              animate={
-                reduceMotion
-                  ? { width: 70 }
-                  : { width: [24, 24, 72, 24] }
-              }
-              transition={lineTransition(1.05)}
-            />
-
-            <m.span
-              className="absolute bottom-0 left-0 w-0.5 bg-emerald-brand-600"
-              animate={
-                reduceMotion
-                  ? { height: 70 }
-                  : { height: [24, 24, 72, 24] }
-              }
-              transition={lineTransition(1.05)}
-            />
-          </div>
-
-          {/* PORTRAIT — 3D INTERACTIVE TILT */}
-          <Card3D maxTilt={10} scale={1.03} depth={25} className="w-full">
-            <div className="relative overflow-hidden rounded-2xl border-4 border-white/10 bg-[#0b1120] shadow-[0_30px_90px_rgba(0,0,0,0.9)] ring-1 ring-emerald-500/25 sm:border-8">
-              <Image
-                src="/images/abdul-sattar.webp"
-                alt="Abdul Sattar, full-stack software engineer behind Sattar Web Studio"
-                width={720}
-                height={900}
-                priority
-                fetchPriority="high"
-                quality={82}
-                sizes="(max-width: 640px) 78vw, 400px"
-                className="aspect-4/5 w-full object-cover object-[50%_35%]"
-              />
+                {/* Subtle Inner Lens Vignette for High-Tech Polish */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/15 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(0,0,0,0.5)_100%)]"
+                />
+              </div>
             </div>
           </Card3D>
-        </div>
-
-        <div className="absolute -bottom-5 left-0 z-20 flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0b1120]/95 px-4 py-3 text-white shadow-[0_20px_40px_rgba(0,0,0,0.85)] backdrop-blur-2xl ring-1 ring-emerald-500/30 sm:left-2 sm:px-5 sm:py-4">
-          <span className="grid size-9 place-items-center rounded-xl border border-emerald-brand-400/50 bg-emerald-500/10 font-mono text-xs font-bold text-emerald-brand-300 shadow-[0_0_12px_rgba(52,211,153,0.3)]">AS</span>
-          <span>
-            <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-slate-300">Independent engineer</span>
-            <span className="mt-0.5 block text-sm font-semibold tracking-tight text-white">Ideas into software</span>
-          </span>
-          <span aria-hidden="true" className="ml-2 size-2 rounded-full bg-emerald-brand-400 shadow-[0_0_14px_rgba(52,211,153,0.9)]" />
         </div>
       </div>
     </LazyMotion>

@@ -2,6 +2,7 @@ export type TechCategoryKey =
   | "all"
   | "frontend"
   | "backend"
+  | "cms"
   | "cloud"
   | "practices";
 

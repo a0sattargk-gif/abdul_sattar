@@ -152,12 +152,12 @@ export const FOOTER_CONTACT_ITEMS: FooterContactItem[] = [
   {
     id: "location",
     label: "Location",
-    value: "Pakistan",
+    value: "Global Delivery · Remote",
   },
   {
     id: "availability",
     label: "Availability",
-    value: "Available for freelance and remote work",
+    value: "Open for client projects & retainers",
   },
 ];
 

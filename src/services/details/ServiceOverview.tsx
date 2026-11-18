@@ -92,10 +92,10 @@ export default function ServiceOverview({ service }: ServiceOverviewProps) {
           {/* Value Proposition Sidebar Card */}
           <div className="rounded-3xl border border-white/10 bg-[#0b1120]/80 p-6 backdrop-blur-xl sm:p-8">
             <h3 className="text-sm font-bold uppercase tracking-wider text-white">
-              Why Partner With Me
+              Why Partner With Our Studio
             </h3>
             <p className="mt-2 text-xs text-slate-300">
-              Direct senior-level execution without agency overhead or junior handoffs.
+              Senior architectural leadership, battle-tested system standards, and dedicated sprint execution.
             </p>
 
             <div className="mt-6 space-y-5">

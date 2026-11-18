@@ -46,7 +46,7 @@ export default function BlogAuthorBio({
                 href="/about"
                 className="text-xs font-bold text-slate-200 hover:text-emerald-400 underline underline-offset-4 transition"
               >
-                About Me
+                About Our Studio
               </Link>
               <span aria-hidden="true" className="text-slate-400">
                 •

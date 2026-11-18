@@ -31,23 +31,23 @@ export const CONTACT_PROJECT_TYPES: ContactOption[] = [
 export const CONTACT_BUDGET_OPTIONS: ContactOption[] = [
   {
     value: "not-sure",
-    label: "Not sure yet",
+    label: "Not sure yet (Need technical discovery)",
   },
   {
-    value: "under-1000",
-    label: "Under $1,000",
+    value: "under-3000",
+    label: "Under $3,000 (Architecture Audit / Scoping)",
   },
   {
-    value: "1000-3000",
-    label: "$1,000 – $3,000",
+    value: "3000-8000",
+    label: "$3,000 – $8,000 (Feature Sprint / Module)",
   },
   {
-    value: "3000-5000",
-    label: "$3,000 – $5,000",
+    value: "8000-15000",
+    label: "$8,000 – $15,000 (Full-Cycle MVP / Web Platform)",
   },
   {
-    value: "5000-plus",
-    label: "$5,000+",
+    value: "15000-plus",
+    label: "$15,000+ (Enterprise / Dedicated Team Retainer)",
   },
 ];
 
@@ -61,18 +61,18 @@ export const CONTACT_DETAILS: ContactDetail[] = [
   {
     id: "location",
     label: "Location",
-    value: "Pakistan · Available remotely",
+    value: "Global Delivery · Operating Remotely",
   },
   {
     id: "availability",
     label: "Availability",
-    value: "Freelance, contract, and remote projects",
+    value: "Accepting new client projects & retainer partnerships",
   },
 ];
 
 export const CONTACT_EXPECTATIONS = [
-  "Clear project discussion",
-  "Technical direction",
-  "Realistic timeline",
-  "Transparent communication",
+  "Technical Discovery & Architectural Roadmap",
+  "Dedicated Solutions Architect on Every Account",
+  "Agile Sprint Delivery with Bi-weekly Progress Demos",
+  "Full Code, Database Schema & IP Ownership",
 ];
